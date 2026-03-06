@@ -1,0 +1,198 @@
+{
+  "header": {
+    "id": "workOrderProcessDistributionDependency",
+    "name": "WorkOrderProcessDistributionDependency",
+    "description": "",
+    "dataModelKindId": "reference",
+    "_customFields": {
+      "_externalId": null
+    }
+  },
+  "version": {
+    "id": "cmazsrmbj02px0775f2i2a78k",
+    "number": "3",
+    "dataModelId": "workOrderProcessDistributionDependency",
+    "modelDefinition": {
+      "name": "WorkOrderProcessDistributionDependency",
+      "metadata": {
+        "mfgx": {
+          "module": {
+            "id": "workOrderManagement",
+            "group": {
+              "id": "productionManagement"
+            }
+          },
+          "exposed": true,
+          "mutable": true,
+          "mutations": {
+            "create": true,
+            "update": true,
+            "del": true
+          },
+          "dataChangeCapture": {
+            "exposed": true,
+            "retentionDays": 120
+          },
+          "editor": {
+            "autosort": true
+          }
+        },
+        "mongo": {
+          "collection": "workOrderProcessDistributionDependency"
+        },
+        "graphql": {
+          "type": "Object"
+        }
+      },
+      "kind": "Reference",
+      "fields": [
+        {
+          "name": "id",
+          "type": "ID!",
+          "description": "The primary unique ID of the record.  Every model should have an id field.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": false
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": true
+          }
+        },
+        {
+          "name": "childWorkOrderProcessDistributionId",
+          "type": "ID!",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "childWorkOrderProcessDistribution",
+          "description": "",
+          "type": "WorkOrderProcessDistribution!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "childWorkOrderProcessDistributionId",
+                  "to": "id"
+                },
+                "deletionReferenceBehavior": "cascade"
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "parentWorkOrderProcessDistributionId",
+          "type": "ID!",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "parentWorkOrderProcessDistribution",
+          "description": "",
+          "type": "WorkOrderProcessDistribution!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "parentWorkOrderProcessDistributionId",
+                  "to": "id"
+                },
+                "deletionReferenceBehavior": "prevent"
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        }
+      ],
+      "description": ""
+    },
+    "dataModelTypeId": null
+  },
+  "migration": "$",
+  "migrations": [
+    {
+      "dataModelVersionId": "cmazsrmbj02px0775f2i2a78k",
+      "dataModelVersion": {
+        "number": "3"
+      },
+      "mappingExpression": "$"
+    }
+  ]
+}

@@ -1,0 +1,373 @@
+{
+  "header": {
+    "id": "badgeInOutModalOperatorUser",
+    "name": "Badge In/Out Modal (Operator/User)",
+    "description": "",
+    "active": true,
+    "moduleId": "employees",
+    "isWidget": true,
+    "_customFields": {
+      "_externalId": null
+    }
+  },
+  "version": {
+    "id": "cmeiyc7k108di01481q1b4j75",
+    "number": "0.0.7",
+    "description": "",
+    "screenId": "badgeInOutModalOperatorUser",
+    "design": {
+      "components": [
+        {
+          "name": "New Screen",
+          "tabTitle": "New Tab",
+          "type": "canvas",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "flowsDelay": 0,
+                  "screenDataFlowIds": [
+                    "controlPanelWebFlow"
+                  ]
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Form": 1,
+                    "Container": 2,
+                    "Scan": 1,
+                    "Action Button": 2,
+                    "Text": 1,
+                    "Flow Button": 2
+                  }
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "9IRfOUk8pA"
+                ],
+                "linkedNodes": {}
+              },
+              "9IRfOUk8pA": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "parameters": "{\n  \"filter\": {\n    \"id\": {\n      \"_eq\": id\n    }\n  },\n  \"first\": 1\n}",
+                    "fields": [
+                      "id"
+                    ],
+                    "disableDataChangeIndicator": false
+                  },
+                  "blockNavigationWhenDirty": true
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "lePjN0BkUi"
+                ],
+                "linkedNodes": {}
+              },
+              "lePjN0BkUi": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 8,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "auto",
+                  "height": "150px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": true,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "9IRfOUk8pA",
+                "hidden": false,
+                "nodes": [
+                  "jgLMfbtefB",
+                  "0-xkkgaPeo",
+                  "BT-7swCpW2",
+                  "e2_0LHexNc"
+                ],
+                "linkedNodes": {}
+              },
+              "yDeNwIaJDB": {
+                "type": {
+                  "resolvedName": "ScanTextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "80%",
+                  "height": "50px",
+                  "validation": {
+                    "required": true
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "scanText",
+                  "label": "Badge in/out Operator",
+                  "allowManualInput": true,
+                  "terminatorCharacters": [
+                    "enter",
+                    "tab"
+                  ],
+                  "prefixString": "",
+                  "stripPrefixString": true,
+                  "scanTimeoutMilliseconds": 200,
+                  "clearable": true,
+                  "autoFocus": false,
+                  "clearOnFocus": true,
+                  "beepOnScan": false,
+                  "formElement": "Form1",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "userId"
+                },
+                "displayName": "Scan",
+                "custom": {
+                  "elementName": "Scan1"
+                },
+                "parent": "BT-7swCpW2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "BT-7swCpW2": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "80%",
+                  "height": "50px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "lePjN0BkUi",
+                "hidden": false,
+                "nodes": [
+                  "yDeNwIaJDB"
+                ],
+                "linkedNodes": {}
+              },
+              "jgLMfbtefB": {
+                "type": {
+                  "resolvedName": "RichText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "width": "80%",
+                  "height": "50px",
+                  "content": {
+                    "blocks": [
+                      {
+                        "key": "cl9qaup740002356nczbdvi6q",
+                        "text": "Badge in/out current user:",
+                        "type": "unstyled",
+                        "depth": 0,
+                        "inlineStyleRanges": [
+                          {
+                            "offset": 0,
+                            "length": 26,
+                            "style": "fontsize-16"
+                          }
+                        ],
+                        "entityRanges": [],
+                        "data": {}
+                      }
+                    ],
+                    "entityMap": {}
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text1"
+                },
+                "parent": "lePjN0BkUi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "0-xkkgaPeo": {
+                "type": {
+                  "resolvedName": "FlowButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "id-badge",
+                    "color": "inherit",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "payload": {
+                    "__transform": "{\r\n  \"REQUEST\":{\r\n    \"DATA\": {\r\n      \"userId\": $metadata.user.id,\r\n      \"activityId\": $metadata.urlParameters.activityId,\r\n      \"workunitId\":$metadata.urlParameters.workunitId\r\n    },\r\n    \"ACTION\": \"BADGE\"\r\n  }\r\n}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "dataFlowId": "controlPanelWebFlow"
+                },
+                "displayName": "Flow Button",
+                "custom": {
+                  "elementName": "FlowButton1"
+                },
+                "parent": "lePjN0BkUi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "e2_0LHexNc": {
+                "type": {
+                  "resolvedName": "FlowButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "id-badge",
+                    "color": "inherit",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$components.Form1.formState.hasValidationErrors",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "payload": {
+                    "__transform": "{\r\n  \"REQUEST\":{\r\n    \"DATA\": {\r\n      \"userId\": $components.Form1.data.userId,\r\n      \"activityId\": $metadata.urlParameters.activityId,\r\n      \"workunitId\":$metadata.urlParameters.workunitId\r\n    },\r\n    \"ACTION\": \"BADGE\"\r\n  }\r\n}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "dataFlowId": "controlPanelWebFlow"
+                },
+                "displayName": "Flow Button",
+                "custom": {
+                  "elementName": "FlowButton2"
+                },
+                "parent": "lePjN0BkUi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "cmehcglwt04vp015u014ycfk1",
+      "title": "Badge In/Out Modal (Operator/User)",
+      "path": "/humanCapitalManagement/employees/badgeInOutModalOperatorUser",
+      "moduleId": "employees",
+      "screenId": "badgeInOutModalOperatorUser",
+      "isMenuAccessible": false,
+      "submenu": ""
+    }
+  ]
+}

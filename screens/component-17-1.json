@@ -1,0 +1,1354 @@
+{
+  "header": {
+    "id": "productionStepWidget",
+    "name": "Production Step Widget",
+    "description": "",
+    "active": true,
+    "moduleId": "controlPanels",
+    "isWidget": true,
+    "_customFields": {
+      "_externalId": null
+    }
+  },
+  "version": {
+    "id": "cmhx7hssq09e3015kagk5apue",
+    "number": "0.0.8",
+    "description": "",
+    "screenId": "productionStepWidget",
+    "design": {
+      "components": [
+        {
+          "name": "New Screen",
+          "tabTitle": "New Tab",
+          "type": "canvas",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "flowsDelay": 0,
+                  "removeOuterMargin": false,
+                  "screenDataFlowIds": [
+                    "validateScanStep"
+                  ]
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 13,
+                    "Table": 1,
+                    "Table Column": 3,
+                    "Form": 1,
+                    "Text": 9,
+                    "Action": 4,
+                    "Scan": 1,
+                    "Icon": 1,
+                    "Flow": 1,
+                    "Decimal": 1
+                  }
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "gWuOjMOTN6"
+                ],
+                "linkedNodes": {}
+              },
+              "gWuOjMOTN6": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "kFAJV11R2Z",
+                  "S2mTmY4PON"
+                ],
+                "linkedNodes": {}
+              },
+              "kFAJV11R2Z": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "25%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "gWuOjMOTN6",
+                "hidden": false,
+                "nodes": [
+                  "YRutapNjig"
+                ],
+                "linkedNodes": {}
+              },
+              "S2mTmY4PON": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "75%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "gWuOjMOTN6",
+                "hidden": false,
+                "nodes": [
+                  "fUMEFxK7pK"
+                ],
+                "linkedNodes": {}
+              },
+              "YRutapNjig": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id"
+                    ],
+                    "disableDataChangeIndicator": false,
+                    "selectedDataChangeIndicator": null,
+                    "model": "ProductionSetupOutputStep",
+                    "parameters": "{\r\n  \"filter\":{\r\n      \"productionSetupOutput\":  {\r\n         \"workunitId\":  {\r\n            \"_eq\": $metadata.urlParameters.id \r\n         }\r\n      }\r\n  }\r\n}"
+                  },
+                  "selectable": "none",
+                  "showToolPanels": false,
+                  "showStatusBar": false,
+                  "enableGrouping": true,
+                  "enableCharts": true,
+                  "showColumnMenu": true,
+                  "enableRowDragging": false,
+                  "disableColumnDragging": false,
+                  "disableDragLeaveHidesColumns": false,
+                  "masterDetail": false,
+                  "hideTableHeader": false,
+                  "description": "Defines the static configuration of a production step, including fields such as code, description, expected duration, and optional BOM references. It does not record execution data like timestamps or BOM components. When a new run begins, this reference data is copied into CurrentProductionSetupOutputStep.",
+                  "rowMultiSelectWithClick": false,
+                  "limitToOneActiveDetail": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table1"
+                },
+                "parent": "kFAJV11R2Z",
+                "hidden": false,
+                "nodes": [
+                  "x1TN0ctIcv",
+                  "OJi6EYq3ch",
+                  "3sAXsAxWhg"
+                ],
+                "linkedNodes": {}
+              },
+              "3sAXsAxWhg": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Expected",
+                  "format": "duration",
+                  "sortable": true,
+                  "dataPath": "expectedDuration",
+                  "description": "Estimated time required to complete the step.",
+                  "query": {},
+                  "field": "expectedDuration"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn1"
+                },
+                "parent": "YRutapNjig",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "OJi6EYq3ch": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Code",
+                  "format": "text",
+                  "sortable": true,
+                  "dataPath": "code",
+                  "description": "Identifier for the step",
+                  "query": {},
+                  "field": "code"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn2"
+                },
+                "parent": "YRutapNjig",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "fUMEFxK7pK": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "parameters": "{\n  \"filter\": {\n    \"productionSetupOutput\":  {\n      \"workunitId\":  {\n          \"_eq\": $metadata.urlParameters.id \n      }\n    },\n    \"productionSetupOutputStepStatusId\":{\n      \"_eq\": \"pending\"\n    }\n  },\n  \"first\": 1,\n  \"orderBy\":{\n    \"direction\": \"asc\",\n    \"field\": \"sequence\"\n  }\n}",
+                    "fields": [
+                      "id",
+                      "productStrategyProcessStepTypeId"
+                    ],
+                    "disableDataChangeIndicator": false,
+                    "dataChangeIndicatorSize": "normal",
+                    "model": "ProductionSetupOutputStep"
+                  },
+                  "blockNavigationWhenDirty": false,
+                  "enableConfirmOnDataChanged": false,
+                  "description": "Defines the static configuration of a production step, including fields such as code, description, expected duration, and optional BOM references. It does not record execution data like timestamps or BOM components. When a new run begins, this reference data is copied into CurrentProductionSetupOutputStep."
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "S2mTmY4PON",
+                "hidden": false,
+                "nodes": [
+                  "AiuDQLwYLL"
+                ],
+                "linkedNodes": {}
+              },
+              "AiuDQLwYLL": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 20,
+                  "margin": 8,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "space-between",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "flexShrink": false,
+                  "shadow": true,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container4"
+                },
+                "parent": "fUMEFxK7pK",
+                "hidden": false,
+                "nodes": [
+                  "Bec8zEFLjD",
+                  "wxVw3NwRDd",
+                  "frntO8ov4C"
+                ],
+                "linkedNodes": {}
+              },
+              "ZhUMCySmb2": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "50%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "display",
+                  "label": "Code",
+                  "justifyContent": "start",
+                  "alignTextItems": "start",
+                  "labelFontSize": "body1",
+                  "fontSize": "h3",
+                  "formElement": "Form1",
+                  "dataPath": "code",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Identifier for the step",
+                  "field": "code",
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text1"
+                },
+                "parent": "dHHeEVmDUf",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "-7QJJSTlbR": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "display",
+                  "label": "Description",
+                  "justifyContent": "start",
+                  "alignTextItems": "start",
+                  "labelFontSize": "body1",
+                  "fontSize": "body1",
+                  "formElement": "Form1",
+                  "dataPath": "description",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Provides detailed definition of the actions taken within the step.",
+                  "field": "description",
+                  "format": "markdown",
+                  "labelPosition": {
+                    "id": "null",
+                    "label": "None"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text2"
+                },
+                "parent": "Bec8zEFLjD",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "cKHMU5tkIP": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-end",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": {
+                    "__transform": "$not($components.Form1.data.productStrategyProcessStepTypeId = \"DEFAULT\")",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container5"
+                },
+                "parent": "frntO8ov4C",
+                "hidden": false,
+                "nodes": [
+                  "SRVMFtZ0Cr"
+                ],
+                "linkedNodes": {}
+              },
+              "SRVMFtZ0Cr": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "green",
+                  "icon": {
+                    "icon": "check",
+                    "color": "inherit",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "120px",
+                  "height": "100px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "mutation",
+                      "mutation": "mutation UpdateProductionSetupOutputStep($payload: [ProductionSetupOutputStepUpdatePayloadInput!]!) {\n  updateProductionSetupOutputStep(payload: $payload) {\n    id\n  }\n}",
+                      "api": "Application",
+                      "transforms": {
+                        "pre": "(\r\n  $nextIndex := $findFirstIndex($components.Table1.data, function($v){$v.id = $components.Form1.data.id}) + 1;\r\n  $nextId := $components.Table1.data[$nextIndex].id;\r\n\r\n  {\r\n    \"payload\":[\r\n      {\r\n        \"where\":{\r\n          \"id\": $components.Form1.data.id\r\n        },\r\n        \"update\":{\r\n          \"productionSetupOutputStepStatusId\": \"passed\",\r\n          \"endAt\": $moment().format()\r\n        }\r\n      },\r\n      $nextId? {\r\n        \"where\":{\r\n          \"id\": $nextId\r\n        },\r\n        \"update\":{\r\n          \"startAt\": $moment().format()\r\n        }\r\n      }\r\n    ]\r\n  }\r\n)  ",
+                        "post": "(\r\n  $components.Form1.fn.loadData();\r\n  $components.Table1.fn.loadData();\r\n)"
+                      }
+                    }
+                  ]
+                },
+                "displayName": "Action",
+                "custom": {},
+                "parent": "cKHMU5tkIP",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "b-I2RLhJZ9": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": {
+                    "__transform": "$not($components.Form1.data.productStrategyProcessStepTypeId = \"SCAN\")",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container6"
+                },
+                "parent": "frntO8ov4C",
+                "hidden": false,
+                "nodes": [
+                  "vR_Hdcy02p",
+                  "6QNMqNCZ2t"
+                ],
+                "linkedNodes": {}
+              },
+              "vR_Hdcy02p": {
+                "type": {
+                  "resolvedName": "ScanTextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "scanText",
+                  "label": "Scan",
+                  "allowManualInput": true,
+                  "terminatorCharacters": [
+                    "enter",
+                    "tab"
+                  ],
+                  "prefixString": "",
+                  "stripPrefixString": true,
+                  "scanTimeoutMilliseconds": 200,
+                  "clearable": true,
+                  "autoFocus": false,
+                  "clearOnFocus": true,
+                  "beepOnScan": false,
+                  "formElement": "Form1",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "pieceSerial",
+                  "query": {
+                    "fields": [
+                      ""
+                    ]
+                  },
+                  "onChange": "$isNotNilOrEmpty($$.newValue) and  $not($$.newValue = $$.oldValue)?(\r\n  $components.Action3.fn.execute($$)\r\n)"
+                },
+                "displayName": "Scan",
+                "custom": {
+                  "elementName": "Scan1"
+                },
+                "parent": "b-I2RLhJZ9",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Bec8zEFLjD": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": {
+                    "__transform": "$isNilOrEmpty( $components.Form1.data.code )",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container7"
+                },
+                "parent": "AiuDQLwYLL",
+                "hidden": false,
+                "nodes": [
+                  "dHHeEVmDUf",
+                  "-7QJJSTlbR"
+                ],
+                "linkedNodes": {}
+              },
+              "frntO8ov4C": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": {
+                    "__transform": "$isNilOrEmpty( $components.Form1.data.code )",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container8"
+                },
+                "parent": "AiuDQLwYLL",
+                "hidden": false,
+                "nodes": [
+                  "b-I2RLhJZ9",
+                  "cKHMU5tkIP",
+                  "KavtU9h9TI"
+                ],
+                "linkedNodes": {}
+              },
+              "wxVw3NwRDd": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": {
+                    "__transform": "$isNotNilOrEmpty( $components.Form1.data.code )",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container9"
+                },
+                "parent": "AiuDQLwYLL",
+                "hidden": false,
+                "nodes": [
+                  "5EVVbiVw-4",
+                  "jWaemHg-0q"
+                ],
+                "linkedNodes": {}
+              },
+              "5EVVbiVw-4": {
+                "type": {
+                  "resolvedName": "Icon"
+                },
+                "isCanvas": false,
+                "props": {
+                  "icon": {
+                    "icon": "check",
+                    "color": "success",
+                    "variant": "regular",
+                    "size": "icon"
+                  },
+                  "title": "Icon",
+                  "height": "48px",
+                  "width": "48px"
+                },
+                "displayName": "Icon",
+                "custom": {
+                  "elementName": "Icon1"
+                },
+                "parent": "wxVw3NwRDd",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "jWaemHg-0q": {
+                "type": {
+                  "resolvedName": "RichText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "width": "100%",
+                  "height": "auto",
+                  "content": {
+                    "blocks": [
+                      {
+                        "key": "cl9qaup740002356nczbdvi6q",
+                        "text": "Complete!",
+                        "type": "unstyled",
+                        "depth": 0,
+                        "inlineStyleRanges": [
+                          {
+                            "offset": 0,
+                            "length": 9,
+                            "style": "fontfamily-Roboto"
+                          },
+                          {
+                            "offset": 0,
+                            "length": 9,
+                            "style": "fontsize-24"
+                          }
+                        ],
+                        "entityRanges": [],
+                        "data": {
+                          "text-align": "center"
+                        }
+                      }
+                    ],
+                    "entityMap": {}
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text3"
+                },
+                "parent": "wxVw3NwRDd",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "x1TN0ctIcv": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Status",
+                  "format": "icon",
+                  "sortable": true,
+                  "dataPath": "productionSetupOutputStepStatusId",
+                  "description": "Reference to the status model, indicates the status of the current step running,",
+                  "query": {},
+                  "field": "productionSetupOutputStepStatusId",
+                  "data": {
+                    "__transform": "data.productionSetupOutputStepStatusId = \"passed\"? \"check\" : \"x\"",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "width": "50px"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn3"
+                },
+                "parent": "YRutapNjig",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "dHHeEVmDUf": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container10"
+                },
+                "parent": "Bec8zEFLjD",
+                "hidden": false,
+                "nodes": [
+                  "ZhUMCySmb2",
+                  "eX7fTQeAK0"
+                ],
+                "linkedNodes": {}
+              },
+              "eX7fTQeAK0": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "50%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "display",
+                  "label": "Expected Duration",
+                  "justifyContent": "start",
+                  "alignTextItems": "end",
+                  "labelFontSize": "button",
+                  "fontSize": "body1",
+                  "formElement": "Form1",
+                  "dataPath": "expectedDuration",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Estimated time required to complete the step.",
+                  "field": "expectedDuration",
+                  "format": "duration",
+                  "durationMode": "humanize"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text4"
+                },
+                "parent": "dHHeEVmDUf",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "6QNMqNCZ2t": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "mouse-pointer",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": true,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "flow",
+                      "flowId": "validateScanStep",
+                      "transforms": {
+                        "pre": "{\r\n  \"REQUEST\":{\r\n    \"pieceSerial\": data.newValue,\r\n    \"currentProductionOutputStepId\": data.data.id\r\n  }\r\n}",
+                        "post": "(\r\n  $components.Form1.fn.loadData();\r\n  $components.Table1.fn.loadData();\r\n)"
+                      }
+                    }
+                  ]
+                },
+                "displayName": "Action",
+                "custom": {
+                  "elementName": "Action3"
+                },
+                "parent": "b-I2RLhJZ9",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "KavtU9h9TI": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "end",
+                  "alignItems": "flex-end",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": {
+                    "__transform": "$not($components.Form1.data.productStrategyProcessStepTypeId = \"VARIABLE\")",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container11"
+                },
+                "parent": "frntO8ov4C",
+                "hidden": false,
+                "nodes": [
+                  "L0r9TlE_2i",
+                  "4iBb7zDEEB"
+                ],
+                "linkedNodes": {}
+              },
+              "L0r9TlE_2i": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "20%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container12"
+                },
+                "parent": "KavtU9h9TI",
+                "hidden": false,
+                "nodes": [
+                  "TwaIpi29tb",
+                  "7PP58joq_L",
+                  "EQIlXNazlS"
+                ],
+                "linkedNodes": {}
+              },
+              "TwaIpi29tb": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "98%",
+                  "height": "50px",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "display",
+                  "label": "Max",
+                  "justifyContent": "start",
+                  "alignTextItems": "start",
+                  "labelFontSize": "body1",
+                  "fontSize": "body1",
+                  "formElement": "Form1",
+                  "dataPath": "max",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "The maximum acceptable value for the step check values. Defines the upper boundary of tolerance for the measurement. Must be greater than or equal to target.",
+                  "field": "max"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text7"
+                },
+                "parent": "L0r9TlE_2i",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "EQIlXNazlS": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "display",
+                  "label": "Min",
+                  "justifyContent": "start",
+                  "alignTextItems": "start",
+                  "labelFontSize": "body1",
+                  "fontSize": "body1",
+                  "formElement": "Form1",
+                  "dataPath": "min",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "The minimum acceptable value for the step check value. Defines the lower boundary of tolerance for the measurement. Must be less than or equal to target.",
+                  "field": "min"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text8"
+                },
+                "parent": "L0r9TlE_2i",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "7PP58joq_L": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "99%",
+                  "height": "50px",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "display",
+                  "label": "Target",
+                  "justifyContent": "start",
+                  "alignTextItems": "start",
+                  "labelFontSize": "body1",
+                  "fontSize": "body1",
+                  "formElement": "Form1",
+                  "dataPath": "target",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "The expected or ideal value for the step check value. Serves as the reference point for evaluating whether a measured value is within acceptable limits. Must fall between min and max values.",
+                  "field": "target"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text9"
+                },
+                "parent": "L0r9TlE_2i",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Di7AeS5U14": {
+                "type": {
+                  "resolvedName": "FloatInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "float",
+                  "label": "Value",
+                  "formElement": "Form1",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "inputValue",
+                  "query": {
+                    "fields": [
+                      ""
+                    ]
+                  }
+                },
+                "displayName": "Decimal",
+                "custom": {
+                  "elementName": "Decimal1"
+                },
+                "parent": "4iBb7zDEEB",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "vDxsu-42Vf": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "mouse-pointer",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "120px",
+                  "height": "100px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "(\r\n  $data := $components.Form1.data;\r\n  $data.inputValue >= $data.min and $data.inputValue <= $data.max? $data.inputValue : $throw(\"Value not in range.\")\r\n)"
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation UpdateProductionSetupOutputStep($payload: [ProductionSetupOutputStepUpdatePayloadInput!]!) {\n  updateProductionSetupOutputStep(payload: $payload) {\n    id\n  }\n}",
+                      "transforms": {
+                        "pre": "(\r\n  $nextIndex := $findFirstIndex($components.Table1.data, function($v){$v.id = $components.Form1.data.id}) + 1;\r\n  $nextId := $components.Table1.data[$nextIndex].id;\r\n\r\n  {\r\n    \"payload\":[\r\n      {\r\n        \"where\":{ \"id\": $components.Form1.data.id},\r\n        \"update\":{\r\n          \"productionSetupOutputStepStatusId\": \"passed\",\r\n          \"endAt\": $moment().format(),\r\n          \"value\":{\r\n            \"variableValue\":$components.Form1.data.inputValue\r\n          }\r\n          \r\n        }\r\n      },\r\n      $nextId? {\r\n        \"where\":{\r\n          \"id\": $nextId\r\n        },\r\n        \"update\":{\r\n          \"startAt\": $moment().format()\r\n        }\r\n      }\r\n    ]\r\n  }\r\n)",
+                        "post": "(\r\n  $components.Form1.fn.loadData();\r\n  $components.Table1.fn.loadData();\r\n)"
+                      }
+                    }
+                  ]
+                },
+                "displayName": "Action",
+                "custom": {
+                  "elementName": "Action4"
+                },
+                "parent": "4iBb7zDEEB",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "4iBb7zDEEB": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-end",
+                  "alignItems": "flex-end",
+                  "width": "80%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container13"
+                },
+                "parent": "KavtU9h9TI",
+                "hidden": false,
+                "nodes": [
+                  "Di7AeS5U14",
+                  "vDxsu-42Vf"
+                ],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": []
+}

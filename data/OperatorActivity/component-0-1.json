@@ -1,0 +1,107 @@
+{
+  "api": "application",
+  "modelName": "OperatorActivity",
+  "payload": [
+    {
+      "id": "Change Over",
+      "name": "Change Over",
+      "changeover": false,
+      "cleaning": false,
+      "controlPanelDisplay": true,
+      "default": false,
+      "includeLabor": true,
+      "maintenance": false,
+      "other": false,
+      "production": false,
+      "quality": false,
+      "testing": false,
+      "training": false,
+      "usable": true,
+      "customData": null,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Other",
+      "name": "Other",
+      "changeover": false,
+      "cleaning": false,
+      "controlPanelDisplay": false,
+      "default": null,
+      "includeLabor": true,
+      "maintenance": false,
+      "other": true,
+      "production": false,
+      "quality": null,
+      "testing": false,
+      "training": false,
+      "usable": true,
+      "customData": null,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Production",
+      "name": "Production",
+      "changeover": false,
+      "cleaning": false,
+      "controlPanelDisplay": false,
+      "default": null,
+      "includeLabor": true,
+      "maintenance": false,
+      "other": false,
+      "production": true,
+      "quality": null,
+      "testing": false,
+      "training": false,
+      "usable": true,
+      "customData": null,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Testing",
+      "name": "Testing",
+      "changeover": false,
+      "cleaning": false,
+      "controlPanelDisplay": false,
+      "default": null,
+      "includeLabor": true,
+      "maintenance": false,
+      "other": false,
+      "production": false,
+      "quality": null,
+      "testing": true,
+      "training": false,
+      "usable": true,
+      "customData": null,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Training",
+      "name": "Training",
+      "changeover": false,
+      "cleaning": false,
+      "controlPanelDisplay": false,
+      "default": null,
+      "includeLabor": true,
+      "maintenance": false,
+      "other": false,
+      "production": false,
+      "quality": null,
+      "testing": false,
+      "training": true,
+      "usable": true,
+      "customData": null,
+      "_customFields": {
+        "_externalId": null
+      }
+    }
+  ],
+  "metadata": {}
+}

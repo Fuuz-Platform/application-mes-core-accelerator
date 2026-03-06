@@ -1,0 +1,17 @@
+{
+  "api": "application",
+  "modelName": "Role",
+  "payload": [
+    {
+      "id": "operator",
+      "name": "Operator",
+      "description": "Role for production operators",
+      "menu": null,
+      "homeScreenId": null,
+      "_customFields": {
+        "_externalId": null
+      }
+    }
+  ],
+  "metadata": {}
+}

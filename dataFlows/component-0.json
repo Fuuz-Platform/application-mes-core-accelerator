@@ -1,0 +1,671 @@
+{
+  "header": {
+    "id": "backFillEndDatesOfWorkunitHistory",
+    "name": "Back Fill End Dates of Workunit History",
+    "description": "Updates the workunit state history end dates and duration on a schedule.",
+    "active": true,
+    "dataFlowTypeId": "System",
+    "logLevelId": "Debug",
+    "mcpToolConfiguration": null,
+    "moduleId": "workunits",
+    "_customFields": {
+      "_externalId": null
+    }
+  },
+  "version": {
+    "id": "cmex2480802h9016kf2u57928",
+    "number": "0.0.9",
+    "description": "",
+    "dataFlowId": "backFillEndDatesOfWorkunitHistory",
+    "flow": {
+      "id": "cmex2480802h9016kf2u57928",
+      "name": "Back Fill End Dates of Workunit History",
+      "type": "System",
+      "nodes": [
+        {
+          "id": "2bb4855c-e400-432e-9504-b0a9eb8b8209",
+          "name": "Get History without end dates",
+          "type": "query",
+          "data": {
+            "api": "application",
+            "variablesTransform": "{}",
+            "query": "{\n  workunitStateHistory(where: {endAt: {_isNull: true}}) {\n    edges {\n      node {\n        id\n        workunitId\n        occurAt\n      }\n    }\n  }\n}",
+            "nextNodes": [
+              "17a85503-42c1-45ba-a64b-cb88e437e4a2"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "17a85503-42c1-45ba-a64b-cb88e437e4a2",
+          "name": "Calculate End Dates",
+          "type": "transform",
+          "data": {
+            "transform": "$groupBy(\n  workunitStateHistory.edges.node[$isNil(occurAt)~>$not]^(occurAt), \n  $path(?, \"workunitId\")\n)\n~>$mapValues(function($j){\n  $count($j) > 1?(\n    $map($j, function($v, $i, $arr){(\n \n    $arr[$i +1]?(\n     $start := $moment($v.occurAt);\n     $end := $moment($arr[$i +1].occurAt);\n\n\n     {\n        \"where\":{ \"id\": $v.id},\n        \"update\":{\n          \"endAt\": $end.toISOString(),\n          \"duration\": $end.diff($start, \"seconds\")\n        }\n      }\n    )\n    )})\n  )\n})\n~>$values\n~>$filter($isNil~>$not)\n~>$flatten()\n\n\n",
+            "nextNodes": [
+              "aeb7cadb-d58a-4c57-987c-d596518bdc0d"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "aeb7cadb-d58a-4c57-987c-d596518bdc0d",
+          "name": "Update End Dates",
+          "type": "mutate",
+          "data": {
+            "api": "Application",
+            "variablesTransform": "{\n  \"payload\": $\n}",
+            "mutation": "mutation ($payload: [WorkunitStateHistoryUpdatePayloadInput!]!){\n  updateWorkunitStateHistory(payload:$payload){ id }\n}",
+            "nextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": true,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": true,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "111c1db3-c824-4b97-ae47-603f4d807542",
+          "name": "Schedule",
+          "type": "schedule",
+          "data": {
+            "configure": "Open Schedule Editor",
+            "nextNodes": [
+              "2bb4855c-e400-432e-9504-b0a9eb8b8209"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "247870c8-7700-4f57-9427-900c1ceb7c81",
+          "name": "Log: Start Schedule",
+          "type": "log",
+          "data": {
+            "messageTransform": "\"Start Scheduled\"",
+            "level": "Debug",
+            "includeContext": true,
+            "includePayload": true,
+            "nextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": true,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "f1539dfe-ce61-4f2b-8b7b-ede6e931e7a8",
+          "name": "Log: End Schedule",
+          "type": "log",
+          "data": {
+            "messageTransform": "\"End Schedule\"",
+            "level": "Debug",
+            "includeContext": true,
+            "includePayload": true,
+            "nextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": true,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        }
+      ],
+      "version": "0.0.8"
+    },
+    "diagram": {
+      "id": "cmex2480802h9016kf2u57928",
+      "offsetX": 65.47,
+      "offsetY": -104.99,
+      "zoom": 102.67,
+      "gridSize": 5,
+      "layers": [
+        {
+          "id": "39025a4d-900e-4c4d-bf3b-41db317658f6",
+          "type": "diagram-links",
+          "isSvg": true,
+          "transformed": true,
+          "models": {
+            "0622c303-50ee-41dc-8889-2eaaff28a051": {
+              "points": [
+                {
+                  "id": "da237b5c-644c-4dfb-bc62-0192be23cbc3",
+                  "type": "point",
+                  "x": 223.98,
+                  "y": 334.73
+                },
+                {
+                  "id": "116ba240-6edd-4f0b-9cee-dadd17e4588f",
+                  "type": "point",
+                  "x": 260,
+                  "y": 334.73
+                }
+              ],
+              "id": "0622c303-50ee-41dc-8889-2eaaff28a051",
+              "type": "default",
+              "selected": false,
+              "source": "1ec12b1d-ca03-4933-996d-43e2d11f0f4a",
+              "sourcePort": "clo37arvs03xk356fs320igob",
+              "target": "2bb4855c-e400-432e-9504-b0a9eb8b8209",
+              "targetPort": "clo37at6n03xs356fj2o53rm7",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "375f9187-89c6-4bc0-bf45-db9c2099705b": {
+              "points": [
+                {
+                  "id": "13876689-073e-43c4-8190-032709eef0d2",
+                  "type": "point",
+                  "x": 465.56,
+                  "y": 334.73
+                },
+                {
+                  "id": "2f6b6ca5-86fd-40af-a2c8-b0f40fca8e73",
+                  "type": "point",
+                  "x": 510,
+                  "y": 334.73
+                }
+              ],
+              "id": "375f9187-89c6-4bc0-bf45-db9c2099705b",
+              "type": "default",
+              "selected": false,
+              "source": "2bb4855c-e400-432e-9504-b0a9eb8b8209",
+              "sourcePort": "clo37at6n03xu356fiue4d4d8",
+              "target": "17a85503-42c1-45ba-a64b-cb88e437e4a2",
+              "targetPort": "clo37b2cw03y2356fdtw4ey73",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "7174bb7a-a6c5-49a6-8464-fe902e36f13c": {
+              "points": [
+                {
+                  "id": "942b981b-ac7a-4e87-a0f1-2d7a1a11d8a9",
+                  "type": "point",
+                  "x": 664,
+                  "y": 334.73
+                },
+                {
+                  "id": "82cfa0de-e65c-4202-b0d0-1d9be45bb372",
+                  "type": "point",
+                  "x": 715,
+                  "y": 334.73
+                }
+              ],
+              "id": "7174bb7a-a6c5-49a6-8464-fe902e36f13c",
+              "type": "default",
+              "selected": false,
+              "source": "17a85503-42c1-45ba-a64b-cb88e437e4a2",
+              "sourcePort": "clo37b2cw03y4356fzmvw5xxj",
+              "target": "aeb7cadb-d58a-4c57-987c-d596518bdc0d",
+              "targetPort": "clo37my0s04bj356f3cbt38ak",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "10f579b6-09ce-434b-944b-6501c249bc7f": {
+              "points": [
+                {
+                  "id": "29e8484f-7b6d-4434-b7e7-2ee04049331e",
+                  "type": "point",
+                  "x": 224,
+                  "y": 269.73
+                },
+                {
+                  "id": "fe6a0152-1bab-42e4-a75a-433062dd45af",
+                  "type": "point",
+                  "x": 260,
+                  "y": 334.73
+                }
+              ],
+              "id": "10f579b6-09ce-434b-944b-6501c249bc7f",
+              "type": "default",
+              "selected": false,
+              "source": "111c1db3-c824-4b97-ae47-603f4d807542",
+              "sourcePort": "clo3azdca04w4356for80hahl",
+              "target": "2bb4855c-e400-432e-9504-b0a9eb8b8209",
+              "targetPort": "clo37at6n03xs356fj2o53rm7",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            }
+          }
+        },
+        {
+          "id": "633d6d68-1d51-457f-b637-7b2605cd6af7",
+          "type": "diagram-nodes",
+          "isSvg": false,
+          "transformed": true,
+          "models": {
+            "1ec12b1d-ca03-4933-996d-43e2d11f0f4a": {
+              "id": "1ec12b1d-ca03-4933-996d-43e2d11f0f4a",
+              "type": "debugSource",
+              "selected": false,
+              "x": 70,
+              "y": 295,
+              "ports": [
+                {
+                  "id": "clo37arvs03xk356fs320igob",
+                  "type": "default",
+                  "x": 215.98,
+                  "y": 326.73,
+                  "name": "clo37arvs03xl356ficqblel6",
+                  "parentNode": "1ec12b1d-ca03-4933-996d-43e2d11f0f4a",
+                  "links": [
+                    "0622c303-50ee-41dc-8889-2eaaff28a051"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "payload": {},
+                "context": {},
+                "nextNodes": [
+                  "2bb4855c-e400-432e-9504-b0a9eb8b8209"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Source"
+            },
+            "2bb4855c-e400-432e-9504-b0a9eb8b8209": {
+              "id": "2bb4855c-e400-432e-9504-b0a9eb8b8209",
+              "type": "query",
+              "selected": false,
+              "x": 260,
+              "y": 295,
+              "ports": [
+                {
+                  "id": "clo37at6n03xs356fj2o53rm7",
+                  "type": "default",
+                  "x": 252,
+                  "y": 326.73,
+                  "name": "clo37at6n03xt356fe484eqcn",
+                  "parentNode": "2bb4855c-e400-432e-9504-b0a9eb8b8209",
+                  "links": [
+                    "0622c303-50ee-41dc-8889-2eaaff28a051",
+                    "10f579b6-09ce-434b-944b-6501c249bc7f"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clo37at6n03xu356fiue4d4d8",
+                  "type": "default",
+                  "x": 457.56,
+                  "y": 326.73,
+                  "name": "clo37at6n03xv356fd8o4ip6l",
+                  "parentNode": "2bb4855c-e400-432e-9504-b0a9eb8b8209",
+                  "links": [
+                    "375f9187-89c6-4bc0-bf45-db9c2099705b"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "api": "application",
+                "variablesTransform": "{}",
+                "query": "{\n  workunitStateHistory(where: {endAt: {_isNull: true}}) {\n    edges {\n      node {\n        id\n        workunitId\n        occurAt\n      }\n    }\n  }\n}",
+                "nextNodes": [
+                  "17a85503-42c1-45ba-a64b-cb88e437e4a2"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Get History without end dates"
+            },
+            "17a85503-42c1-45ba-a64b-cb88e437e4a2": {
+              "id": "17a85503-42c1-45ba-a64b-cb88e437e4a2",
+              "type": "transform",
+              "selected": true,
+              "x": 510,
+              "y": 295,
+              "ports": [
+                {
+                  "id": "clo37b2cw03y2356fdtw4ey73",
+                  "type": "default",
+                  "x": 502,
+                  "y": 326.73,
+                  "name": "clo37b2cw03y3356f3o7ai6lf",
+                  "parentNode": "17a85503-42c1-45ba-a64b-cb88e437e4a2",
+                  "links": [
+                    "375f9187-89c6-4bc0-bf45-db9c2099705b"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clo37b2cw03y4356fzmvw5xxj",
+                  "type": "default",
+                  "x": 656,
+                  "y": 326.73,
+                  "name": "clo37b2cw03y5356f2gktfafr",
+                  "parentNode": "17a85503-42c1-45ba-a64b-cb88e437e4a2",
+                  "links": [
+                    "7174bb7a-a6c5-49a6-8464-fe902e36f13c"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "transform": "$groupBy(\n  workunitStateHistory.edges.node[$isNil(occurAt)~>$not]^(occurAt), \n  $path(?, \"workunitId\")\n)\n~>$mapValues(function($j){\n  $count($j) > 1?(\n    $map($j, function($v, $i, $arr){(\n \n    $arr[$i +1]?(\n     $start := $moment($v.occurAt);\n     $end := $moment($arr[$i +1].occurAt);\n\n\n     {\n        \"where\":{ \"id\": $v.id},\n        \"update\":{\n          \"endAt\": $end.toISOString(),\n          \"duration\": $end.diff($start, \"seconds\")\n        }\n      }\n    )\n    )})\n  )\n})\n~>$values\n~>$filter($isNil~>$not)\n~>$flatten()\n\n\n",
+                "nextNodes": [
+                  "aeb7cadb-d58a-4c57-987c-d596518bdc0d"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Calculate End Dates"
+            },
+            "aeb7cadb-d58a-4c57-987c-d596518bdc0d": {
+              "id": "aeb7cadb-d58a-4c57-987c-d596518bdc0d",
+              "type": "mutate",
+              "selected": false,
+              "x": 715,
+              "y": 295,
+              "ports": [
+                {
+                  "id": "clo37my0s04bj356f3cbt38ak",
+                  "type": "default",
+                  "x": 707,
+                  "y": 326.73,
+                  "name": "clo37my0s04bk356fcae1oubl",
+                  "parentNode": "aeb7cadb-d58a-4c57-987c-d596518bdc0d",
+                  "links": [
+                    "7174bb7a-a6c5-49a6-8464-fe902e36f13c"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clo37my0s04bl356fmiltn700",
+                  "type": "default",
+                  "x": 861,
+                  "y": 326.73,
+                  "name": "clo37my0s04bm356fqjdwkuy4",
+                  "parentNode": "aeb7cadb-d58a-4c57-987c-d596518bdc0d",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "api": "Application",
+                "variablesTransform": "{\n  \"payload\": $\n}",
+                "mutation": "mutation ($payload: [WorkunitStateHistoryUpdatePayloadInput!]!){\n  updateWorkunitStateHistory(payload:$payload){ id }\n}",
+                "nextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": true,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": true,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Update End Dates"
+            },
+            "111c1db3-c824-4b97-ae47-603f4d807542": {
+              "id": "111c1db3-c824-4b97-ae47-603f4d807542",
+              "type": "schedule",
+              "selected": false,
+              "x": 70,
+              "y": 230,
+              "ports": [
+                {
+                  "id": "clo3azdca04w4356for80hahl",
+                  "type": "default",
+                  "x": 216,
+                  "y": 261.73,
+                  "name": "clo3azdca04w5356fdkr1m2gx",
+                  "parentNode": "111c1db3-c824-4b97-ae47-603f4d807542",
+                  "links": [
+                    "10f579b6-09ce-434b-944b-6501c249bc7f"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Payload",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "configure": "Open Schedule Editor",
+                "nextNodes": [
+                  "2bb4855c-e400-432e-9504-b0a9eb8b8209"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Schedule"
+            },
+            "247870c8-7700-4f57-9427-900c1ceb7c81": {
+              "id": "247870c8-7700-4f57-9427-900c1ceb7c81",
+              "type": "log",
+              "selected": false,
+              "x": 270,
+              "y": 185,
+              "ports": [
+                {
+                  "id": "cmevrcqxu00293j6n7vu0ph0t",
+                  "type": "default",
+                  "x": 262,
+                  "y": 216.73,
+                  "name": "cmevrcqxu002a3j6nsmsmejx4",
+                  "parentNode": "247870c8-7700-4f57-9427-900c1ceb7c81",
+                  "links": [],
+                  "in": true
+                },
+                {
+                  "id": "cmevrcqxu002b3j6nqq5brqgq",
+                  "type": "default",
+                  "x": 416,
+                  "y": 216.73,
+                  "name": "cmevrcqxu002c3j6nx7a0bpr7",
+                  "parentNode": "247870c8-7700-4f57-9427-900c1ceb7c81",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "messageTransform": "\"Start Scheduled\"",
+                "level": "Debug",
+                "includeContext": true,
+                "includePayload": true,
+                "nextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": true,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Log: Start Schedule"
+            },
+            "f1539dfe-ce61-4f2b-8b7b-ede6e931e7a8": {
+              "id": "f1539dfe-ce61-4f2b-8b7b-ede6e931e7a8",
+              "type": "log",
+              "selected": false,
+              "x": 910,
+              "y": 375,
+              "ports": [
+                {
+                  "id": "cmevrdbd7002h3j6ncfnzskrq",
+                  "type": "default",
+                  "x": 902,
+                  "y": 406.73,
+                  "name": "cmevrdbd7002i3j6n6pg13l9n",
+                  "parentNode": "f1539dfe-ce61-4f2b-8b7b-ede6e931e7a8",
+                  "links": [],
+                  "in": true
+                },
+                {
+                  "id": "cmevrdbd7002j3j6nzug7k01b",
+                  "type": "default",
+                  "x": 1056,
+                  "y": 406.73,
+                  "name": "cmevrdbd7002k3j6nci48rqgu",
+                  "parentNode": "f1539dfe-ce61-4f2b-8b7b-ede6e931e7a8",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "messageTransform": "\"End Schedule\"",
+                "level": "Debug",
+                "includeContext": true,
+                "includePayload": true,
+                "nextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": true,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Log: End Schedule"
+            }
+          }
+        }
+      ],
+      "name": "Back Fill End Dates of Workunit History",
+      "type": "System",
+      "version": "0.0.8",
+      "walkthrough": {
+        "steps": [],
+        "includeIntroduction": true
+      }
+    }
+  }
+}

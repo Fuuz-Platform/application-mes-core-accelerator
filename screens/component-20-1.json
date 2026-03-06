@@ -1,0 +1,1175 @@
+{
+  "header": {
+    "id": "scrapManagement",
+    "name": "Scrap Reasons",
+    "description": "",
+    "active": true,
+    "moduleId": "productDataManagement",
+    "isWidget": false,
+    "_customFields": {
+      "_externalId": null
+    }
+  },
+  "version": {
+    "id": "cmhv39eoj03vg010kccus55kb",
+    "number": "0.0.1",
+    "description": "",
+    "screenId": "scrapManagement",
+    "design": {
+      "components": [
+        {
+          "name": "New Screen",
+          "tabTitle": "New Tab",
+          "type": "canvas",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "flowsDelay": 0,
+                  "removeOuterMargin": false
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 27,
+                    "Form": 6,
+                    "Tabs": 2,
+                    "Table": 5,
+                    "Table Column": 29,
+                    "Button Group": 6,
+                    "Action": 22,
+                    "Text": 4,
+                    "Select": 4,
+                    "Switch": 5
+                  }
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "YcF9ZjHhPk"
+                ],
+                "linkedNodes": {}
+              },
+              "YcF9ZjHhPk": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container27"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "h5S1loOTKT",
+                  "VZvuC6Sa65"
+                ],
+                "linkedNodes": {}
+              },
+              "h5S1loOTKT": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 8,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "25%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "default",
+                  "data": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container25"
+                },
+                "parent": "YcF9ZjHhPk",
+                "hidden": false,
+                "nodes": [
+                  "KW0mfNMbk2",
+                  "X1EGqWCgeO"
+                ],
+                "linkedNodes": {}
+              },
+              "KW0mfNMbk2": {
+                "type": {
+                  "resolvedName": "ButtonsGroup"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 6,
+                  "width": "100%",
+                  "height": "auto"
+                },
+                "displayName": "Button Group",
+                "custom": {
+                  "elementName": "ButtonGroup6"
+                },
+                "parent": "h5S1loOTKT",
+                "hidden": false,
+                "nodes": [
+                  "i-0lSTCUkM",
+                  "XiFKqHi_Mw",
+                  "z30jrvSOUd",
+                  "SwZaI4V52C"
+                ],
+                "linkedNodes": {}
+              },
+              "i-0lSTCUkM": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "search",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Table5.fn.search()"
+                    }
+                  ],
+                  "title": "Search"
+                },
+                "displayName": "Action",
+                "custom": {
+                  "editor": {
+                    "category": "Buttons",
+                    "description": "Search button action.",
+                    "color": "#9c5a94",
+                    "elementName": "Search Button which search data from table.",
+                    "icon": "search",
+                    "requiresTable": true
+                  },
+                  "elementName": "Action19"
+                },
+                "parent": "KW0mfNMbk2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "XiFKqHi_Mw": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "plus",
+                    "variant": "regular",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "fields": [
+                        {
+                          "label": "Code",
+                          "name": "code",
+                          "type": "text",
+                          "dataPath": "code"
+                        },
+                        {
+                          "label": "Message",
+                          "name": "message",
+                          "type": "markdown",
+                          "dataPath": "message"
+                        },
+                        {
+                          "label": "Color",
+                          "name": "color",
+                          "type": "text",
+                          "dataPath": "color"
+                        },
+                        {
+                          "label": "Control Panel",
+                          "name": "controlPanel",
+                          "type": "switch",
+                          "dataPath": "controlPanel",
+                          "defaultValue": true
+                        },
+                        {
+                          "label": "Engineered",
+                          "name": "engineered",
+                          "type": "switch",
+                          "dataPath": "engineered",
+                          "defaultValue": false
+                        },
+                        {
+                          "label": "Internal",
+                          "name": "internal",
+                          "type": "switch",
+                          "dataPath": "internal",
+                          "defaultValue": false
+                        },
+                        {
+                          "label": "Supplier",
+                          "name": "supplier",
+                          "type": "switch",
+                          "dataPath": "supplier",
+                          "defaultValue": false
+                        },
+                        {
+                          "label": "Customer",
+                          "name": "customer",
+                          "type": "switch",
+                          "dataPath": "customer",
+                          "defaultValue": false
+                        }
+                      ],
+                      "transforms": {}
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation CreateScrapReason($payload: [ScrapReasonCreatePayloadInput!]!) {\n  createScrapReason(payload: $payload) {\n    id\n  }\n}",
+                      "transforms": {
+                        "pre": "{\r\n  \"payload\":[\r\n    {\r\n      \"create\": $.data\r\n    }\r\n  ]\r\n}"
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Table5.fn.search()"
+                    }
+                  ],
+                  "title": "Create"
+                },
+                "displayName": "Action",
+                "custom": {
+                  "editor": {
+                    "category": "Buttons",
+                    "description": "Create button action.",
+                    "color": "#9c5a94",
+                    "elementName": "Create Button which open form.",
+                    "icon": "plus",
+                    "requiresTable": true
+                  },
+                  "elementName": "Action20"
+                },
+                "parent": "KW0mfNMbk2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "z30jrvSOUd": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": "pencil",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": {
+                    "__transform": "$count($components.Table5.selectedRows) != 1",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "form",
+                      "fields": [
+                        {
+                          "label": "Code",
+                          "name": "code",
+                          "type": "text",
+                          "dataPath": "code"
+                        },
+                        {
+                          "label": "Message",
+                          "name": "message",
+                          "type": "markdown",
+                          "dataPath": "message"
+                        },
+                        {
+                          "label": "Color",
+                          "name": "color",
+                          "type": "text",
+                          "dataPath": "color"
+                        },
+                        {
+                          "label": "Control Panel",
+                          "name": "controlPanel",
+                          "type": "switch",
+                          "dataPath": "controlPanel",
+                          "defaultValue": true
+                        },
+                        {
+                          "label": "Engineered",
+                          "name": "engineered",
+                          "type": "switch",
+                          "dataPath": "engineered",
+                          "defaultValue": false
+                        },
+                        {
+                          "label": "Internal",
+                          "name": "internal",
+                          "type": "switch",
+                          "dataPath": "internal",
+                          "defaultValue": false
+                        },
+                        {
+                          "label": "Supplier",
+                          "name": "supplier",
+                          "type": "switch",
+                          "dataPath": "supplier",
+                          "defaultValue": false
+                        },
+                        {
+                          "label": "Customer",
+                          "name": "customer",
+                          "type": "switch",
+                          "dataPath": "customer",
+                          "defaultValue": false
+                        }
+                      ],
+                      "transforms": {
+                        "pre": "$components.Table5.selectedRows[0]"
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation UpdateScrapReason($payload: [ScrapReasonUpdatePayloadInput!]!) {\n  updateScrapReason(payload: $payload) {\n    id\n  }\n}",
+                      "transforms": {
+                        "pre": "{\r\n  \"payload\": $components.Table5.selectedRows.{\r\n    \"where\": {\r\n      \"id\": id\r\n    },\r\n    \"update\": $$.data\r\n  }\r\n}"
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Table5.fn.search()"
+                    }
+                  ],
+                  "title": "Update"
+                },
+                "displayName": "Action",
+                "custom": {
+                  "editor": {
+                    "category": "Buttons",
+                    "description": "Edit button action.",
+                    "color": "#9c5a94",
+                    "elementName": "Edit Button which open form with auto fill.",
+                    "icon": "pencil",
+                    "requiresTable": true
+                  },
+                  "elementName": "Action21"
+                },
+                "parent": "KW0mfNMbk2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "SwZaI4V52C": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "error",
+                  "icon": {
+                    "icon": "trash",
+                    "variant": "solid"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "confirmation",
+                      "submitIcon": {
+                        "icon": "trash",
+                        "variant": "solid"
+                      },
+                      "buttonColor": "error",
+                      "message": {
+                        "__transform": "\"Delete \" & ($count($components.Table5.selectedRows) = 1 ? (\"Fault \" & $components.Table5.selectedRows.code) : $count($components.Table1.selectedRows) & \" records\") & \"?\""
+                      }
+                    },
+                    {
+                      "type": "mutation",
+                      "api": "Application",
+                      "mutation": "mutation DeleteScrapReason($payload: [ScrapReasonDeletePayloadInput!]!) {\n  deleteScrapReason(payload: $payload) {\n    id\n  }\n}",
+                      "message": {
+                        "__transform": "($count($components.Table5.selectedRows) = 1 ? (\"Scrap Reasons \" & $components.Table5.selectedRows.code) : $count($components.Table1.selectedRows) & \" records\") & \" deleted successfully.\""
+                      },
+                      "transforms": {
+                        "pre": "{\r\n  \"payload\": $components.Table5.selectedRows.{\r\n    \"where\": {\r\n      \"id\": id\r\n    }\r\n  }\r\n}"
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Table5.fn.search()"
+                    }
+                  ]
+                },
+                "displayName": "Action",
+                "custom": {
+                  "editor": {
+                    "category": "Buttons",
+                    "color": "#9c5a94",
+                    "description": "Delete button which perform delete action.",
+                    "elementName": "Delete Button",
+                    "icon": "trash",
+                    "requiresTable": true,
+                    "requiresForm": true
+                  },
+                  "elementName": "Action22"
+                },
+                "parent": "KW0mfNMbk2",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "X1EGqWCgeO": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false,
+                    "parameters": "{\n  \"filter\": {\n    \"id\": {\n      \"_eq\": id\n    }\n  },\n  \"first\": 1\n}",
+                    "fields": [
+                      "id"
+                    ],
+                    "disableDataChangeIndicator": false,
+                    "dataChangeIndicatorSize": "normal",
+                    "model": "ScrapReason"
+                  },
+                  "blockNavigationWhenDirty": true,
+                  "enableConfirmOnDataChanged": false,
+                  "description": "A list of Scrap Reasons."
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form6"
+                },
+                "parent": "h5S1loOTKT",
+                "hidden": false,
+                "nodes": [
+                  "BK8Jusc54I"
+                ],
+                "linkedNodes": {}
+              },
+              "BK8Jusc54I": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 8,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "data": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container24"
+                },
+                "parent": "X1EGqWCgeO",
+                "hidden": false,
+                "nodes": [
+                  "_dHGTeR_Ib",
+                  "gq2wXgl86Q",
+                  "a_7E_cOf0M",
+                  "tPWtQ7QqEN",
+                  "P1OS_5nq_d",
+                  "xcCHLpWd4d",
+                  "EzTNmWqsIu"
+                ],
+                "linkedNodes": {}
+              },
+              "VZvuC6Sa65": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "75%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container26"
+                },
+                "parent": "YcF9ZjHhPk",
+                "hidden": false,
+                "nodes": [
+                  "VJk3WKyDK_"
+                ],
+                "linkedNodes": {}
+              },
+              "VJk3WKyDK_": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id"
+                    ],
+                    "disableDataChangeIndicator": false,
+                    "selectedDataChangeIndicator": null,
+                    "model": "ScrapReason"
+                  },
+                  "selectable": "multiple",
+                  "showToolPanels": true,
+                  "showStatusBar": true,
+                  "enableGrouping": true,
+                  "enableCharts": true,
+                  "showColumnMenu": true,
+                  "enableRowDragging": false,
+                  "disableColumnDragging": false,
+                  "disableDragLeaveHidesColumns": false,
+                  "masterDetail": false,
+                  "hideTableHeader": false,
+                  "description": "Reasons marked as suppluer indicate that the material is scrap becasue of the fault of a supplier.\n\nThis would typcically be for source material.",
+                  "filterFormName": "Form6",
+                  "rowMultiSelectWithClick": false,
+                  "limitToOneActiveDetail": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table5"
+                },
+                "parent": "VZvuC6Sa65",
+                "hidden": false,
+                "nodes": [
+                  "-5XA0_Bu6M",
+                  "Cv_I_OlvtA",
+                  "Aw7sY6B1-o",
+                  "xABbxof265",
+                  "2qSKFrkTaK",
+                  "aocQ-8buuI",
+                  "KHDR5cdqMC",
+                  "K9es6dZzKN",
+                  "xvHiqDp_kv"
+                ],
+                "linkedNodes": {}
+              },
+              "-5XA0_Bu6M": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Code",
+                  "format": "text",
+                  "sortable": true,
+                  "dataPath": "code",
+                  "description": "This is the code of the scrap reason   - Label field",
+                  "query": {
+                    "fields": [
+                      "id",
+                      "code"
+                    ]
+                  },
+                  "field": "code"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn21"
+                },
+                "parent": "VJk3WKyDK_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Cv_I_OlvtA": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Message",
+                  "format": "text",
+                  "sortable": true,
+                  "dataPath": "message",
+                  "description": "A message that maybe displayed to an end user.",
+                  "query": {},
+                  "field": "message"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn22"
+                },
+                "parent": "VJk3WKyDK_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Aw7sY6B1-o": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Color",
+                  "format": "text",
+                  "sortable": true,
+                  "dataPath": "color",
+                  "description": "Display color",
+                  "query": {},
+                  "field": "color"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn23"
+                },
+                "parent": "VJk3WKyDK_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "xABbxof265": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Usable",
+                  "format": "checkmark",
+                  "sortable": true,
+                  "dataPath": "usable",
+                  "description": "System flag that  indicates if the scrap reason  is usable",
+                  "query": {},
+                  "field": "usable"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn24"
+                },
+                "parent": "VJk3WKyDK_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "2qSKFrkTaK": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Control Panel",
+                  "format": "checkmark",
+                  "sortable": true,
+                  "dataPath": "controlPanel",
+                  "description": "For use on control panels - only reasons flagged as control panel will be usable on control panels.",
+                  "query": {},
+                  "field": "controlPanel"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn25"
+                },
+                "parent": "VJk3WKyDK_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "aocQ-8buuI": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Engineered",
+                  "format": "checkmark",
+                  "sortable": true,
+                  "dataPath": "engineered",
+                  "description": "Engineered Scrap is anticipated as part of the manufacturing of the product, this maybe setup related scrap that is planned for or otherwise. ",
+                  "query": {},
+                  "field": "engineered"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn26"
+                },
+                "parent": "VJk3WKyDK_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "KHDR5cdqMC": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Supplier",
+                  "format": "checkmark",
+                  "sortable": true,
+                  "dataPath": "supplier",
+                  "description": "Reasons marked as suppluer indicate that the material is scrap becasue of the fault of a supplier.\n\nThis would typcically be for source material.",
+                  "query": {},
+                  "field": "supplier"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn27"
+                },
+                "parent": "VJk3WKyDK_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "K9es6dZzKN": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Internal",
+                  "format": "checkmark",
+                  "sortable": true,
+                  "dataPath": "internal",
+                  "description": "Reasons marked as internal indicate that the material is scrap becasue of internal processes.",
+                  "query": {},
+                  "field": "internal"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn28"
+                },
+                "parent": "VJk3WKyDK_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "xvHiqDp_kv": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Customer",
+                  "format": "checkmark",
+                  "sortable": true,
+                  "dataPath": "customer",
+                  "description": "Reasons marked as customer indicate that the material is scrap becasue of the fault of a customer.\n\nThis would typcically be for source material.",
+                  "query": {},
+                  "field": "customer"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn29"
+                },
+                "parent": "VJk3WKyDK_",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "_dHGTeR_Ib": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "text",
+                  "label": "Code",
+                  "formElement": "Form6",
+                  "dataPath": "code",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "This is the code of the scrap reason   - Label field",
+                  "field": "code"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text3"
+                },
+                "parent": "BK8Jusc54I",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "gq2wXgl86Q": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "text",
+                  "label": "Message",
+                  "formElement": "Form6",
+                  "dataPath": "message",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "A message that maybe displayed to an end user.",
+                  "field": "message"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text4"
+                },
+                "parent": "BK8Jusc54I",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "a_7E_cOf0M": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "switch",
+                  "label": "Control Panel",
+                  "formElement": "Form6",
+                  "dataPath": "controlPanel",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "For use on control panels - only reasons flagged as control panel will be usable on control panels.",
+                  "field": "controlPanel"
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch1"
+                },
+                "parent": "BK8Jusc54I",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "tPWtQ7QqEN": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "switch",
+                  "label": "Customer",
+                  "formElement": "Form6",
+                  "dataPath": "customer",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Reasons marked as customer indicate that the material is scrap becasue of the fault of a customer.\n\nThis would typcically be for source material.",
+                  "field": "customer"
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch2"
+                },
+                "parent": "BK8Jusc54I",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "P1OS_5nq_d": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "switch",
+                  "label": "Engineered",
+                  "formElement": "Form6",
+                  "dataPath": "engineered",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Engineered Scrap is anticipated as part of the manufacturing of the product, this maybe setup related scrap that is planned for or otherwise. ",
+                  "field": "engineered"
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch3"
+                },
+                "parent": "BK8Jusc54I",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "xcCHLpWd4d": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "switch",
+                  "label": "Internal",
+                  "formElement": "Form6",
+                  "dataPath": "internal",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Reasons marked as internal indicate that the material is scrap becasue of internal processes.",
+                  "field": "internal"
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch4"
+                },
+                "parent": "BK8Jusc54I",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "EzTNmWqsIu": {
+                "type": {
+                  "resolvedName": "Switch"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "switch",
+                  "label": "Supplier",
+                  "formElement": "Form6",
+                  "dataPath": "supplier",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "Reasons marked as suppluer indicate that the material is scrap becasue of the fault of a supplier.\n\nThis would typcically be for source material.",
+                  "field": "supplier"
+                },
+                "displayName": "Switch",
+                "custom": {
+                  "elementName": "Switch5"
+                },
+                "parent": "BK8Jusc54I",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "cmhwjoktm03ub017t8uzaa4al",
+      "title": "Scrap Management",
+      "path": "/productionManagement/productDataManagement/scrapManagement",
+      "moduleId": "productDataManagement",
+      "screenId": "scrapManagement",
+      "isMenuAccessible": true,
+      "submenu": ""
+    }
+  ]
+}

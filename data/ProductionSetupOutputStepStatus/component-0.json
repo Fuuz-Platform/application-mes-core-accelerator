@@ -1,0 +1,27 @@
+{
+  "api": "application",
+  "modelName": "ProductionSetupOutputStepStatus",
+  "payload": [
+    {
+      "id": "passed",
+      "active": false,
+      "usable": true,
+      "code": "Passed",
+      "description": "This indicates that the step has been completed.",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "pending",
+      "active": true,
+      "usable": true,
+      "code": "Pending",
+      "description": "This indicates that the step need to still be completed.",
+      "_customFields": {
+        "_externalId": null
+      }
+    }
+  ],
+  "metadata": {}
+}

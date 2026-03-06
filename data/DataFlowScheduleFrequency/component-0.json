@@ -1,0 +1,33 @@
+{
+  "api": "application",
+  "modelName": "DataFlowScheduleFrequency",
+  "payload": [
+    {
+      "id": "cmigip7zw1lbc0775c2jed2ui",
+      "name": "5 minutes",
+      "active": true,
+      "valid": true,
+      "lastExecution": "2025-12-03T04:15:26.066Z",
+      "payload": {},
+      "status": {
+        "message": "Successfully ran schedule",
+        "info": {
+          "id": "cron_cmigip8230d1c07165ewr5zul",
+          "typeName": "cron",
+          "config": {
+            "cronString": "*/5 * * * *"
+          }
+        }
+      },
+      "config": {
+        "cronString": "*/5 * * * *"
+      },
+      "dataFlowScheduleId": "cmigionh81lau077554kwcqdo",
+      "scheduleTypeId": "cron",
+      "_customFields": {
+        "_externalId": null
+      }
+    }
+  ],
+  "metadata": {}
+}

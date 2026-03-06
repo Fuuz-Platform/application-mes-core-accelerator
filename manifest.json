@@ -1,0 +1,10 @@
+{
+  "name": "MES",
+  "version": "1.0.0",
+  "applicationPublisherId": null,
+  "enterpriseId": "local",
+  "environmentId": "build",
+  "dependencies": {},
+  "specVersion": "2.0.0",
+  "platformVersion": "2025.11.3"
+}

@@ -1,0 +1,785 @@
+{
+  "header": {
+    "id": "modeStateChangeModal",
+    "name": "Mode/State Change Modal",
+    "description": "",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": true,
+    "_customFields": {
+      "_externalId": null
+    }
+  },
+  "version": {
+    "id": "cmipfi0cd49ai07758em58b4o",
+    "number": "0.0.12",
+    "description": "",
+    "screenId": "modeStateChangeModal",
+    "design": {
+      "components": [
+        {
+          "name": "New Screen",
+          "tabTitle": "New Tab",
+          "type": "canvas",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "flowsDelay": 0,
+                  "removeOuterMargin": false,
+                  "pageLoadAction": "(\r\n  $wait(500);\r\n  $modeStateList := $lowercase(data.currentStateHistory.mode.id) & \"StateList\";\r\n  $defaultState := data.$eval($modeStateList).stateListStates.edges.node.stateList.defaultStateId;\r\n  $stateId := data.$eval($modeStateList).stateListStates.edges.node[stateId = $defaultState[0]].stateId;\r\n  $components.Form1.fn.setValue(\"state\", $stateId)\r\n)"
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Form": 3,
+                    "Container": 6,
+                    "Screen Widget": 1,
+                    "Select": 5,
+                    "Action Button": 4,
+                    "Text": 7
+                  }
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "G6N8EDSqag"
+                ],
+                "linkedNodes": {}
+              },
+              "Es0ZkJKFRx": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "parameters": "{\n  \"filter\": {\n    \"id\": {\n      \"_eq\": $metadata.urlParameters.id\n    }\n  },\n  \"first\": 1\n}",
+                    "fields": [
+                      "id",
+                      "productionStateListId",
+                      "productionStateList.stateListStates.edges.node.stateId",
+                      "productionStateList.stateListStates.edges.node.allowNote",
+                      "productionStateList.stateListStates.edges.node.requireNote",
+                      "productionStateList.stateListStates.edges.node.stateList.defaultStateId",
+                      "productionStateList.stateListStates.edges.node.selectBlockingWorkunit",
+                      "productionStateList.stateListStates.edges.node.selectStarvingWorkunit",
+                      "productionStateList.stateListStates.edges.node.defaultBlockingWorkunitId",
+                      "productionStateList.stateListStates.edges.node.defaultStarvingWorkunitId",
+                      "changeoverStateListId",
+                      "changeoverStateList.stateListStates.edges.node.stateId",
+                      "changeoverStateList.stateListStates.edges.node.allowNote",
+                      "changeoverStateList.stateListStates.edges.node.requireNote",
+                      "changeoverStateList.stateListStates.edges.node.stateList.defaultStateId",
+                      "changeoverStateList.stateListStates.edges.node.selectBlockingWorkunit",
+                      "changeoverStateList.stateListStates.edges.node.selectStarvingWorkunit",
+                      "changeoverStateList.stateListStates.edges.node.defaultBlockingWorkunitId",
+                      "changeoverStateList.stateListStates.edges.node.defaultStarvingWorkunitId",
+                      "idleStateListId",
+                      "idleStateList.stateListStates.edges.node.stateId",
+                      "idleStateList.stateListStates.edges.node.allowNote",
+                      "idleStateList.stateListStates.edges.node.requireNote",
+                      "idleStateList.stateListStates.edges.node.stateList.defaultStateId",
+                      "idleStateList.stateListStates.edges.node.selectBlockingWorkunit",
+                      "idleStateList.stateListStates.edges.node.selectStarvingWorkunit",
+                      "idleStateList.stateListStates.edges.node.defaultBlockingWorkunitId",
+                      "idleStateList.stateListStates.edges.node.defaultStarvingWorkunitId",
+                      "maintenanceStateListId",
+                      "maintenanceStateList.stateListStates.edges.node.stateId",
+                      "maintenanceStateList.stateListStates.edges.node.allowNote",
+                      "maintenanceStateList.stateListStates.edges.node.requireNote",
+                      "maintenanceStateList.stateListStates.edges.node.stateList.defaultStateId",
+                      "maintenanceStateList.stateListStates.edges.node.selectBlockingWorkunit",
+                      "maintenanceStateList.stateListStates.edges.node.selectStarvingWorkunit",
+                      "maintenanceStateList.stateListStates.edges.node.defaultBlockingWorkunitId",
+                      "maintenanceStateList.stateListStates.edges.node.defaultStarvingWorkunitId",
+                      "otherStateListId",
+                      "otherStateList.stateListStates.edges.node.stateId",
+                      "otherStateList.stateListStates.edges.node.allowNote",
+                      "otherStateList.stateListStates.edges.node.requireNote",
+                      "otherStateList.stateListStates.edges.node.stateList.defaultStateId",
+                      "otherStateList.stateListStates.edges.node.selectBlockingWorkunit",
+                      "otherStateList.stateListStates.edges.node.selectStarvingWorkunit",
+                      "otherStateList.stateListStates.edges.node.defaultBlockingWorkunitId",
+                      "otherStateList.stateListStates.edges.node.defaultStarvingWorkunitId",
+                      "disabledStateListId",
+                      "disabledStateList.stateListStates.edges.node.stateId",
+                      "disabledStateList.stateListStates.edges.node.allowNote",
+                      "disabledStateList.stateListStates.edges.node.requireNote",
+                      "disabledStateList.stateListStates.edges.node.stateList.defaultStateId",
+                      "disabledStateList.stateListStates.edges.node.selectBlockingWorkunit",
+                      "disabledStateList.stateListStates.edges.node.selectStarvingWorkunit",
+                      "disabledStateList.stateListStates.edges.node.defaultBlockingWorkunitId",
+                      "disabledStateList.stateListStates.edges.node.defaultStarvingWorkunitId",
+                      "currentStateHistory.mode.id"
+                    ],
+                    "disableDataChangeIndicator": false,
+                    "model": "Workunit"
+                  },
+                  "blockNavigationWhenDirty": false,
+                  "enableConfirmOnDataChanged": false,
+                  "description": "The central manufacturing resource model that represents a specific piece of equipment, machine, or production station capable of executing manufacturing processes. Workunits are the fundamental building blocks of the production floor and serve as the primary constraint resources in scheduling and execution."
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "G6N8EDSqag",
+                "hidden": false,
+                "nodes": [
+                  "4F1xm-_k0p"
+                ],
+                "linkedNodes": {}
+              },
+              "4F1xm-_k0p": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 8,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": true,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "Es0ZkJKFRx",
+                "hidden": false,
+                "nodes": [
+                  "kDo-EQEBTm"
+                ],
+                "linkedNodes": {}
+              },
+              "qyqv43QWzt": {
+                "type": {
+                  "resolvedName": "SelectInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "40%",
+                  "height": "60px",
+                  "validation": {
+                    "required": true
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "select",
+                  "label": "Mode",
+                  "dialogMode": "never",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "selectAll": true,
+                  "searchPredicate": "contains",
+                  "api": "Application",
+                  "stateTracking": "id",
+                  "optionLimit": 5,
+                  "optionLimitFlex": 5,
+                  "alwaysReloadOptions": false,
+                  "tenantId": "",
+                  "formElement": "Form1",
+                  "labelPath": "name",
+                  "orderByField": "id",
+                  "query": {
+                    "fields": []
+                  },
+                  "dataModel": "Mode",
+                  "selectFields": [
+                    "name"
+                  ],
+                  "additionalFields": [],
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "currentStateHistory.mode.id",
+                  "additionalFilter": {
+                    "__transform": "\"\"",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "onChange": "/*  Mode select onChange transform \r\n(\r\n  $wait(500);\r\n  $modeStateList := $lowercase(data.currentStateHistory.mode.id) & \"StateList\";\r\n  $defaultState := data.$eval($modeStateList).stateListStates.edges.node.stateList.defaultStateId;\r\n  $stateId := data.$eval($modeStateList).stateListStates.edges.node[stateId = $defaultState[0]].stateId;\r\n  $components.Form1.fn.setValue(\"state\", $stateId)\r\n) */\"\"\r\n"
+                },
+                "displayName": "Select",
+                "custom": {
+                  "elementName": "Select1"
+                },
+                "parent": "kDo-EQEBTm",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "wGhRU9Blpm": {
+                "type": {
+                  "resolvedName": "SelectInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "45%",
+                  "height": "60px",
+                  "validation": {
+                    "required": true
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "select",
+                  "label": "State",
+                  "dialogMode": "never",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "selectAll": true,
+                  "searchPredicate": "contains",
+                  "api": "Application",
+                  "stateTracking": "id",
+                  "optionLimit": 5,
+                  "optionLimitFlex": 5,
+                  "alwaysReloadOptions": false,
+                  "tenantId": "",
+                  "formElement": "Form1",
+                  "dataModel": "State",
+                  "selectFields": [
+                    "name"
+                  ],
+                  "labelPath": "name",
+                  "orderByField": "id",
+                  "query": {
+                    "fields": []
+                  },
+                  "additionalFields": [],
+                  "additionalFilter": {
+                    "__transform": "(\n  $modeStateList := $lowercase(data.currentStateHistory.mode.id) & \"StateListId\";\n    {\n      \"stateListStates\":{\n        \"_some\":{\n          \"stateListId\":{\n            \"_eq\": $coalesce([data.$eval($modeStateList), \"-1\"])\n          }\n        }\n      }\n    }\n  )",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": [
+                        "components.Form1.data.currentStateHistory.mode.id"
+                      ]
+                    },
+                    "__cacheKey": "stateCacheKey",
+                    "__remote": false,
+                    "__fallbackValue": null
+                  },
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "state",
+                  "onChange": "/* State select onChange transform */\r\n(\r\n  $wait(500);\r\n  $modeStateList := $lowercase(data.currentStateHistory.mode.id) & \"StateList\";\r\n  $state := data.state;\r\n  $starvingWorkunit := data.$eval($modeStateList).stateListStates.edges.node[stateId = $state].defaultStarvingWorkunitId;\r\n  $blockingWorkunit := data.$eval($modeStateList).stateListStates.edges.node[stateId = $state].defaultBlockingWorkunitId;\r\n  \r\n  $components.Form1.fn.setValue(\"starvingWorkunit\", $starvingWorkunit);\r\n  $components.Form1.fn.setValue(\"blockingWorkunit\", $blockingWorkunit)\r\n)",
+                  "data": {
+                    "__transform": "(\r\n\r\n  $modeStateList := $lowercase(data.currentStateHistory.mode.id) & \"StateList\";\r\n  $defaultState := data.$eval($modeStateList).stateListStates.edges.node.stateList.defaultStateId;\r\n  $stateId := data.$eval($modeStateList).stateListStates.edges.node[stateId = $defaultState[0]].stateId;\r\n  $stateId\r\n)",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": [
+                        "components.Form1.data.currentStateHistory.mode.id"
+                      ]
+                    },
+                    "__cacheKey": "stateDataTransformCacheKey"
+                  }
+                },
+                "displayName": "Select",
+                "custom": {
+                  "elementName": "Select2"
+                },
+                "parent": "kDo-EQEBTm",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "3IhxrWxZCF": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "check",
+                    "color": "inherit",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "100px",
+                  "height": "50px",
+                  "disabled": {
+                    "__transform": "$components.Form1.formState.hasValidationErrors",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "flow",
+                      "flowId": "workunitFunctions",
+                      "transforms": {
+                        "pre": "{\r\n  \"ACTION\": \"STATE_CHANGE\",\r\n  \"REQUEST\": {\r\n    \"DATA\": {\r\n      \"modeId\": $components.Form1.data.currentStateHistory.mode.id,\r\n      \"stateId\": $components.Form1.data.state,\r\n      \"starvingWorkunit\": $components.Form1.data.starvingWorkunitId,\r\n      \"blockingWorkunit\": $components.Form1.data.blockingWorkunitId,\r\n      \"workunitId\": $metadata.urlParameters.id,\r\n      \"note\": $components.Form1.data.note\r\n    }\r\n  }\r\n}"
+                      }
+                    },
+                    {
+                      "type": "message",
+                      "severity": {
+                        "__transform": "data.SUCCESS ? \"success\" : \"info\""
+                      },
+                      "message": {
+                        "__transform": "data.MESSAGE"
+                      },
+                      "title": {
+                        "__transform": "data.SUCCESS ? \"Mode/State updated succesfully\" : \"Error updating Mode/State\""
+                      },
+                      "data": {
+                        "__transform": "data"
+                      }
+                    },
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Screen.fn.return()"
+                    }
+                  ]
+                },
+                "displayName": "Action",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "kDo-EQEBTm",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "kDo-EQEBTm": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "4F1xm-_k0p",
+                "hidden": false,
+                "nodes": [
+                  "qyqv43QWzt",
+                  "wGhRU9Blpm",
+                  "3IhxrWxZCF",
+                  "sK8efABQLp",
+                  "NaW1hIG86U",
+                  "DN4mHKe8lT",
+                  "LQqHwqN4PM",
+                  "8oooa8_Jo-"
+                ],
+                "linkedNodes": {}
+              },
+              "8oooa8_Jo-": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false,
+                    "transform": "/* NOTE VALIDATION */\r\ndata.state ? (\r\n  $modeStateList := $lowercase(data.currentStateHistory.mode.id) & \"StateList\";\r\n  $state := data.state;\r\n  $note := data.note;\r\n  data.$eval($modeStateList).stateListStates.edges.node[stateId = $state].requireNote ? $exists($note) ? undefined : \"A note must be provided.\" ;\r\n) : undefined"
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "text",
+                  "label": {
+                    "__transform": "/* Note field label transform */\r\n(\r\n  $modeStateList := $lowercase(data.currentStateHistory.mode.id) & \"StateList\";\r\n  data.$eval($modeStateList).stateListStates.edges.node.requireNote ? \"Note (Required)\" : \"Note\"\r\n) ",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "variant": "standard",
+                  "formElement": "Form1",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "note",
+                  "query": {
+                    "fields": []
+                  },
+                  "disabled": {
+                    "__transform": "/* NOTE DISPLAY TRANSFORM */\r\ndata.state ? (\r\n  $modeStateList := $lowercase(data.currentStateHistory.mode.id) & \"StateList\";\r\n  $state := data.state;\r\n  data.$eval($modeStateList).stateListStates.edges.node[stateId = $state].allowNote;\r\n  \r\n) ~> $not : true",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": [
+                        "components.Form1.data.state"
+                      ]
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text1"
+                },
+                "parent": "kDo-EQEBTm",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "DN4mHKe8lT": {
+                "type": {
+                  "resolvedName": "SelectInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "50%",
+                  "height": "60px",
+                  "validation": {
+                    "required": false,
+                    "transform": "/* Select Blocking WU VALIDATION transform */\r\n(\r\n  $modeStateList := $lowercase(data.currentStateHistory.mode.id) & \"StateList\";\r\n  $state := data.state;\r\n  data.state ? \r\n  data.$eval($modeStateList).stateListStates.edges.node[stateId=$state].selectBlockingWorkunit ?\r\n   $isNotNilOrEmpty(data.blockingWorkunit) ? undefined : \"A starving Workunit must be selected.\" : undefined\r\n)"
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": {
+                    "__transform": "/* Select Blocking WU visible transform */\r\n(\r\n  $modeStateList := $lowercase(data.currentStateHistory.mode.id) & \"StateList\";\r\n  $state := data.state;\r\n  $state ? \r\n  data.$eval($modeStateList).stateListStates.edges.node[stateId = $state].selectBlockingWorkunit\r\n  :\r\n  false\r\n)",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": [
+                        "components.Form1.data.state"
+                      ]
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "type": "select",
+                  "label": "Select Blocking Workunit",
+                  "dialogMode": "never",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "selectAll": true,
+                  "searchPredicate": "contains",
+                  "api": "Application",
+                  "stateTracking": "id",
+                  "optionLimit": 5,
+                  "optionLimitFlex": 5,
+                  "alwaysReloadOptions": false,
+                  "tenantId": "",
+                  "formElement": "Form1",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "blockingWorkunit",
+                  "additionalFilter": [],
+                  "query": {
+                    "fields": []
+                  },
+                  "labelPath": "code",
+                  "orderByField": "code",
+                  "dataModel": "Workunit",
+                  "selectFields": [],
+                  "additionalFields": []
+                },
+                "displayName": "Select",
+                "custom": {
+                  "elementName": "Select4"
+                },
+                "parent": "kDo-EQEBTm",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "LQqHwqN4PM": {
+                "type": {
+                  "resolvedName": "SelectInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "50%",
+                  "height": "60px",
+                  "validation": {
+                    "required": false,
+                    "transform": "/* Select Starving WU VALIDATION transform */\r\n(\r\n  $modeStateList := $lowercase(data.currentStateHistory.mode.id) & \"StateList\";\r\n  $state := data.state;\r\n  data.state ? \r\n  data.$eval($modeStateList).stateListStates.edges.node[stateId=$state].selectStarvingWorkunit ?\r\n   $isNotNilOrEmpty(data.starvingWorkunit) ? undefined : \"A starving Workunit must be selected.\" : undefined\r\n)"
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": {
+                    "__transform": "/* Select Starving WU visible transform */\r\n(\r\n  $modeStateList := $lowercase(data.currentStateHistory.mode.id) & \"StateList\";\r\n  $state := data.state;\r\n  $state ? \r\n  data.$eval($modeStateList).stateListStates.edges.node[stateId = $state].selectStarvingWorkunit\r\n  :\r\n  false\r\n)",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": [
+                        "components.Form1.data.state"
+                      ]
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "type": "select",
+                  "label": "Select Starving Workunit",
+                  "dialogMode": "never",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "selectAll": true,
+                  "searchPredicate": "contains",
+                  "api": "Application",
+                  "stateTracking": "id",
+                  "optionLimit": 5,
+                  "optionLimitFlex": 5,
+                  "alwaysReloadOptions": false,
+                  "tenantId": "",
+                  "formElement": "Form1",
+                  "target": {},
+                  "dataPath": "starvingWorkunit",
+                  "query": {
+                    "fields": []
+                  },
+                  "labelPath": "code",
+                  "orderByField": "code",
+                  "dataModel": "Workunit",
+                  "selectFields": [],
+                  "additionalFields": []
+                },
+                "displayName": "Select",
+                "custom": {
+                  "elementName": "Select5"
+                },
+                "parent": "kDo-EQEBTm",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "sK8efABQLp": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "50%",
+                  "height": "57px",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": {
+                    "__transform": "/* Default Blocking WU visible transform */\r\n\r\n(\r\n  $modeStateList := $lowercase(data.currentStateHistory.mode.id) & \"StateList\";\r\n  $stateList := data.$eval($modeStateList).stateListStates.edges.node[stateId=$state];\r\n  $state := data.state;\r\n  $isNotNilOrEmpty($state) and $isNotNilOrEmpty(data.$eval($modeStateList).stateListStates.edges.node[stateId=$state].defaultBlockingWorkunitId) ?\r\n  data.$eval($modeStateList).stateListStates.edges.node[stateId=$state].selectBlockingWorkunit ~> $not\r\n  : false;\r\n  \r\n)",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "type": "display",
+                  "label": "Blocking Workunit: ",
+                  "justifyContent": "start",
+                  "alignTextItems": "start",
+                  "labelFontSize": "body1",
+                  "fontSize": "body1",
+                  "formElement": "Form1",
+                  "data": {
+                    "__transform": "/* Default Blocking WU DATA TRANSFORM */\r\n\r\n\r\n(\r\n  $modeStateList := $lowercase(data.currentStateHistory.mode.id) & \"StateList\";\r\n  $state := data.state;\r\n  data.$eval($modeStateList).stateListStates.edges.node[stateId=$state].defaultBlockingWorkunitId\r\n) "
+                  },
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "defaultBlockingWorkunit",
+                  "query": {
+                    "fields": []
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text2"
+                },
+                "parent": "kDo-EQEBTm",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "NaW1hIG86U": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "50%",
+                  "height": "57px",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": {
+                    "__transform": "/* Default Starving WU visible transform */\r\n\r\n(\r\n  $modeStateList := $lowercase(data.currentStateHistory.mode.id) & \"StateList\";\r\n  $stateList := data.$eval($modeStateList).stateListStates.edges.node[stateId=$state];\r\n  $state := data.state;\r\n  $isNotNilOrEmpty($state) and $isNotNilOrEmpty(data.$eval($modeStateList).stateListStates.edges.node[stateId=$state].defaultStarvingWorkunitId) ?\r\n  data.$eval($modeStateList).stateListStates.edges.node[stateId=$state].selectStarvingWorkunit ~> $not\r\n  : false;\r\n  \r\n)",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "type": "display",
+                  "label": "Starving Workunit: ",
+                  "justifyContent": "start",
+                  "alignTextItems": "start",
+                  "labelFontSize": "body1",
+                  "fontSize": "body1",
+                  "formElement": "Form1",
+                  "data": {
+                    "__transform": "/* Default Starving WU DATA TRANSFORM */\r\n\r\n\r\n(\r\n  $modeStateList := $lowercase(data.currentStateHistory.mode.id) & \"StateList\";\r\n  $state := data.state;\r\n  data.$eval($modeStateList).stateListStates.edges.node[stateId=$state].defaultStarvingWorkunitId\r\n) "
+                  },
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "defaultBlockingWorkunit",
+                  "query": {
+                    "fields": []
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text3"
+                },
+                "parent": "kDo-EQEBTm",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "G6N8EDSqag": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container6"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "Es0ZkJKFRx"
+                ],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "cmeu79yfs031t019lb6uz0mb0",
+      "title": "Mode/State Change Modal",
+      "path": "/productionManagement/manufacturing/modeStateChangeModal",
+      "moduleId": "manufacturing",
+      "screenId": "modeStateChangeModal",
+      "isMenuAccessible": false,
+      "submenu": ""
+    }
+  ]
+}

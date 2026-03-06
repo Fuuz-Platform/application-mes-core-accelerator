@@ -1,0 +1,117 @@
+{
+  "api": "application",
+  "modelName": "Sequence",
+  "payload": [
+    {
+      "id": "inventoryNumber",
+      "name": "Inventory Number",
+      "type": "String",
+      "increment": 1,
+      "prefix": "S",
+      "suffix": "",
+      "zeroPadding": 10,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "masterInventoryNumber",
+      "name": "Master Inventory Number",
+      "type": "String",
+      "increment": 1,
+      "prefix": "M",
+      "suffix": "",
+      "zeroPadding": 8,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "operatorHistoryNumber",
+      "name": "Operator History Number",
+      "type": "String",
+      "increment": 1,
+      "prefix": "OH",
+      "suffix": "",
+      "zeroPadding": 12,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "productionHistoryNumber",
+      "name": "Production History Number",
+      "type": "String",
+      "increment": 1,
+      "prefix": "PH",
+      "suffix": "",
+      "zeroPadding": 12,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "productionHistorySerialNumber",
+      "name": "Production History Serial Number",
+      "type": "String",
+      "increment": 1,
+      "prefix": "S",
+      "suffix": "",
+      "zeroPadding": 10,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "productionRunNumber",
+      "name": "Production Run Number",
+      "type": "String",
+      "increment": 1,
+      "prefix": "PR",
+      "suffix": "",
+      "zeroPadding": 9,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "productionSetupMaterialNumber",
+      "name": "Production Setup Material Number",
+      "type": "String",
+      "increment": 1,
+      "prefix": "PSM",
+      "suffix": "",
+      "zeroPadding": 8,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "workOrderNumber",
+      "name": "Work Order Number",
+      "type": "String",
+      "increment": 1,
+      "prefix": "WO",
+      "suffix": "",
+      "zeroPadding": 6,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "workunitHistoryNumber",
+      "name": "Workunit History Number",
+      "type": "String",
+      "increment": 1,
+      "prefix": "WH",
+      "suffix": "",
+      "zeroPadding": 12,
+      "_customFields": {
+        "_externalId": null
+      }
+    }
+  ],
+  "metadata": {
+    "insertEarly": true
+  }
+}

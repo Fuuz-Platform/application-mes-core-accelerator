@@ -1,0 +1,2040 @@
+{
+  "packageDefinition": {
+    "name": "MES"
+  },
+  "packageDefinitionVersion": {
+    "id": "cmiphyjno00gx356m9keg0s44",
+    "version": "1.0.0",
+    "packageDefinitionId": "mes",
+    "exportedFileId": null
+  },
+  "packageDefinitionSelections": [
+    {
+      "id": "cmiphyjxx00gy356mnyzn3xq1",
+      "api": "application",
+      "modelName": "DataFlowScheduleFrequency",
+      "selected": [
+        {
+          "id": "cmigip7zw1lbc0775c2jed2ui",
+          "label": "5 minutes"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "active"
+        },
+        {
+          "name": "valid"
+        },
+        {
+          "name": "lastExecution"
+        },
+        {
+          "name": "payload"
+        },
+        {
+          "name": "status"
+        },
+        {
+          "name": "config"
+        },
+        {
+          "name": "dataFlowScheduleId"
+        },
+        {
+          "name": "scheduleTypeId"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ],
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cmiphyjno00gx356m9keg0s44"
+    },
+    {
+      "id": "cmiphyjxx00gz356msnq3wc2k",
+      "api": "application",
+      "modelName": "DataFlowSchedule",
+      "selected": [
+        {
+          "id": "cmigionh81lau077554kwcqdo",
+          "label": "Backfill State History Schedule"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "active"
+        },
+        {
+          "name": "inputSchema"
+        },
+        {
+          "name": "dataFlowId"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ],
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cmiphyjno00gx356m9keg0s44"
+    },
+    {
+      "id": "cmiphyjxx00h0356m0kn5oafl",
+      "api": "application",
+      "modelName": "ProductStrategyType",
+      "selected": [
+        {
+          "id": "manufactured",
+          "label": "manufactured"
+        },
+        {
+          "id": "purchased",
+          "label": "purchased"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "active"
+        },
+        {
+          "name": "usable"
+        },
+        {
+          "name": "code"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          }
+        ],
+        "labelField": "id"
+      },
+      "packageDefinitionVersionId": "cmiphyjno00gx356m9keg0s44"
+    },
+    {
+      "id": "cmiphyjxx00h1356mjeqw7jb7",
+      "api": "application",
+      "modelName": "ProcessType",
+      "selected": [
+        {
+          "id": "manufactured",
+          "label": "manufactured"
+        },
+        {
+          "id": "receive",
+          "label": "receive"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "usable"
+        },
+        {
+          "name": "code"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          }
+        ],
+        "labelField": "id"
+      },
+      "packageDefinitionVersionId": "cmiphyjno00gx356m9keg0s44"
+    },
+    {
+      "id": "cmiphyjxx00h2356mfrvc90ta",
+      "api": "application",
+      "modelName": "ProductionSetupOutputStepStatus",
+      "selected": [
+        {
+          "id": "passed",
+          "label": "passed"
+        },
+        {
+          "id": "pending",
+          "label": "pending"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "active"
+        },
+        {
+          "name": "usable"
+        },
+        {
+          "name": "code"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          }
+        ],
+        "labelField": "id"
+      },
+      "packageDefinitionVersionId": "cmiphyjno00gx356m9keg0s44"
+    },
+    {
+      "id": "cmiphyjxx00h3356mtekd7c23",
+      "api": "application",
+      "modelName": "ProductStrategyProcessStepType",
+      "selected": [
+        {
+          "id": "DEFAULT",
+          "label": "DEFAULT"
+        },
+        {
+          "id": "SCAN",
+          "label": "SCAN"
+        },
+        {
+          "id": "VARIABLE",
+          "label": "VARIABLE"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "active"
+        },
+        {
+          "name": "usable"
+        },
+        {
+          "name": "code"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          }
+        ],
+        "labelField": "id"
+      },
+      "packageDefinitionVersionId": "cmiphyjno00gx356m9keg0s44"
+    },
+    {
+      "id": "cmiphyjxx00h4356mpupbmlpx",
+      "api": "application",
+      "modelName": "ConsumptionType",
+      "selected": [
+        {
+          "id": "actual",
+          "label": "Actual"
+        },
+        {
+          "id": "none",
+          "label": "None"
+        },
+        {
+          "id": "standard",
+          "label": "Standard"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "usable"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ],
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cmiphyjno00gx356m9keg0s44"
+    },
+    {
+      "id": "cmiphyjxx00h5356m5q6lm5xg",
+      "api": "application",
+      "modelName": "TransactionType",
+      "selected": [
+        {
+          "id": "Activity Update",
+          "label": "Activity Update"
+        },
+        {
+          "id": "Badge In",
+          "label": "Badge In"
+        },
+        {
+          "id": "Badge Out",
+          "label": "Badge Out"
+        },
+        {
+          "id": "Material Load",
+          "label": "Material Load"
+        },
+        {
+          "id": "Mode Change",
+          "label": "Mode Change"
+        },
+        {
+          "id": "Production Add",
+          "label": "Production Add"
+        },
+        {
+          "id": "Production Depletion",
+          "label": "Production Depletion"
+        },
+        {
+          "id": "Production Load",
+          "label": "Production Load"
+        },
+        {
+          "id": "Production Setup Add",
+          "label": "Production Setup Add"
+        },
+        {
+          "id": "Production Setup Clear",
+          "label": "Production Setup Clear"
+        },
+        {
+          "id": "Production Unload",
+          "label": "Production Unload"
+        },
+        {
+          "id": "Scrap Add",
+          "label": "Scrap Add"
+        },
+        {
+          "id": "Work Order Complete",
+          "label": "Work Order Complete"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "activityUpdate"
+        },
+        {
+          "name": "badgeIn"
+        },
+        {
+          "name": "badgeOut"
+        },
+        {
+          "name": "eventUpdate"
+        },
+        {
+          "name": "inventoryAdjustment"
+        },
+        {
+          "name": "inventoryHold"
+        },
+        {
+          "name": "inventoryMerge"
+        },
+        {
+          "name": "inventoryMove"
+        },
+        {
+          "name": "inventorySplit"
+        },
+        {
+          "name": "inventoryStatusChange"
+        },
+        {
+          "name": "materialLoad"
+        },
+        {
+          "name": "materialUnload"
+        },
+        {
+          "name": "modeChange"
+        },
+        {
+          "name": "productionAdd"
+        },
+        {
+          "name": "productionMaterialLoad"
+        },
+        {
+          "name": "productionMaterialUnload"
+        },
+        {
+          "name": "productionSetupAdd"
+        },
+        {
+          "name": "productionSetupClear"
+        },
+        {
+          "name": "receiptConfirm"
+        },
+        {
+          "name": "scrapAdd"
+        },
+        {
+          "name": "shiftChange"
+        },
+        {
+          "name": "shipmentLoad"
+        },
+        {
+          "name": "shipmentPick"
+        },
+        {
+          "name": "shipmentShip"
+        },
+        {
+          "name": "shipmentStage"
+        },
+        {
+          "name": "shipmentUnload"
+        },
+        {
+          "name": "subEventUpdate"
+        },
+        {
+          "name": "system"
+        },
+        {
+          "name": "transferCreate"
+        },
+        {
+          "name": "transferLoad"
+        },
+        {
+          "name": "transferShip"
+        },
+        {
+          "name": "transferStage"
+        },
+        {
+          "name": "transferUnload"
+        },
+        {
+          "name": "transferUpdate"
+        },
+        {
+          "name": "usable"
+        },
+        {
+          "name": "workOrderComplete"
+        },
+        {
+          "name": "color"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "customData"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ],
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cmiphyjno00gx356m9keg0s44"
+    },
+    {
+      "id": "cmiphyjxx00h6356mm01t9ano",
+      "api": "application",
+      "modelName": "Mode",
+      "selected": [
+        {
+          "id": "Changeover",
+          "label": "Changeover"
+        },
+        {
+          "id": "Disabled",
+          "label": "Disabled"
+        },
+        {
+          "id": "Idle",
+          "label": "Idle"
+        },
+        {
+          "id": "Maintenance",
+          "label": "Maintenance"
+        },
+        {
+          "id": "Other",
+          "label": "Other/Off"
+        },
+        {
+          "id": "Production",
+          "label": "Production"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "includeProductionCounts"
+        },
+        {
+          "name": "includeMaintenanceHours"
+        },
+        {
+          "name": "usable"
+        },
+        {
+          "name": "externalId"
+        },
+        {
+          "name": "customData"
+        },
+        {
+          "name": "color"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "system"
+        },
+        {
+          "name": "activeRunUse"
+        },
+        {
+          "name": "noRunUse"
+        },
+        {
+          "name": "operatingTime"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ],
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cmiphyjno00gx356m9keg0s44"
+    },
+    {
+      "id": "cmiphyjxx00h7356mlia626uw",
+      "api": "application",
+      "modelName": "Role",
+      "selected": [
+        {
+          "id": "operator",
+          "label": "Operator"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "menu"
+        },
+        {
+          "name": "homeScreenId"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ],
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cmiphyjno00gx356m9keg0s44"
+    },
+    {
+      "id": "cmiphyjxx00h8356mmdwkqfpc",
+      "api": "application",
+      "modelName": "Sequence",
+      "selected": [
+        {
+          "id": "inventoryNumber",
+          "label": "Inventory Number"
+        },
+        {
+          "id": "masterInventoryNumber",
+          "label": "Master Inventory Number"
+        },
+        {
+          "id": "operatorHistoryNumber",
+          "label": "Operator History Number"
+        },
+        {
+          "id": "productionHistoryNumber",
+          "label": "Production History Number"
+        },
+        {
+          "id": "productionRunNumber",
+          "label": "Production Run Number"
+        },
+        {
+          "id": "productionSetupMaterialNumber",
+          "label": "Production Setup Material Number"
+        },
+        {
+          "id": "wikiNumber",
+          "label": "Wiki Number"
+        },
+        {
+          "id": "workOrderNumber",
+          "label": "Work Order Number"
+        },
+        {
+          "id": "workunitHistoryNumber",
+          "label": "Workunit History Number"
+        },
+        {
+          "id": "productionHistorySerialNumber",
+          "label": "Production History Serial Number"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "type"
+        },
+        {
+          "name": "increment"
+        },
+        {
+          "name": "prefix"
+        },
+        {
+          "name": "suffix"
+        },
+        {
+          "name": "zeroPadding"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ],
+        "labelField": "name",
+        "insertBefore": [
+          {
+            "modelName": "DataModel"
+          }
+        ]
+      },
+      "packageDefinitionVersionId": "cmiphyjno00gx356m9keg0s44"
+    },
+    {
+      "id": "cmiphyjxx00h9356mwz7ney8p",
+      "api": "application",
+      "modelName": "ModuleGroup",
+      "selected": [
+        {
+          "id": "applications",
+          "label": "Applications"
+        },
+        {
+          "id": "customerRelationshipManagement",
+          "label": "Customer Relationship Management"
+        },
+        {
+          "id": "documentation",
+          "label": "Documentation"
+        },
+        {
+          "id": "edi",
+          "label": "EDI"
+        },
+        {
+          "id": "humanCapitalManagement",
+          "label": "Human Capital Management"
+        },
+        {
+          "id": "maintenanceManagement",
+          "label": "Maintenance Management"
+        },
+        {
+          "id": "materialsManagement",
+          "label": "Materials Management"
+        },
+        {
+          "id": "mobile",
+          "label": "Mobile"
+        },
+        {
+          "id": "productDataManagement",
+          "label": "Product Data Management"
+        },
+        {
+          "id": "productionManagement",
+          "label": "Production Management"
+        },
+        {
+          "id": "qualityControl",
+          "label": "Quality Control"
+        },
+        {
+          "id": "reportingAndAnalytics",
+          "label": "Reporting and Analytics"
+        },
+        {
+          "id": "resourceManagement",
+          "label": "Resource Management"
+        },
+        {
+          "id": "shopFloorExecution",
+          "label": "Shop Floor Execution"
+        },
+        {
+          "id": "supplyChainManagement",
+          "label": "Supply Chain Management"
+        },
+        {
+          "id": "system",
+          "label": "System"
+        },
+        {
+          "id": "traceabilityAndGenealogy",
+          "label": "Traceability and Genealogy"
+        },
+        {
+          "id": "warehouseManagement",
+          "label": "Warehouse Management"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "icon"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ],
+        "labelField": "name",
+        "insertBefore": [
+          {
+            "modelName": "Module"
+          }
+        ]
+      },
+      "packageDefinitionVersionId": "cmiphyjno00gx356m9keg0s44"
+    },
+    {
+      "id": "cmiphyjxx00ha356mu1sbpk6r",
+      "api": "application",
+      "modelName": "Module",
+      "selected": [
+        {
+          "id": "accessControl",
+          "label": "Access Control"
+        },
+        {
+          "id": "advancedProductionScheduling",
+          "label": "Advanced Production Scheduling"
+        },
+        {
+          "id": "applicationConnector",
+          "label": "Application Connector"
+        },
+        {
+          "id": "applicationLifecycleManagement",
+          "label": "Application Lifecycle Management"
+        },
+        {
+          "id": "applicationSetup",
+          "label": "Application Setup"
+        },
+        {
+          "id": "applicationTrace",
+          "label": "Application Trace"
+        },
+        {
+          "id": "businessIntelligence",
+          "label": "Business Intelligence"
+        },
+        {
+          "id": "configuration",
+          "label": "Configuration"
+        },
+        {
+          "id": "confluence",
+          "label": "Confluence"
+        },
+        {
+          "id": "controlPanels",
+          "label": "Control Panels"
+        },
+        {
+          "id": "customerManagement",
+          "label": "Customer Management"
+        },
+        {
+          "id": "dashboard",
+          "label": "Dashboard"
+        },
+        {
+          "id": "dataManagement",
+          "label": "Data Management"
+        },
+        {
+          "id": "dataModeling",
+          "label": "Data Modeling"
+        },
+        {
+          "id": "employees",
+          "label": "Employees"
+        },
+        {
+          "id": "engineering",
+          "label": "Engineering"
+        },
+        {
+          "id": "files",
+          "label": "Files"
+        },
+        {
+          "id": "genealogyTracking",
+          "label": "Genealogy Tracking"
+        },
+        {
+          "id": "integration",
+          "label": "Integration"
+        },
+        {
+          "id": "integrationNetSuite",
+          "label": "Integration: NetSuite"
+        },
+        {
+          "id": "internetOfThings",
+          "label": "Internet of Things"
+        },
+        {
+          "id": "inventory",
+          "label": "Inventory"
+        },
+        {
+          "id": "inventoryControl",
+          "label": "Inventory Control"
+        },
+        {
+          "id": "kanbanProduction",
+          "label": "Kanban Production"
+        },
+        {
+          "id": "logistics",
+          "label": "Logistics"
+        },
+        {
+          "id": "maintenance",
+          "label": "Maintenance"
+        },
+        {
+          "id": "manufacturing",
+          "label": "Manufacturing"
+        },
+        {
+          "id": "materials",
+          "label": "Materials"
+        },
+        {
+          "id": "orchestration",
+          "label": "Orchestration"
+        },
+        {
+          "id": "planning",
+          "label": "Planning"
+        },
+        {
+          "id": "procurement",
+          "label": "Procurement"
+        },
+        {
+          "id": "productDataManagement",
+          "label": "Product Data Management"
+        },
+        {
+          "id": "quality",
+          "label": "Quality"
+        },
+        {
+          "id": "requestManagement",
+          "label": "Request Management"
+        },
+        {
+          "id": "resources",
+          "label": "Resources"
+        },
+        {
+          "id": "sales",
+          "label": "Sales"
+        },
+        {
+          "id": "scheduling",
+          "label": "Scheduling"
+        },
+        {
+          "id": "storageManagement",
+          "label": "Storage Management"
+        },
+        {
+          "id": "supplierManagement",
+          "label": "Supplier Management"
+        },
+        {
+          "id": "testing",
+          "label": "Testing"
+        },
+        {
+          "id": "workOrderManagement",
+          "label": "Work Order Management"
+        },
+        {
+          "id": "workunits",
+          "label": "Workunits"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "moduleGroupId"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ],
+        "labelField": "name",
+        "insertBefore": [
+          {
+            "modelName": "DataFlow"
+          }
+        ]
+      },
+      "packageDefinitionVersionId": "cmiphyjno00gx356m9keg0s44"
+    },
+    {
+      "id": "cmiphyjxx00hb356me27s937x",
+      "api": "application",
+      "modelName": "Process",
+      "selected": [
+        {
+          "id": "Default",
+          "label": "Default"
+        },
+        {
+          "id": "Receive",
+          "label": "Receive"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "metadata": {
+            "mfgx": {
+              "mutable": null,
+              "defaultValue": null,
+              "derivedFrom": null,
+              "derivedFromKind": null
+            },
+            "type": {
+              "base": "ID"
+            }
+          }
+        },
+        {
+          "name": "code",
+          "metadata": {
+            "mfgx": {
+              "mutable": null,
+              "defaultValue": null,
+              "derivedFrom": null,
+              "derivedFromKind": null
+            },
+            "type": {
+              "base": "String"
+            }
+          }
+        },
+        {
+          "name": "usable",
+          "metadata": {
+            "mfgx": {
+              "mutable": null,
+              "defaultValue": true,
+              "derivedFrom": null,
+              "derivedFromKind": null
+            },
+            "type": {
+              "base": "Boolean"
+            }
+          }
+        },
+        {
+          "name": "color",
+          "metadata": {
+            "mfgx": {
+              "mutable": null,
+              "defaultValue": null,
+              "derivedFrom": null,
+              "derivedFromKind": null
+            },
+            "type": {
+              "base": "String"
+            }
+          }
+        },
+        {
+          "name": "description",
+          "metadata": {
+            "mfgx": {
+              "mutable": null,
+              "defaultValue": null,
+              "derivedFrom": null,
+              "derivedFromKind": null
+            },
+            "type": {
+              "base": "String"
+            }
+          }
+        },
+        {
+          "name": "externalId",
+          "metadata": {
+            "mfgx": {
+              "mutable": null,
+              "defaultValue": null,
+              "derivedFrom": null,
+              "derivedFromKind": null
+            },
+            "type": {
+              "base": "String"
+            }
+          }
+        },
+        {
+          "name": "customData",
+          "metadata": {
+            "mfgx": {
+              "mutable": null,
+              "defaultValue": null,
+              "derivedFrom": null,
+              "derivedFromKind": null
+            },
+            "type": {
+              "base": "JSON"
+            }
+          }
+        },
+        {
+          "name": "iDocumentDesignId",
+          "metadata": {
+            "mfgx": {
+              "mutable": null,
+              "defaultValue": null,
+              "derivedFrom": null,
+              "derivedFromKind": null
+            },
+            "type": {
+              "base": "ID"
+            }
+          }
+        },
+        {
+          "name": "processTypeId",
+          "metadata": {
+            "mfgx": {
+              "mutable": null,
+              "defaultValue": null,
+              "derivedFrom": null,
+              "derivedFromKind": null
+            },
+            "type": {
+              "base": "ID"
+            }
+          }
+        },
+        {
+          "name": "_customFields._externalId",
+          "description": "The external ID of the document to which these custom fields are attached. This field is always available on _customFields.",
+          "type": "String",
+          "metadata": {
+            "type": {
+              "base": "String",
+              "list": false,
+              "nonNull": false
+            }
+          }
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "code",
+            "label": "code"
+          }
+        ],
+        "labelField": "code"
+      },
+      "packageDefinitionVersionId": "cmiphyjno00gx356m9keg0s44"
+    },
+    {
+      "id": "cmiphyjxx00hc356mqprcv5cc",
+      "api": "application",
+      "modelName": "WorkOrderStatus",
+      "selected": [
+        {
+          "id": "Canceled",
+          "label": "Canceled"
+        },
+        {
+          "id": "Complete",
+          "label": "Complete"
+        },
+        {
+          "id": "Hold",
+          "label": "Hold"
+        },
+        {
+          "id": "In Process",
+          "label": "In Process"
+        },
+        {
+          "id": "Planned",
+          "label": "Planned"
+        },
+        {
+          "id": "Released",
+          "label": "Released"
+        },
+        {
+          "id": "Scheduled",
+          "label": "Scheduled"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "system"
+        },
+        {
+          "name": "usable"
+        },
+        {
+          "name": "workOrderProcessDistUse"
+        },
+        {
+          "name": "workOrderUse"
+        },
+        {
+          "name": "color"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "externalId"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "customData"
+        },
+        {
+          "name": "integrationData"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          }
+        ],
+        "labelField": "id"
+      },
+      "packageDefinitionVersionId": "cmiphyjno00gx356m9keg0s44"
+    },
+    {
+      "id": "cmiphyjxx00hd356mbt7xjapg",
+      "api": "application",
+      "modelName": "Screen",
+      "selected": [
+        {
+          "id": "badgeInOutModalOperator",
+          "label": "Badge In/Out Modal (Operator)"
+        },
+        {
+          "id": "badgeInOutModalOperatorUser",
+          "label": "Badge In/Out Modal (Operator/User)"
+        },
+        {
+          "id": "badgeInOutModalUser",
+          "label": "Badge In/Out Modal (User)"
+        },
+        {
+          "id": "buildDistributionModal",
+          "label": "Build Distribution Modal"
+        },
+        {
+          "id": "operatorManagement",
+          "label": "Operator Management"
+        },
+        {
+          "id": "productDetailsForm",
+          "label": "Product Details Form"
+        },
+        {
+          "id": "productManagementV2",
+          "label": "Product Management"
+        },
+        {
+          "id": "runStartStopDialog",
+          "label": "Run Start Stop Dialog"
+        },
+        {
+          "id": "siteManagement",
+          "label": "Site Management"
+        },
+        {
+          "id": "workOrderDetailsForm",
+          "label": "Work Order Details Form"
+        },
+        {
+          "id": "workOrderManagementV2",
+          "label": "Work Order Management"
+        },
+        {
+          "id": "workunitManagement",
+          "label": "Workunit Management"
+        },
+        {
+          "id": "modeStateChangeModal",
+          "label": "Mode/State Change Modal"
+        },
+        {
+          "id": "unloadDistributionModal",
+          "label": "Unload Distribution Modal"
+        },
+        {
+          "id": "updateSetupMaterialOrderModal",
+          "label": "Update Setup Material Order Modal"
+        },
+        {
+          "id": "controlPanelDemo",
+          "label": "Control Panel Demo"
+        },
+        {
+          "id": "dispatchWidget",
+          "label": "Dispatch Widget"
+        },
+        {
+          "id": "productionStepWidget",
+          "label": "Production Step Widget"
+        },
+        {
+          "id": "productionWidget",
+          "label": "Production Widget"
+        },
+        {
+          "id": "setupMaterialWidget",
+          "label": "Setup Material Widget"
+        },
+        {
+          "id": "scrapManagement",
+          "label": "Scrap Management"
+        },
+        {
+          "id": "createWorkorderWidget",
+          "label": "Create Workorder Widget"
+        },
+        {
+          "id": "productCreateDialog",
+          "label": "Product Create Dialog"
+        },
+        {
+          "id": "stateListStateWidget",
+          "label": "State List State Widget"
+        },
+        {
+          "id": "workunitDetailsWidget",
+          "label": "Workunit Details Widget"
+        },
+        {
+          "id": "stateListAddState",
+          "label": "StateList Add State"
+        },
+        {
+          "id": "createDistributionsForWorkorders",
+          "label": "Create Distributions for Workorders"
+        },
+        {
+          "id": "productionHistory",
+          "label": "Production History"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "active"
+        },
+        {
+          "name": "moduleId"
+        },
+        {
+          "name": "isWidget"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ],
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cmiphyjno00gx356m9keg0s44"
+    },
+    {
+      "id": "cmiphyjxx00he356m10fdiy5a",
+      "api": "application",
+      "modelName": "DataFlow",
+      "selected": [
+        {
+          "id": "backFillEndDatesOfWorkunitHistory",
+          "label": "Back Fill End Dates of Workunit History"
+        },
+        {
+          "id": "controlPanelWebFlow",
+          "label": "Control Panel Web Flow"
+        },
+        {
+          "id": "debuggingFlow",
+          "label": "Debugging Flow"
+        },
+        {
+          "id": "dispatchFunctions",
+          "label": "Dispatch Functions"
+        },
+        {
+          "id": "modeStateChangeHistoryFlow",
+          "label": "ModeStateChangeHistoryFlow"
+        },
+        {
+          "id": "productDetailsWebFlow",
+          "label": "Product Details Web Flow"
+        },
+        {
+          "id": "productionFunctions",
+          "label": "Production Functions"
+        },
+        {
+          "id": "productionRunFunctions",
+          "label": "Production Run Functions"
+        },
+        {
+          "id": "productStrategyManagementFunctions",
+          "label": "Product Strategy Management Functions"
+        },
+        {
+          "id": "stateListWizard",
+          "label": "State List Wizard"
+        },
+        {
+          "id": "validateScanStep",
+          "label": "Validate Scan Step "
+        },
+        {
+          "id": "workOrderFunctions",
+          "label": "Work Order Functions"
+        },
+        {
+          "id": "workOrderManagementWebFlow",
+          "label": "Work Order Management Web Flow"
+        },
+        {
+          "id": "workunitControlPanelWebRoute",
+          "label": "Workunit Control Panel Web Route"
+        },
+        {
+          "id": "workunitFunctions",
+          "label": "Workunit Functions"
+        },
+        {
+          "id": "productionHistoryGenealogy",
+          "label": "Production History Genealogy"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "active"
+        },
+        {
+          "name": "dataFlowTypeId"
+        },
+        {
+          "name": "logLevelId"
+        },
+        {
+          "name": "mcpToolConfiguration.enabled"
+        },
+        {
+          "name": "mcpToolConfiguration.inputSchema"
+        },
+        {
+          "name": "mcpToolConfiguration.outputSchema"
+        },
+        {
+          "name": "mcpToolConfiguration.readOnly"
+        },
+        {
+          "name": "mcpToolConfiguration.destructive"
+        },
+        {
+          "name": "mcpToolConfiguration.idempotent"
+        },
+        {
+          "name": "moduleId"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ],
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cmiphyjno00gx356m9keg0s44"
+    },
+    {
+      "id": "cmiphyjxy00hf356mnqnxfiql",
+      "api": "application",
+      "modelName": "OperatorActivity",
+      "selected": [
+        {
+          "id": "Change Over",
+          "label": "Change Over"
+        },
+        {
+          "id": "Other",
+          "label": "Other"
+        },
+        {
+          "id": "Production",
+          "label": "Production"
+        },
+        {
+          "id": "Testing",
+          "label": "Testing"
+        },
+        {
+          "id": "Training",
+          "label": "Training"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "changeover"
+        },
+        {
+          "name": "cleaning"
+        },
+        {
+          "name": "controlPanelDisplay"
+        },
+        {
+          "name": "default"
+        },
+        {
+          "name": "includeLabor"
+        },
+        {
+          "name": "maintenance"
+        },
+        {
+          "name": "other"
+        },
+        {
+          "name": "production"
+        },
+        {
+          "name": "quality"
+        },
+        {
+          "name": "testing"
+        },
+        {
+          "name": "training"
+        },
+        {
+          "name": "usable"
+        },
+        {
+          "name": "customData"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ],
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cmiphyjno00gx356m9keg0s44"
+    },
+    {
+      "id": "cmiphyjxy00hg356mkwnoi3zt",
+      "api": "application",
+      "modelName": "StateCategory",
+      "selected": [
+        {
+          "id": "Blocked",
+          "label": "Blocked"
+        },
+        {
+          "id": "Disabled",
+          "label": "Disabled"
+        },
+        {
+          "id": "Idle",
+          "label": "Idle"
+        },
+        {
+          "id": "Planned Downtime",
+          "label": "Planned Downtime"
+        },
+        {
+          "id": "Running",
+          "label": "Running"
+        },
+        {
+          "id": "Starved",
+          "label": "Starved"
+        },
+        {
+          "id": "Unplanned Downtime",
+          "label": "Unplanned Downtime"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "usable"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "customData"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          }
+        ],
+        "labelField": "id"
+      },
+      "packageDefinitionVersionId": "cmiphyjno00gx356m9keg0s44"
+    },
+    {
+      "id": "cmiphyjxy00hh356mvjjdqt9m",
+      "api": "application",
+      "modelName": "DataModel",
+      "selected": [
+        {
+          "id": "approvedWorkunit",
+          "label": "ApprovedWorkunit"
+        },
+        {
+          "id": "area",
+          "label": "Area"
+        },
+        {
+          "id": "consumptionType",
+          "label": "ConsumptionType"
+        },
+        {
+          "id": "historyStatus",
+          "label": "HistoryStatus"
+        },
+        {
+          "id": "mode",
+          "label": "Mode"
+        },
+        {
+          "id": "operatorActivity",
+          "label": "OperatorActivity"
+        },
+        {
+          "id": "operatorHistory",
+          "label": "OperatorHistory"
+        },
+        {
+          "id": "process",
+          "label": "Process"
+        },
+        {
+          "id": "processStep",
+          "label": "ProcessStep"
+        },
+        {
+          "id": "processType",
+          "label": "ProcessType"
+        },
+        {
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "id": "productCategory",
+          "label": "ProductCategory"
+        },
+        {
+          "id": "productionHistory",
+          "label": "ProductionHistory"
+        },
+        {
+          "id": "productionHistoryInput",
+          "label": "ProductionHistoryInput"
+        },
+        {
+          "id": "productionHistoryOperator",
+          "label": "ProductionHistoryOperator"
+        },
+        {
+          "id": "productionRun",
+          "label": "ProductionRun"
+        },
+        {
+          "id": "productionSetupBom",
+          "label": "ProductionSetupBom"
+        },
+        {
+          "id": "productionSetupMaterial",
+          "label": "ProductionSetupMaterial"
+        },
+        {
+          "id": "productionSetupOperator",
+          "label": "ProductionSetupOperator"
+        },
+        {
+          "id": "productionSetupOutput",
+          "label": "ProductionSetupOutput"
+        },
+        {
+          "id": "productionSetupOutputStep",
+          "label": "ProductionSetupOutputStep"
+        },
+        {
+          "id": "productionSetupOutputStepStatus",
+          "label": "ProductionSetupOutputStepStatus"
+        },
+        {
+          "id": "productionStepHistory",
+          "label": "ProductionStepHistory"
+        },
+        {
+          "id": "ProductStrategy",
+          "label": "ProductStrategy"
+        },
+        {
+          "id": "productStrategyProcess",
+          "label": "ProductStrategyProcess"
+        },
+        {
+          "id": "productStrategyProcessBom",
+          "label": "ProductStrategyProcessBom"
+        },
+        {
+          "id": "productStrategyProcessProduct",
+          "label": "ProductStrategyProcessProduct"
+        },
+        {
+          "id": "productStrategyProcessStep",
+          "label": "ProductStrategyProcessStep"
+        },
+        {
+          "id": "productStrategyProcessStepType",
+          "label": "ProductStrategyProcessStepType"
+        },
+        {
+          "id": "productStrategyType",
+          "label": "ProductStrategyType"
+        },
+        {
+          "id": "scrapReason",
+          "label": "ScrapReason"
+        },
+        {
+          "id": "state",
+          "label": "State"
+        },
+        {
+          "id": "stateCategory",
+          "label": "StateCategory"
+        },
+        {
+          "id": "stateList",
+          "label": "StateList"
+        },
+        {
+          "id": "stateListState",
+          "label": "StateListState"
+        },
+        {
+          "id": "transactionType",
+          "label": "TransactionType"
+        },
+        {
+          "id": "workcenter",
+          "label": "Workcenter"
+        },
+        {
+          "id": "workOrder",
+          "label": "WorkOrder"
+        },
+        {
+          "id": "workOrderProcess",
+          "label": "WorkOrderProcess"
+        },
+        {
+          "id": "workOrderProcessBom",
+          "label": "WorkOrderProcessBom"
+        },
+        {
+          "id": "workOrderProcessDistribution",
+          "label": "WorkOrderProcessDistribution"
+        },
+        {
+          "id": "workOrderProcessDistributionDependency",
+          "label": "WorkOrderProcessDistributionDependency"
+        },
+        {
+          "id": "workOrderStatus",
+          "label": "WorkOrderStatus"
+        },
+        {
+          "id": "workunit",
+          "label": "Workunit"
+        },
+        {
+          "id": "workunitScrapReason",
+          "label": "WorkunitScrapReason"
+        },
+        {
+          "id": "workunitStateHistory",
+          "label": "WorkunitStateHistory"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "dataModelKindId"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ],
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "cmiphyjno00gx356m9keg0s44"
+    }
+  ]
+}

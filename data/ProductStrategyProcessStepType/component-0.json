@@ -1,0 +1,37 @@
+{
+  "api": "application",
+  "modelName": "ProductStrategyProcessStepType",
+  "payload": [
+    {
+      "id": "DEFAULT",
+      "active": true,
+      "usable": true,
+      "code": "DEFAULT",
+      "description": "default type",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "SCAN",
+      "active": true,
+      "usable": true,
+      "code": "SCAN",
+      "description": "SCAN",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "VARIABLE",
+      "active": true,
+      "usable": true,
+      "code": "VARIABLE",
+      "description": "A continuous numeric measurement with defined minimum, maximum, and target values. Used for dimensions, weight, temperature, etc.",
+      "_customFields": {
+        "_externalId": null
+      }
+    }
+  ],
+  "metadata": {}
+}

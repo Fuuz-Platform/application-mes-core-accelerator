@@ -1,0 +1,171 @@
+{
+  "api": "application",
+  "modelName": "ModuleGroup",
+  "payload": [
+    {
+      "id": "applications",
+      "name": "Applications",
+      "icon": "sidebar",
+      "description": "Features and functionality related to Fuuz Apps in the platform.",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "customerRelationshipManagement",
+      "name": "Customer Relationship Management",
+      "icon": "money-bill",
+      "description": "Functionality around managing customer relationships, such as sales.",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "documentation",
+      "name": "Documentation",
+      "icon": "book",
+      "description": "",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "edi",
+      "name": "EDI",
+      "icon": "exchange-alt",
+      "description": "",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "humanCapitalManagement",
+      "name": "Human Capital Management",
+      "icon": "users",
+      "description": "Functionality around managing human capital, such as employees, departments, and positions.",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "maintenanceManagement",
+      "name": "Maintenance Management",
+      "icon": "hourglass-clock",
+      "description": "",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "materialsManagement",
+      "name": "Materials Management",
+      "icon": "boxes",
+      "description": "Functionality around managing handling of physical materials, such as inventory and logistics.",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "mobile",
+      "name": "Mobile",
+      "icon": "tablet",
+      "description": "",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "productDataManagement",
+      "name": "Product Data Management",
+      "icon": "clipboard",
+      "description": "Functionality around managing product data, such as engineering, quality, and materials.",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "productionManagement",
+      "name": "Production Management",
+      "icon": "industry-alt",
+      "description": "Functionality around managing production, such as planning and manufacturing.",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "qualityControl",
+      "name": "Quality Control",
+      "icon": "link",
+      "description": "",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "reportingAndAnalytics",
+      "name": "Reporting and Analytics",
+      "icon": "chart-simple",
+      "description": "",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "resourceManagement",
+      "name": "Resource Management",
+      "icon": "calendars",
+      "description": "",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "shopFloorExecution",
+      "name": "Shop Floor Execution",
+      "icon": "user-helmet-safety",
+      "description": "",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "supplyChainManagement",
+      "name": "Supply Chain Management",
+      "icon": "link",
+      "description": "Functionality around managing supply chains, such as procurement.",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "system",
+      "name": "System",
+      "icon": "cog",
+      "description": "Funcitonality that affects behavior system-wide, such as access control, integration, and business intelligence.",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "traceabilityAndGenealogy",
+      "name": "Traceability and Genealogy",
+      "icon": "dna",
+      "description": "",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "warehouseManagement",
+      "name": "Warehouse Management",
+      "icon": "forklift",
+      "description": "",
+      "_customFields": {
+        "_externalId": null
+      }
+    }
+  ],
+  "metadata": {
+    "insertEarly": true
+  }
+}

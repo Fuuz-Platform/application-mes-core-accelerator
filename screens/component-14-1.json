@@ -1,0 +1,190 @@
+{
+  "header": {
+    "id": "updateSetupMaterialOrderModal",
+    "name": "Update Setup Material Order Modal",
+    "description": "",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": true,
+    "_customFields": {
+      "_externalId": null
+    }
+  },
+  "version": {
+    "id": "cmfzq6k8102oh0109dvao4le4",
+    "number": "0.0.7",
+    "description": "",
+    "screenId": "updateSetupMaterialOrderModal",
+    "design": {
+      "components": [
+        {
+          "name": "New Screen",
+          "tabTitle": "New Tab",
+          "type": "canvas",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "flowsDelay": 0,
+                  "removeOuterMargin": false
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Table Column": 2,
+                    "Table": 1,
+                    "Container": 1
+                  }
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "ez_nqk7MQA"
+                ],
+                "linkedNodes": {}
+              },
+              "ez_nqk7MQA": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 0,
+                  "width": "300px",
+                  "height": "400",
+                  "flexGrow": false,
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id",
+                      "serial"
+                    ],
+                    "disableDataChangeIndicator": false,
+                    "selectedDataChangeIndicator": null,
+                    "model": "ProductionSetupMaterial",
+                    "parameters": "{\r\n  \"filter\":{\r\n    \"_and\": \r\n    [\r\n      {\r\n        \"workunitId\":{\r\n          \"_eq\": $metadata.urlParameters.workunitId\r\n        }\r\n      },\r\n        {\r\n          \"productId\":{\r\n            \"_eq\": $metadata.urlParameters.productId\r\n        }\r\n      }\r\n    ]\r\n  },\r\n  \"orderBy\": [\r\n    {\r\n      \"direction\": \"asc\",\r\n      \"field\": \"priority\"\r\n    }\r\n  ]\r\n}",
+                    "filterPredicate": {}
+                  },
+                  "selectable": "multiple",
+                  "showToolPanels": true,
+                  "showStatusBar": true,
+                  "enableGrouping": true,
+                  "enableCharts": true,
+                  "showColumnMenu": false,
+                  "enableRowDragging": true,
+                  "disableColumnDragging": false,
+                  "disableDragLeaveHidesColumns": false,
+                  "masterDetail": false,
+                  "hideTableHeader": false,
+                  "tableName": "Update Material Order",
+                  "description": "Represents the actual physical inventory materials that have been allocated and loaded for consumption during active production. This model tracks specific inventory lots, serial numbers, and consumption status for materials required by production processes.\n\nThis is a transient model, items are added and removed here throughout the production run. Once an item has been completely consumed, the record should be deleted from this table.",
+                  "rowMultiSelectWithClick": true,
+                  "limitToOneActiveDetail": false,
+                  "onDataChangeTransform": "$isNotNilOrEmpty(data) ?\r\n(\r\n  $wait(500) ; $query({\"statement\":\"mutation UpdateProductionSetupMaterial($payload: [ProductionSetupMaterialUpdatePayloadInput!]!) {\\n  updateProductionSetupMaterial(payload: $payload) {\\n    id\\npriority\\nserial\\nquantity  }\\n}\",\r\n    \"variables\":{\r\n    \"payload\": [\r\n      data#$index.{\r\n        \"where\": {\r\n          \"id\": id\r\n        },\r\n        \"update\": {\r\n          \"priority\": $index\r\n        }\r\n      }\r\n    ]\r\n  }})\r\n)"
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "UpdateSetupMaterialTable"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "j70LlqRTxx",
+                  "Rt4somsNSQ"
+                ],
+                "linkedNodes": {}
+              },
+              "j70LlqRTxx": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Serial",
+                  "format": "text",
+                  "sortable": true,
+                  "dataPath": "serial",
+                  "description": "(String, Optional): Serial number of the specific material lot or item",
+                  "query": {},
+                  "field": "serial",
+                  "width": "175px",
+                  "validation": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn1"
+                },
+                "parent": "ez_nqk7MQA",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Rt4somsNSQ": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Qty",
+                  "format": "integer",
+                  "sortable": true,
+                  "dataPath": "quantity",
+                  "description": "(Int, Required, 0): Available quantity of this material allocation",
+                  "query": {},
+                  "field": "quantity",
+                  "width": "75px"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn2"
+                },
+                "parent": "ez_nqk7MQA",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "cmfzpizt102ez0109c87cetmy",
+      "title": "Update Setup Material Order Modal",
+      "path": "/productionManagement/manufacturing/updateSetupMaterialOrderModal",
+      "moduleId": "manufacturing",
+      "screenId": "updateSetupMaterialOrderModal",
+      "isMenuAccessible": false,
+      "submenu": ""
+    }
+  ]
+}

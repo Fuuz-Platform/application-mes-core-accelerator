@@ -1,0 +1,2326 @@
+{
+  "header": {
+    "id": "dispatchFunctions",
+    "name": "Dispatch Functions",
+    "description": "System flow to load and unload distribution groups to and from workunits",
+    "active": true,
+    "dataFlowTypeId": "System",
+    "logLevelId": "Trace",
+    "mcpToolConfiguration": null,
+    "moduleId": "workOrderManagement",
+    "_customFields": {
+      "_externalId": null
+    }
+  },
+  "version": {
+    "id": "cmipbwfnw3zvs07759cu9gtzo",
+    "number": "0.0.27",
+    "description": "",
+    "dataFlowId": "dispatchFunctions",
+    "flow": {
+      "id": "cmipbwfnw3zvs07759cu9gtzo",
+      "name": "Dispatch Functions",
+      "type": "System",
+      "nodes": [
+        {
+          "id": "2d66affe-1469-4789-855b-c44384cd9c7e",
+          "name": "Response: FAILURE NO ACTION",
+          "type": "response",
+          "data": {
+            "responseTransform": "{\n  \"SUCCESS\":false,\n  \"MESSAGE\": \"No appropriate action was provided\"\n}",
+            "nextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": true,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "6b177aff-58fc-4ce4-9121-7267e307bd2f",
+          "name": "Request",
+          "type": "request",
+          "data": {
+            "nextNodes": [
+              "f6d1cd6d-5f71-48d6-893d-d88c04eb35d5",
+              "7774dc58-ee12-4d37-ac85-cdab9c9a32c9"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true
+          }
+        },
+        {
+          "id": "f6d1cd6d-5f71-48d6-893d-d88c04eb35d5",
+          "name": "Set Context: REQUEST",
+          "type": "setContext",
+          "data": {
+            "transform": "$",
+            "nextNodes": [
+              "90093b1a-b676-409b-bb45-90938e0d374d"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "49b222c5-510b-4905-a875-f3ded1b3c04a",
+          "name": "Route: ACTION",
+          "type": "switch",
+          "data": {
+            "branches": [
+              {
+                "name": "LOAD",
+                "transform": "ACTION=\"LOAD\"",
+                "nextNodes": [
+                  "326501a2-5929-467a-8286-1f92df99d971"
+                ]
+              },
+              {
+                "name": "UNLOAD",
+                "nextNodes": [
+                  "871d08c0-3757-48e4-bdba-ccfe43289256"
+                ],
+                "transform": "ACTION=\"UNLOAD\""
+              },
+              {
+                "name": "FAIL",
+                "transform": "true",
+                "nextNodes": [
+                  "4e2bdc13-644a-4f4d-831a-1517d9d7364e"
+                ]
+              }
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "4e2bdc13-644a-4f4d-831a-1517d9d7364e",
+          "name": "JSONata: FORMAT",
+          "type": "transform",
+          "data": {
+            "transform": "{\n  \"SUCCESS\":false,\n  \"MESSAGE\": \"No appropriate action was provided\"\n}",
+            "nextNodes": [
+              "2d66affe-1469-4789-855b-c44384cd9c7e"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "7b27b9bc-d879-463c-ad27-bfadddb9d334",
+          "name": "Mutate: Create Production Setup Output/ Production Setup Bom",
+          "type": "mutate",
+          "data": {
+            "api": "Application",
+            "variablesTransform": "$",
+            "mutation": "mutation (\n  $payload: [ProductionSetupOutputCreatePayloadInput!]!\n  $payloadBom: [ProductionSetupBomCreatePayloadInput!]!\n  $payloadDistUpdate: [WorkOrderProcessDistributionUpdatePayloadInput!]!\n  $payloadWorkOrderUpdate: [WorkOrderUpdatePayloadInput!]!\n  $payloadWU:[WorkunitUpdatePayloadInput!]!\n) {\n  createProductionSetupOutput(payload: $payload) {\n    id\n  }\n  createProductionSetupBom(payload: $payloadBom) {\n    id\n  }\n  updateWorkOrderProcessDistribution(payload: $payloadDistUpdate) {\n    id\n  }\n  updateWorkOrder(payload: $payloadWorkOrderUpdate) {\n    id\n  }\n  updateWorkunit(payload : $payloadWU){\n    id\n  }\n}\n",
+            "nextNodes": [
+              "2c971ce4-f630-475b-8118-05d24c53607d"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": true,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "54f13f1d-c8e7-423d-814f-d9e021108f99",
+          "name": "Format Output/ Bom Creation",
+          "type": "transform",
+          "data": {
+            "nextNodes": [
+              "7b27b9bc-d879-463c-ad27-bfadddb9d334"
+            ],
+            "transform": "(\r\n\t$outputId := $cuid();\r\n\t$woProcess := workOrderProcess.edges.node;\r\n\t$request := $state.context.REQUEST.DATA;\r\n\t$wipBom := $woProcess[sequence < $request.workOrderProcess.sequence]^(>sequence)[0] ;\r\n\t$wipProduct := $request.workOrderProcess.workOrder.product.id;\r\n \t{\r\n\t\t\"payload\": [\r\n\t\t\t{\r\n\t\t\t\t\"create\": $state.context\r\n\t\t\t\t\t.REQUEST\r\n\t\t\t\t\t.DATA\r\n\t\t\t\t\t.{\r\n\t\t\t\t\t\t\"id\": $outputId,\r\n\t\t\t\t\t\t\"unitPerCycle\": unitPerCycle,\r\n\t\t\t\t\t\t\"quantity\": balanceQuantity,\r\n\t\t\t\t\t\t\"setBatch\": balanceQuantity,\r\n\t\t\t\t\t\t\"standardPackQuantity\": workOrderProcess\r\n\t\t\t\t\t\t\t.standardPackQuantity,\r\n\t\t\t\t\t\t\"virtual\": false,\r\n\t\t\t\t\t\t\"workunitId\": workunitId,\r\n\t\t\t\t\t\t\"workOrderProcessId\": workOrderProcess.id,\r\n\t\t\t\t\t\t\"workOrderProcessDistributionId\": id\r\n\t\t\t\t\t}\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"payloadBom\": [\r\n\t\t\t$state.context\r\n\t\t\t\t.REQUEST\r\n\t\t\t\t.DATA\r\n\t\t\t\t.workOrderProcess\r\n\t\t\t\t.workOrderProcessBoms\r\n\t\t\t\t.edges\r\n\t\t\t\t.node\r\n\t\t\t\t.{\r\n\t\t\t\t\t\"create\": {\r\n\t\t\t\t\t\t\"addToBatch\": 0,\r\n\t\t\t\t\t\t\"priority\": priority,\r\n\t\t\t\t\t\t\"maximumUsage\": maximumUsage,\r\n\t\t\t\t\t\t\"minimumUsage\": minimumUsage,\r\n\t\t\t\t\t\t\"standardUsage\": standardUsage,\r\n\t\t\t\t\t\t\"consumptionTypeId\": consumptionTypeId,\r\n\t\t\t\t\t\t\"allowOverConsumption\": allowOverConsumption,\r\n\t\t\t\t\t\t\"validate\": validate,\r\n\t\t\t\t\t\t\"extProduct\": extProduct,\r\n\t\t\t\t\t\t\"reference\": reference,\r\n\t\t\t\t\t\t\"componentProductStrategyId\": componentProductStrategyId,\r\n\t\t\t\t\t\t\"componentProductId\": componentProductId,\r\n\t\t\t\t\t\t\"productionSetupOutputId\": $outputId\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t] ~> $append(\r\n\t\t\t[\r\n\t\t\t\t$wipBom.{\r\n\t\t\t\t\t\"create\": {\r\n\t\t\t\t\t\t\"addToBatch\": 0,\r\n\t\t\t\t\t\t\"priority\": 0,\r\n\t\t\t\t\t\t\"maximumUsage\": 1,\r\n\t\t\t\t\t\t\"minimumUsage\": 1,\r\n\t\t\t\t\t\t\"standardUsage\": 1,\r\n\t\t\t\t\t\t\"consumptionTypeId\": \"standard\",\r\n\t\t\t\t\t\t\"allowOverConsumption\": false,\r\n\t\t\t\t\t\t/* \"validate\": true, */\r\n\t\t\t\t\t\t\"wip\": true,\r\n\t\t\t\t\t\t\"componentProductStrategyId\": componentProductStrategyId,\r\n\t\t\t\t\t\t\"componentProductId\": $wipProduct,\r\n\t\t\t\t\t\t\"productionSetupOutputId\": $outputId,\r\n\t\t\t\t\t\t\"wipWorkOrderProcessId\": id\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t),\r\n\t\t\"payloadDistUpdate\": [\r\n\t\t\t$state.context\r\n\t\t\t\t.REQUEST\r\n\t\t\t\t.DATA\r\n\t\t\t\t.{\r\n\t\t\t\t\t\"update\": { \"distributionStatusId\": \"In Process\" },\r\n\t\t\t\t\t\"where\": { \"id\": id }\r\n\t\t\t\t}\r\n\t\t],\r\n\t\t\"payloadWorkOrderUpdate\": [\r\n\t\t\t$state.context\r\n\t\t\t\t.REQUEST\r\n\t\t\t\t.DATA\r\n\t\t\t\t.{\r\n\t\t\t\t\t\"update\": { \"workOrderStatusId\": \"In Process\" },\r\n\t\t\t\t\t\"where\": { \"id\": workOrderProcess.workOrderId }\r\n\t\t\t\t}\r\n\t\t],\r\n\t\t\"payloadWU\": {\r\n\t\t\t\"update\":{\r\n\t\t\t\t\"lastTransactionTypeId\": \"Production Setup Add\"\r\n\t\t\t},\r\n\t\t\t\"where\": {\r\n\t\t\t\t\"id\": $state.context.REQUEST.DATA.workunitId\r\n\t\t\t}\r\n\t\t}\r\n\t\t\r\n\t} \r\n)"
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "2c971ce4-f630-475b-8118-05d24c53607d",
+          "name": "Response",
+          "type": "response",
+          "data": {
+            "responseTransform": "{\n  \"SUCCESS\": true,\n  \"MESSAGE\": \"Successful Dispatch to Workunit \" \n    & $state.context.LOCAL.group.workunit.code\n}",
+            "nextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true
+          }
+        },
+        {
+          "id": "90093b1a-b676-409b-bb45-90938e0d374d",
+          "name": "Try Catch: Main",
+          "type": "tryCatch",
+          "data": {
+            "tryNextNodes": [
+              "49b222c5-510b-4905-a875-f3ded1b3c04a"
+            ],
+            "catchNextNodes": [
+              "0434c021-6197-4a96-ad10-e0e784240b8d"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "6216df1a-51ce-4fa5-819a-c1da5cf379bc",
+          "name": "Response Main Error",
+          "type": "response",
+          "data": {
+            "responseTransform": "{\r\n  \"SUCCESS\": false,\r\n  \"MESSAGE\": $coalesce([$state.lastError.message,\"Unexpected Error Occurred, review Dispatch Functions Data Flow Logs for more detail\"])\r\n}",
+            "nextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "0434c021-6197-4a96-ad10-e0e784240b8d",
+          "name": "TryCatch Main Error",
+          "type": "log",
+          "data": {
+            "messageTransform": "$coalesce([$state.lastError.message,\"Unexpected Error Occurred\"])",
+            "level": "Error",
+            "includeContext": true,
+            "includePayload": true,
+            "nextNodes": [
+              "6216df1a-51ce-4fa5-819a-c1da5cf379bc"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "871d08c0-3757-48e4-bdba-ccfe43289256",
+          "name": "Query Output/Distribution",
+          "type": "query",
+          "data": {
+            "api": "application",
+            "variablesTransform": "{\r\n\t\"where\": {\r\n\t\t\"id\": {\r\n\t\t\t\"_in\": [$.REQUEST.DATA.productionSetupOutputs.edges.node.id]\r\n\t\t}\r\n\t},\r\n\t\"whereDependency\": {\r\n\t\t\"_or\": [\r\n\t\t\t{\r\n\t\t\t\t\"childWorkOrderProcessDistributionId\": {\r\n\t\t\t\t\t\"_in\": [$.REQUEST.DATA.id]\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"parentWorkOrderProcessDistributionId\": {\r\n\t\t\t\t\t\"_in\": [$.REQUEST.DATA.id]\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t]\r\n\t}\r\n}",
+            "query": "query ProductionSetupOutput(\n  $where: ProductionSetupOutputWhereInput\n  $whereDependency: WorkOrderProcessDistributionDependencyWhereInput\n) {\n  productionSetupOutput(where: $where) {\n    edges {\n      node {\n        id\n        unitPerCycle\n        produced\n        quantity\n        scrapped\n        setBatch\n        standardPackQuantity\n        virtual\n        customData\n        integrationData\n        productionData\n        workunitId\n        workOrderProcessId\n        workOrderProcessDistributionId\n        workOrderProcessDistribution {\n          id\n          dispatchSequence\n          unitPerCycle\n          balanceQuantity\n          producedQuantity\n          productionOperators\n          quantity\n          setupOperators\n          active\n          extWorkunit\n          group\n          name\n          actualFinishAt\n          actualStartAt\n          scheduledFinishAt\n          scheduledStartAt\n          customData\n          integrationData\n          cycleDuration\n          idealDuration\n          processDuration\n          scheduledDuration\n          setupDuration\n          standardDuration\n          transitAfter\n          transitBefore\n          distributionStatusId\n          leadingDistributionId\n          productionRunId\n          workOrderProcessId\n          workunitId\n        }\n      }\n    }\n  }\n  workOrderProcessDistributionDependency(where: $whereDependency) {\n    edges {\n      node {\n        id\n        childWorkOrderProcessDistributionId\n        parentWorkOrderProcessDistributionId\n      }\n    }\n  }\n}\n",
+            "nextNodes": [
+              "6adeb1c2-de7a-48b4-9a5a-9306d191c9c5"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "6adeb1c2-de7a-48b4-9a5a-9306d191c9c5",
+          "name": "Save Output Query",
+          "type": "mergeContext",
+          "data": {
+            "transform": "{\r\n\t\"LOCAL\": {\r\n\t\t\"output\":[ $.productionSetupOutput.edges.node],\r\n\t\t\"distribution\": [$\r\n\t\t\t.productionSetupOutput\r\n\t\t\t.edges\r\n\t\t\t.node\r\n\t\t\t.workOrderProcessDistribution],\r\n\t\t\t\"dependency\":[$.workOrderProcessDistributionDependency.edges.node]\r\n\t}\r\n}",
+            "nextNodes": [
+              "6be0a023-9727-402b-ad0b-5fd3f5bfb3f4"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "6be0a023-9727-402b-ad0b-5fd3f5bfb3f4",
+          "name": "Mutate: Delete Output / Create New Distributions / Link Dependencies",
+          "type": "mutate",
+          "data": {
+            "api": "Application",
+            "variablesTransform": "(\r\n\t$newDistId := $cuid();\r\n\t$createNewDistributions := $state.context.CREATE_NEW_DISTRIBUTIONS;\r\n\t{\r\n\t\t\"payloadCreateDistribution\": $createNewDistributions ? [\r\n\t\t\t$state\r\n\t\t\t\t.context\r\n\t\t\t\t.LOCAL\r\n\t\t\t\t.distribution[balanceQuantity > 0]\r\n\t\t\t\t.{\r\n\t\t\t\t\t\"create\": $merge([\r\n\t\t\t\t\t\t$omit(\r\n\t\t\t\t\t\t\t$,\r\n\t\t\t\t\t\t\t[\r\n\t\t\t\t\t\t\t\t\"id\",\r\n\t\t\t\t\t\t\t\t\"balanceQuantity\",\r\n\t\t\t\t\t\t\t\t\"quantity\",\r\n\t\t\t\t\t\t\t\t\"producedQuantity\",\r\n\t\t\t\t\t\t\t\t\"actualFinishAt\",\r\n\t\t\t\t\t\t\t\t\"actualStartAt\",\r\n\t\t\t\t\t\t\t\t\"scheduledFinishAt\",\r\n\t\t\t\t\t\t\t\t\"scheduledStartAt\",\r\n\t\t\t\t\t\t\t\t\"distributionStatusId\"\r\n\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t),\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"id\": $newDistId,\r\n\t\t\t\t\t\t\t\"quantity\": balanceQuantity,\r\n\t\t\t\t\t\t\t\"distributionStatusId\": \"Released\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t])\r\n\t\t\t\t}\r\n\t\t] : [],\r\n\t\t\"payloadUpdateDistribution\": [\r\n\t\t\t$state\r\n\t\t\t\t.context\r\n\t\t\t\t.LOCAL\r\n\t\t\t\t.distribution\r\n\t\t\t\t.{\r\n\t\t\t\t\t\"update\": { \r\n\t\t\t\t\t\t\"distributionStatusId\": \"Complete\",\r\n\t\t\t\t\t\t\"quantity\": producedQuantity \r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"where\": { \"id\": id }\r\n\t\t\t\t}\r\n\t\t],\r\n\t\t\"payloadDependency\": $createNewDistributions ? [\r\n\t\t\t$state\r\n\t\t\t\t.context\r\n\t\t\t\t.LOCAL\r\n\t\t\t\t.dependency\r\n\t\t\t\t.{\r\n\t\t\t\t\t\"create\": childWorkOrderProcessDistributionId\r\n\t\t\t\t\t\t= $state.context.LOCAL.output.id\r\n\t\t\t\t\t\t? {\r\n\t\t\t\t\t\t\t\"childWorkOrderProcessDistributionId\": $newDistId,\r\n\t\t\t\t\t\t\t\"parentWorkOrderProcessDistributionId\": parentWorkOrderProcessDistributionId\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\t: {\r\n\t\t\t\t\t\t\t\"childWorkOrderProcessDistributionId\": childWorkOrderProcessDistributionId,\r\n\t\t\t\t\t\t\t\"parentWorkOrderProcessDistributionId\": $newDistId\r\n\t\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t] : [],\r\n\t\t\"payloadDeleteOutput\": [$state.context.LOCAL.output.{\r\n\t\t\t\t\t\"where\": { \"id\": id }\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\"payloadWU\": {\r\n\t\t\t\"update\":{\r\n\t\t\t\t\"lastTransactionTypeId\": \"Production Setup Clear\"\r\n\t\t\t},\r\n\t\t\t\"where\": {\r\n\t\t\t\t\"id\": $state.context.REQUEST.DATA.workunitId\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n)",
+            "mutation": "mutation DeleteProductionSetupOutput(\n  $payloadDeleteOutput: [ProductionSetupOutputDeletePayloadInput!]!\n  $payloadCreateDistribution: [WorkOrderProcessDistributionCreatePayloadInput!]!\n  $payloadDependency: [WorkOrderProcessDistributionDependencyCreatePayloadInput!]!\n  $payloadUpdateDistribution: [WorkOrderProcessDistributionUpdatePayloadInput!]!\n  $payloadWU:[WorkunitUpdatePayloadInput!]!\n) {\n  deleteProductionSetupOutput(payload: $payloadDeleteOutput) {\n    id\n  }\n  createWorkOrderProcessDistribution(payload: $payloadCreateDistribution) {\n    id\n    dispatchSequence\n    unitPerCycle\n    balanceQuantity\n    producedQuantity\n    productionOperators\n    quantity\n    setupOperators\n    active\n    extWorkunit\n    group\n    actualFinishAt\n    actualStartAt\n    scheduledFinishAt\n    scheduledStartAt\n    customData\n    integrationData\n    cycleDuration\n    idealDuration\n    processDuration\n    scheduledDuration\n    setupDuration\n    standardDuration\n    transitAfter\n    transitBefore\n    distributionStatusId\n    leadingDistributionId\n    workOrderProcessId\n    workunitId\n  }\n  createWorkOrderProcessDistributionDependency(payload: $payloadDependency) {\n    id\n    childWorkOrderProcessDistributionId\n    parentWorkOrderProcessDistributionId\n  }\n  updateWorkOrderProcessDistribution(payload: $payloadUpdateDistribution) {\n    id\n    dispatchSequence\n    distributionStatusId\n  }\n  updateWorkunit(payload : $payloadWU){\n    id\n  }\n}\n",
+            "nextNodes": [
+              "52a60da8-9edc-4977-9fc2-864757cc97c3"
+            ]
+          },
+          "debug": {
+            "breakpointEnabled": true,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "52a60da8-9edc-4977-9fc2-864757cc97c3",
+          "name": "Response",
+          "type": "response",
+          "data": {
+            "responseTransform": "{\n  \"SUCCESS\": true,\n  \"MESSAGE\": \"Successfully Unloaded Distribution from Workunit\",\n  \"DATA\":$ \n}",
+            "nextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true
+          }
+        },
+        {
+          "id": "326501a2-5929-467a-8286-1f92df99d971",
+          "name": "Query WO Processes",
+          "type": "query",
+          "data": {
+            "api": "application",
+            "variablesTransform": "{\r\n  \"where\":{\r\n    \"workOrderId\": {\r\n      \"_eq\": $state.context.REQUEST.DATA.workOrderProcess.workOrderId\r\n    }\r\n  }\r\n}",
+            "nextNodes": [
+              "54f13f1d-c8e7-423d-814f-d9e021108f99"
+            ],
+            "query": "query WorkOrderProcess($where: WorkOrderProcessWhereInput) {\r\n  workOrderProcess(where: $where) {\r\n    edges {\r\n      node {\r\n        id\r\n        processId\r\n        sequence\r\n      }\r\n    }\r\n  }\r\n}"
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        },
+        {
+          "id": "7774dc58-ee12-4d37-ac85-cdab9c9a32c9",
+          "name": "Log",
+          "type": "log",
+          "data": {
+            "messageTransform": "\"Dispatch Functions\"",
+            "level": "Debug",
+            "includeContext": false,
+            "includePayload": true,
+            "nextNodes": []
+          },
+          "debug": {
+            "breakpointEnabled": false,
+            "publishSubscribeClient": false,
+            "publishToMFGx": false
+          },
+          "logging": {
+            "executionMetrics": false,
+            "executionStarted": false,
+            "executionSucceeded": false,
+            "executionFailed": true,
+            "enableTraceLogging": false
+          }
+        }
+      ],
+      "version": "0.0.25"
+    },
+    "diagram": {
+      "id": "cmipbwfnw3zvs07759cu9gtzo",
+      "offsetX": -964.42,
+      "offsetY": -525.57,
+      "zoom": 83.52,
+      "gridSize": 5,
+      "layers": [
+        {
+          "id": "114e81e3-50c3-4c10-b921-3d44256903ac",
+          "type": "diagram-links",
+          "isSvg": true,
+          "transformed": true,
+          "models": {
+            "c435bb65-43ec-4b2d-a78b-12fb437ab672": {
+              "points": [
+                {
+                  "id": "1d8510c8-0ed8-4f5d-ad27-2335285e9532",
+                  "type": "point",
+                  "x": 509,
+                  "y": 984.73
+                },
+                {
+                  "id": "e14c2ea3-5e46-4913-a1ff-cd9134cfb393",
+                  "type": "point",
+                  "x": 590,
+                  "y": 984.73
+                }
+              ],
+              "id": "c435bb65-43ec-4b2d-a78b-12fb437ab672",
+              "type": "default",
+              "selected": false,
+              "source": "6b177aff-58fc-4ce4-9121-7267e307bd2f",
+              "sourcePort": "clqxp48lo004q356mnm9ixpym",
+              "target": "f6d1cd6d-5f71-48d6-893d-d88c04eb35d5",
+              "targetPort": "clqxp48mb0090356mr6tfo3m3",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "c2f19f43-ca7d-42fd-8b5b-faa3ee89de76": {
+              "points": [
+                {
+                  "id": "f45e615d-b0d0-4271-90e2-b839bdec337f",
+                  "type": "point",
+                  "x": 1474,
+                  "y": 1199.73
+                },
+                {
+                  "id": "6d30f676-5e93-453c-a740-7d62cfe78715",
+                  "type": "point",
+                  "x": 1565,
+                  "y": 1199.73
+                }
+              ],
+              "id": "c2f19f43-ca7d-42fd-8b5b-faa3ee89de76",
+              "type": "default",
+              "selected": false,
+              "source": "4e2bdc13-644a-4f4d-831a-1517d9d7364e",
+              "sourcePort": "clqxpcivq00us356m2a60fa3p",
+              "target": "2d66affe-1469-4789-855b-c44384cd9c7e",
+              "targetPort": "clqxp17gn000c356my89zvl6b",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "c42a7292-c45f-4d01-bed0-68ac94f6d6a5": {
+              "points": [
+                {
+                  "id": "0be30d7a-ed82-4949-b079-f19c978838b4",
+                  "type": "point",
+                  "x": 1204,
+                  "y": 1035.05
+                },
+                {
+                  "id": "cda7228c-0660-43f6-a645-ceb7b90ed8a9",
+                  "type": "point",
+                  "x": 1320,
+                  "y": 1199.73
+                }
+              ],
+              "id": "c42a7292-c45f-4d01-bed0-68ac94f6d6a5",
+              "type": "default",
+              "selected": false,
+              "source": "49b222c5-510b-4905-a875-f3ded1b3c04a",
+              "sourcePort": "clqxp8n9k00pw356mljlb7mtz",
+              "target": "4e2bdc13-644a-4f4d-831a-1517d9d7364e",
+              "targetPort": "clqxpcivq00uq356m2ygmv56o",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "a3ebf93d-ef13-449c-bb76-376ccb89d1b3": {
+              "points": [
+                {
+                  "id": "3f92b980-5534-4132-8790-64d9bfc782d0",
+                  "type": "point",
+                  "selected": true,
+                  "x": 1680.53,
+                  "y": 869.73
+                },
+                {
+                  "id": "a887ae5c-b818-49cd-b9cc-a831aad868e1",
+                  "type": "point",
+                  "selected": true,
+                  "x": 1710,
+                  "y": 869.73
+                }
+              ],
+              "id": "a3ebf93d-ef13-449c-bb76-376ccb89d1b3",
+              "type": "default",
+              "selected": false,
+              "source": "54f13f1d-c8e7-423d-814f-d9e021108f99",
+              "sourcePort": "cmbsbxqsa00la356lzui2vsf3",
+              "target": "7b27b9bc-d879-463c-ad27-bfadddb9d334",
+              "targetPort": "cmbsb4mee00ht356lzf6q4k3h",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "abf3f4cf-4aea-4e4f-b934-d6eda62d5711": {
+              "points": [
+                {
+                  "id": "41ddc3e8-30f8-4a1f-b2ec-a91a63722e94",
+                  "type": "point",
+                  "selected": true,
+                  "x": 2102.09,
+                  "y": 869.73
+                },
+                {
+                  "id": "2833dad8-8687-4f58-a362-c37a65cb29d2",
+                  "type": "point",
+                  "selected": true,
+                  "x": 2140,
+                  "y": 869.73
+                }
+              ],
+              "id": "abf3f4cf-4aea-4e4f-b934-d6eda62d5711",
+              "type": "default",
+              "selected": false,
+              "source": "7b27b9bc-d879-463c-ad27-bfadddb9d334",
+              "sourcePort": "cmbsb4mee00hv356ljw7s4a4q",
+              "target": "2c971ce4-f630-475b-8118-05d24c53607d",
+              "targetPort": "cmbsdx0qn011g356l5nwg1n80",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "7c452cc7-0019-42b9-8fb7-825654242203": {
+              "points": [
+                {
+                  "id": "1864f68f-00b7-4c17-bf6f-28090e70e9b4",
+                  "type": "point",
+                  "x": 944,
+                  "y": 984.73
+                },
+                {
+                  "id": "7e035f01-0229-419e-a43d-4def0a159608",
+                  "type": "point",
+                  "x": 1050,
+                  "y": 984.73
+                }
+              ],
+              "id": "7c452cc7-0019-42b9-8fb7-825654242203",
+              "type": "default",
+              "selected": false,
+              "source": "90093b1a-b676-409b-bb45-90938e0d374d",
+              "sourcePort": "cmbsdy0qn011s356lzphvmd2s",
+              "target": "49b222c5-510b-4905-a875-f3ded1b3c04a",
+              "targetPort": "clqxp5blu00k7356mkj47nqyu",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "f00c043b-3375-45d4-ae07-8504293eb217": {
+              "points": [
+                {
+                  "id": "d9bbead3-ef9d-41b3-b13e-3329c6d682d1",
+                  "type": "point",
+                  "x": 944,
+                  "y": 1009.89
+                },
+                {
+                  "id": "ed5cd054-6e3f-4226-afdb-2eacd9b6633b",
+                  "type": "point",
+                  "x": 815,
+                  "y": 1084.73
+                }
+              ],
+              "id": "f00c043b-3375-45d4-ae07-8504293eb217",
+              "type": "default",
+              "selected": false,
+              "source": "90093b1a-b676-409b-bb45-90938e0d374d",
+              "sourcePort": "cmbsdy0qn011u356l1eke1mtr",
+              "target": "0434c021-6197-4a96-ad10-e0e784240b8d",
+              "targetPort": "cmbsdyeca012c356l5pqrql21",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "afdf9d09-8d4d-4ace-8a85-e9f125e48f6e": {
+              "points": [
+                {
+                  "id": "ece71352-d416-47fb-a68b-94755daa9815",
+                  "type": "point",
+                  "x": 969,
+                  "y": 1084.73
+                },
+                {
+                  "id": "627fc884-f7b0-4990-bdc4-89a1dffea2f9",
+                  "type": "point",
+                  "x": 855,
+                  "y": 1154.73
+                }
+              ],
+              "id": "afdf9d09-8d4d-4ace-8a85-e9f125e48f6e",
+              "type": "default",
+              "selected": false,
+              "source": "0434c021-6197-4a96-ad10-e0e784240b8d",
+              "sourcePort": "cmbsdyeca012e356lktoyhqqt",
+              "target": "6216df1a-51ce-4fa5-819a-c1da5cf379bc",
+              "targetPort": "cmbsdyb3y0128356lq9r6rbjh",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "9787f201-e63f-4466-aed8-106d23569ac7": {
+              "points": [
+                {
+                  "id": "5acde7be-a3f0-480d-9cf7-cf92dcbd448a",
+                  "type": "point",
+                  "x": 1204,
+                  "y": 1009.89
+                },
+                {
+                  "id": "4a7bda87-a14f-48e7-a663-6889e68a8f16",
+                  "type": "point",
+                  "x": 1280,
+                  "y": 1009.73
+                }
+              ],
+              "id": "9787f201-e63f-4466-aed8-106d23569ac7",
+              "type": "default",
+              "selected": false,
+              "source": "49b222c5-510b-4905-a875-f3ded1b3c04a",
+              "sourcePort": "clqxp8iev00pj356m1cgskra7",
+              "target": "871d08c0-3757-48e4-bdba-ccfe43289256",
+              "targetPort": "cmbtf9l9a00ft356lh9ft0pcv",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "3fbc8e51-80eb-40a5-aeae-38597376b40c": {
+              "points": [
+                {
+                  "id": "9772aa3c-7c53-4d77-bb86-2874351bc0c0",
+                  "type": "point",
+                  "x": 1463.75,
+                  "y": 1009.73
+                },
+                {
+                  "id": "bb92114f-b2bb-4bba-b262-d7a6428b2939",
+                  "type": "point",
+                  "x": 1500,
+                  "y": 1009.73
+                }
+              ],
+              "id": "3fbc8e51-80eb-40a5-aeae-38597376b40c",
+              "type": "default",
+              "selected": false,
+              "source": "871d08c0-3757-48e4-bdba-ccfe43289256",
+              "sourcePort": "cmbtf9l9a00fv356l6c2do00u",
+              "target": "6adeb1c2-de7a-48b4-9a5a-9306d191c9c5",
+              "targetPort": "cmbtiw0ji00hv356lhjaxm8jt",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "baa332ba-4282-435b-9d9c-b14aa9adcf91": {
+              "points": [
+                {
+                  "id": "7cceedfe-b468-4312-8c82-4eb22146d6b0",
+                  "type": "point",
+                  "x": 1654,
+                  "y": 1009.73
+                },
+                {
+                  "id": "8ce02f69-9740-4d1f-b430-668af6aa500a",
+                  "type": "point",
+                  "x": 1705,
+                  "y": 1009.73
+                }
+              ],
+              "id": "baa332ba-4282-435b-9d9c-b14aa9adcf91",
+              "type": "default",
+              "selected": false,
+              "source": "6adeb1c2-de7a-48b4-9a5a-9306d191c9c5",
+              "sourcePort": "cmbtiw0ji00hx356lxgp17kbj",
+              "target": "6be0a023-9727-402b-ad0b-5fd3f5bfb3f4",
+              "targetPort": "cmbtixgc900ju356lfv7aayhy",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "cde2af56-c0da-4431-95ed-c19883ce475e": {
+              "points": [
+                {
+                  "id": "1251b3b0-c661-441f-8d70-20fe5543fc85",
+                  "type": "point",
+                  "x": 2128.97,
+                  "y": 1009.73
+                },
+                {
+                  "id": "9133d397-4ff7-4225-aebd-a1f1d0897022",
+                  "type": "point",
+                  "x": 2160,
+                  "y": 1009.73
+                }
+              ],
+              "id": "cde2af56-c0da-4431-95ed-c19883ce475e",
+              "type": "default",
+              "selected": false,
+              "source": "6be0a023-9727-402b-ad0b-5fd3f5bfb3f4",
+              "sourcePort": "cmbtixgc900jw356luiq70wry",
+              "target": "52a60da8-9edc-4977-9fc2-864757cc97c3",
+              "targetPort": "cmbtlwj2g01el356lkzas6s04",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "f56d0e61-a35e-48d1-afa5-a26e7562c989": {
+              "points": [
+                {
+                  "id": "d572d637-4462-4936-85bb-f5cb854d0ad3",
+                  "type": "point",
+                  "x": 508.98,
+                  "y": 1064.73
+                },
+                {
+                  "id": "5dd1e74e-573f-42ea-bbea-0fb35fbae1fe",
+                  "type": "point",
+                  "x": 590,
+                  "y": 984.73
+                }
+              ],
+              "id": "f56d0e61-a35e-48d1-afa5-a26e7562c989",
+              "type": "default",
+              "selected": false,
+              "source": "f1ea889f-d2e3-4e00-a1b9-cd5202b122d0",
+              "sourcePort": "cmeboddf100613j6nfkfdx3fq",
+              "target": "f6d1cd6d-5f71-48d6-893d-d88c04eb35d5",
+              "targetPort": "clqxp48mb0090356mr6tfo3m3",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "e419b3a4-e681-44a9-9484-133993a0c2dc": {
+              "points": [
+                {
+                  "id": "478aed3c-abdf-4d5d-8022-aa2783b2e9d7",
+                  "type": "point",
+                  "x": 513.98,
+                  "y": 1194.73
+                },
+                {
+                  "id": "35f546fd-7a83-48ce-a2a8-0074f6025a56",
+                  "type": "point",
+                  "x": 590,
+                  "y": 984.73
+                }
+              ],
+              "id": "e419b3a4-e681-44a9-9484-133993a0c2dc",
+              "type": "default",
+              "selected": false,
+              "source": "3dbdcfde-641d-47d2-ae36-e892292e7cd8",
+              "sourcePort": "cmed9b2jc00vy3j6ngt5pns89",
+              "target": "f6d1cd6d-5f71-48d6-893d-d88c04eb35d5",
+              "targetPort": "clqxp48mb0090356mr6tfo3m3",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "866a9d35-9354-4bac-9866-bf27d3061890": {
+              "points": [
+                {
+                  "id": "977216b7-e226-449a-859c-e0cbfe4042e6",
+                  "type": "point",
+                  "x": 1443.13,
+                  "y": 869.73
+                },
+                {
+                  "id": "d903697f-4969-4415-a627-bd30c27060ce",
+                  "type": "point",
+                  "x": 1475,
+                  "y": 869.73
+                }
+              ],
+              "id": "866a9d35-9354-4bac-9866-bf27d3061890",
+              "type": "default",
+              "source": "326501a2-5929-467a-8286-1f92df99d971",
+              "sourcePort": "cmevud72w00653j6nrw8wyxno",
+              "target": "54f13f1d-c8e7-423d-814f-d9e021108f99",
+              "targetPort": "cmbsbxqsa00l8356lqmyuq1as",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "ffd53424-8743-429b-ae89-afdbb9975364": {
+              "points": [
+                {
+                  "id": "7c080cd9-ee41-4120-9d5d-243e2f744e63",
+                  "type": "point",
+                  "x": 1204,
+                  "y": 984.73
+                },
+                {
+                  "id": "82191cdb-f8e4-4402-8f1f-ade745be1405",
+                  "type": "point",
+                  "x": 1285,
+                  "y": 869.73
+                }
+              ],
+              "id": "ffd53424-8743-429b-ae89-afdbb9975364",
+              "type": "default",
+              "source": "49b222c5-510b-4905-a875-f3ded1b3c04a",
+              "sourcePort": "clqxp872200ok356mtpsuh1lq",
+              "target": "326501a2-5929-467a-8286-1f92df99d971",
+              "targetPort": "cmevud72w00633j6n2ul0trn9",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "0e3fcfb9-41e0-448f-8fee-1e0d9b696ab4": {
+              "points": [
+                {
+                  "id": "bc017ccc-00f4-4ac3-9650-4816588f7e4d",
+                  "type": "point",
+                  "x": 509,
+                  "y": 984.73
+                },
+                {
+                  "id": "3a301b50-95db-4aa0-bf69-18c355b44033",
+                  "type": "point",
+                  "x": 590,
+                  "y": 924.73
+                }
+              ],
+              "id": "0e3fcfb9-41e0-448f-8fee-1e0d9b696ab4",
+              "type": "default",
+              "selected": false,
+              "source": "6b177aff-58fc-4ce4-9121-7267e307bd2f",
+              "sourcePort": "clqxp48lo004q356mnm9ixpym",
+              "target": "7774dc58-ee12-4d37-ac85-cdab9c9a32c9",
+              "targetPort": "cmidkvdsd00al356mkfa5w2vn",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            },
+            "8d4d8d27-3609-4e19-a655-4535ddf6c342": {
+              "points": [
+                {
+                  "id": "24d9f3be-0413-4804-859b-97d302c92cda",
+                  "type": "point",
+                  "x": 755.56,
+                  "y": 984.73
+                },
+                {
+                  "id": "73ede760-4415-4cb8-8ae4-24372d8eb792",
+                  "type": "point",
+                  "x": 790,
+                  "y": 984.73
+                }
+              ],
+              "id": "8d4d8d27-3609-4e19-a655-4535ddf6c342",
+              "type": "default",
+              "selected": false,
+              "source": "f6d1cd6d-5f71-48d6-893d-d88c04eb35d5",
+              "sourcePort": "clqxp48mb0092356mj7bfdyv2",
+              "target": "90093b1a-b676-409b-bb45-90938e0d374d",
+              "targetPort": "cmbsdy0qn011q356lnlfgyjkh",
+              "labels": [],
+              "width": 3,
+              "curvyness": 50
+            }
+          }
+        },
+        {
+          "id": "9cbeb53c-1c91-4fe0-bfef-33bbc83a5364",
+          "type": "diagram-nodes",
+          "isSvg": false,
+          "transformed": true,
+          "models": {
+            "2d66affe-1469-4789-855b-c44384cd9c7e": {
+              "id": "2d66affe-1469-4789-855b-c44384cd9c7e",
+              "type": "response",
+              "selected": false,
+              "x": 1565,
+              "y": 1160,
+              "ports": [
+                {
+                  "id": "clqxp17gn000c356my89zvl6b",
+                  "type": "default",
+                  "x": 1557,
+                  "y": 1191.73,
+                  "name": "clqxp17go000d356mh4jvb2c0",
+                  "parentNode": "2d66affe-1469-4789-855b-c44384cd9c7e",
+                  "links": [
+                    "c2f19f43-ca7d-42fd-8b5b-faa3ee89de76"
+                  ],
+                  "in": true,
+                  "fieldLabel": "Response"
+                },
+                {
+                  "id": "clqxp17go000e356md64ve175",
+                  "type": "default",
+                  "x": 1773.27,
+                  "y": 1191.73,
+                  "name": "clqxp17go000f356m73fr25ic",
+                  "parentNode": "2d66affe-1469-4789-855b-c44384cd9c7e",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "responseTransform": "{\n  \"SUCCESS\":false,\n  \"MESSAGE\": \"No appropriate action was provided\"\n}",
+                "nextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": true,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Response: FAILURE NO ACTION"
+            },
+            "6b177aff-58fc-4ce4-9121-7267e307bd2f": {
+              "id": "6b177aff-58fc-4ce4-9121-7267e307bd2f",
+              "type": "request",
+              "selected": false,
+              "x": 355,
+              "y": 945,
+              "ports": [
+                {
+                  "id": "clqxp48lo004q356mnm9ixpym",
+                  "type": "default",
+                  "x": 501,
+                  "y": 976.73,
+                  "name": "clqxp48lo004r356mcxkrhawi",
+                  "parentNode": "6b177aff-58fc-4ce4-9121-7267e307bd2f",
+                  "links": [
+                    "c435bb65-43ec-4b2d-a78b-12fb437ab672",
+                    "0e3fcfb9-41e0-448f-8fee-1e0d9b696ab4"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Payload",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "nextNodes": [
+                  "f6d1cd6d-5f71-48d6-893d-d88c04eb35d5",
+                  "7774dc58-ee12-4d37-ac85-cdab9c9a32c9"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true
+              },
+              "name": "Request"
+            },
+            "f6d1cd6d-5f71-48d6-893d-d88c04eb35d5": {
+              "id": "f6d1cd6d-5f71-48d6-893d-d88c04eb35d5",
+              "type": "setContext",
+              "selected": false,
+              "x": 590,
+              "y": 945,
+              "ports": [
+                {
+                  "id": "clqxp48mb0090356mr6tfo3m3",
+                  "type": "default",
+                  "x": 582,
+                  "y": 976.73,
+                  "name": "clqxp48mb0091356mrbhlksm8",
+                  "parentNode": "f6d1cd6d-5f71-48d6-893d-d88c04eb35d5",
+                  "links": [
+                    "c435bb65-43ec-4b2d-a78b-12fb437ab672",
+                    "f56d0e61-a35e-48d1-afa5-a26e7562c989",
+                    "e419b3a4-e681-44a9-9484-133993a0c2dc"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clqxp48mb0092356mj7bfdyv2",
+                  "type": "default",
+                  "x": 747.56,
+                  "y": 976.73,
+                  "name": "clqxp48mb0093356m7x4jxy8b",
+                  "parentNode": "f6d1cd6d-5f71-48d6-893d-d88c04eb35d5",
+                  "links": [
+                    "8d4d8d27-3609-4e19-a655-4535ddf6c342"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "transform": "$",
+                "nextNodes": [
+                  "90093b1a-b676-409b-bb45-90938e0d374d"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Set Context: REQUEST"
+            },
+            "49b222c5-510b-4905-a875-f3ded1b3c04a": {
+              "id": "49b222c5-510b-4905-a875-f3ded1b3c04a",
+              "type": "switch",
+              "selected": false,
+              "x": 1050,
+              "y": 945,
+              "ports": [
+                {
+                  "id": "clqxp5blu00k7356mkj47nqyu",
+                  "type": "default",
+                  "x": 1042,
+                  "y": 976.73,
+                  "name": "clqxp5blu00k8356m0igiqqqj",
+                  "parentNode": "49b222c5-510b-4905-a875-f3ded1b3c04a",
+                  "links": [
+                    "7c452cc7-0019-42b9-8fb7-825654242203"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clqxp872200ok356mtpsuh1lq",
+                  "type": "default",
+                  "x": 1196,
+                  "y": 976.73,
+                  "name": "clqxp872200ol356mk97awmlu",
+                  "parentNode": "49b222c5-510b-4905-a875-f3ded1b3c04a",
+                  "links": [
+                    "ffd53424-8743-429b-ae89-afdbb9975364"
+                  ],
+                  "in": false,
+                  "groupName": "LOAD",
+                  "groupIndex": 0,
+                  "groupPath": "data.branches",
+                  "fieldLabel": null,
+                  "fieldPath": "nextNodes"
+                },
+                {
+                  "id": "clqxp8iev00pj356m1cgskra7",
+                  "type": "default",
+                  "x": 1196,
+                  "y": 1001.89,
+                  "name": "clqxp8iev00pk356mpk6jgc8j",
+                  "parentNode": "49b222c5-510b-4905-a875-f3ded1b3c04a",
+                  "links": [
+                    "9787f201-e63f-4466-aed8-106d23569ac7"
+                  ],
+                  "in": false,
+                  "groupName": "UNLOAD",
+                  "groupIndex": 1,
+                  "groupPath": "data.branches",
+                  "fieldLabel": null,
+                  "fieldPath": "nextNodes"
+                },
+                {
+                  "id": "clqxp8n9k00pw356mljlb7mtz",
+                  "type": "default",
+                  "x": 1196,
+                  "y": 1027.05,
+                  "name": "clqxp8n9k00px356mi7bg0yks",
+                  "parentNode": "49b222c5-510b-4905-a875-f3ded1b3c04a",
+                  "links": [
+                    "c42a7292-c45f-4d01-bed0-68ac94f6d6a5"
+                  ],
+                  "in": false,
+                  "groupName": "FAIL",
+                  "groupIndex": 2,
+                  "groupPath": "data.branches",
+                  "fieldLabel": null,
+                  "fieldPath": "nextNodes"
+                }
+              ],
+              "data": {
+                "branches": [
+                  {
+                    "name": "LOAD",
+                    "transform": "ACTION=\"LOAD\"",
+                    "nextNodes": [
+                      "326501a2-5929-467a-8286-1f92df99d971"
+                    ]
+                  },
+                  {
+                    "name": "UNLOAD",
+                    "nextNodes": [
+                      "871d08c0-3757-48e4-bdba-ccfe43289256"
+                    ],
+                    "transform": "ACTION=\"UNLOAD\""
+                  },
+                  {
+                    "name": "FAIL",
+                    "transform": "true",
+                    "nextNodes": [
+                      "4e2bdc13-644a-4f4d-831a-1517d9d7364e"
+                    ]
+                  }
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Route: ACTION"
+            },
+            "4e2bdc13-644a-4f4d-831a-1517d9d7364e": {
+              "id": "4e2bdc13-644a-4f4d-831a-1517d9d7364e",
+              "type": "transform",
+              "selected": false,
+              "x": 1320,
+              "y": 1160,
+              "ports": [
+                {
+                  "id": "clqxpcivq00uq356m2ygmv56o",
+                  "type": "default",
+                  "x": 1312,
+                  "y": 1191.73,
+                  "name": "clqxpcivq00ur356m6avu15ag",
+                  "parentNode": "4e2bdc13-644a-4f4d-831a-1517d9d7364e",
+                  "links": [
+                    "c42a7292-c45f-4d01-bed0-68ac94f6d6a5"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "clqxpcivq00us356m2a60fa3p",
+                  "type": "default",
+                  "x": 1466,
+                  "y": 1191.73,
+                  "name": "clqxpcivq00ut356ml88cyico",
+                  "parentNode": "4e2bdc13-644a-4f4d-831a-1517d9d7364e",
+                  "links": [
+                    "c2f19f43-ca7d-42fd-8b5b-faa3ee89de76"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "transform": "{\n  \"SUCCESS\":false,\n  \"MESSAGE\": \"No appropriate action was provided\"\n}",
+                "nextNodes": [
+                  "2d66affe-1469-4789-855b-c44384cd9c7e"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "JSONata: FORMAT"
+            },
+            "7b27b9bc-d879-463c-ad27-bfadddb9d334": {
+              "id": "7b27b9bc-d879-463c-ad27-bfadddb9d334",
+              "type": "mutate",
+              "selected": false,
+              "x": 1710,
+              "y": 830,
+              "ports": [
+                {
+                  "id": "cmbsb4mee00ht356lzf6q4k3h",
+                  "type": "default",
+                  "x": 1702,
+                  "y": 861.73,
+                  "name": "cmbsb4mee00hu356l9tvp0gpe",
+                  "parentNode": "7b27b9bc-d879-463c-ad27-bfadddb9d334",
+                  "links": [
+                    "a3ebf93d-ef13-449c-bb76-376ccb89d1b3"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "cmbsb4mee00hv356ljw7s4a4q",
+                  "type": "default",
+                  "x": 2094.09,
+                  "y": 861.73,
+                  "name": "cmbsb4mee00hw356lun6hc3gi",
+                  "parentNode": "7b27b9bc-d879-463c-ad27-bfadddb9d334",
+                  "links": [
+                    "abf3f4cf-4aea-4e4f-b934-d6eda62d5711"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "api": "Application",
+                "variablesTransform": "$",
+                "mutation": "mutation (\n  $payload: [ProductionSetupOutputCreatePayloadInput!]!\n  $payloadBom: [ProductionSetupBomCreatePayloadInput!]!\n  $payloadDistUpdate: [WorkOrderProcessDistributionUpdatePayloadInput!]!\n  $payloadWorkOrderUpdate: [WorkOrderUpdatePayloadInput!]!\n  $payloadWU:[WorkunitUpdatePayloadInput!]!\n) {\n  createProductionSetupOutput(payload: $payload) {\n    id\n  }\n  createProductionSetupBom(payload: $payloadBom) {\n    id\n  }\n  updateWorkOrderProcessDistribution(payload: $payloadDistUpdate) {\n    id\n  }\n  updateWorkOrder(payload: $payloadWorkOrderUpdate) {\n    id\n  }\n  updateWorkunit(payload : $payloadWU){\n    id\n  }\n}\n",
+                "nextNodes": [
+                  "2c971ce4-f630-475b-8118-05d24c53607d"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": true,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Mutate: Create Production Setup Output/ Production Setup Bom"
+            },
+            "54f13f1d-c8e7-423d-814f-d9e021108f99": {
+              "id": "54f13f1d-c8e7-423d-814f-d9e021108f99",
+              "type": "transform",
+              "selected": false,
+              "x": 1475,
+              "y": 830,
+              "ports": [
+                {
+                  "id": "cmbsbxqsa00l8356lqmyuq1as",
+                  "type": "default",
+                  "x": 1467,
+                  "y": 861.73,
+                  "name": "cmbsbxqsa00l9356ltrmv5ta0",
+                  "parentNode": "54f13f1d-c8e7-423d-814f-d9e021108f99",
+                  "links": [
+                    "866a9d35-9354-4bac-9866-bf27d3061890"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "cmbsbxqsa00la356lzui2vsf3",
+                  "type": "default",
+                  "x": 1672.53,
+                  "y": 861.73,
+                  "name": "cmbsbxqsa00lb356l4gdeso2f",
+                  "parentNode": "54f13f1d-c8e7-423d-814f-d9e021108f99",
+                  "links": [
+                    "a3ebf93d-ef13-449c-bb76-376ccb89d1b3"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "nextNodes": [
+                  "7b27b9bc-d879-463c-ad27-bfadddb9d334"
+                ],
+                "transform": "(\r\n\t$outputId := $cuid();\r\n\t$woProcess := workOrderProcess.edges.node;\r\n\t$request := $state.context.REQUEST.DATA;\r\n\t$wipBom := $woProcess[sequence < $request.workOrderProcess.sequence]^(>sequence)[0] ;\r\n\t$wipProduct := $request.workOrderProcess.workOrder.product.id;\r\n \t{\r\n\t\t\"payload\": [\r\n\t\t\t{\r\n\t\t\t\t\"create\": $state.context\r\n\t\t\t\t\t.REQUEST\r\n\t\t\t\t\t.DATA\r\n\t\t\t\t\t.{\r\n\t\t\t\t\t\t\"id\": $outputId,\r\n\t\t\t\t\t\t\"unitPerCycle\": unitPerCycle,\r\n\t\t\t\t\t\t\"quantity\": balanceQuantity,\r\n\t\t\t\t\t\t\"setBatch\": balanceQuantity,\r\n\t\t\t\t\t\t\"standardPackQuantity\": workOrderProcess\r\n\t\t\t\t\t\t\t.standardPackQuantity,\r\n\t\t\t\t\t\t\"virtual\": false,\r\n\t\t\t\t\t\t\"workunitId\": workunitId,\r\n\t\t\t\t\t\t\"workOrderProcessId\": workOrderProcess.id,\r\n\t\t\t\t\t\t\"workOrderProcessDistributionId\": id\r\n\t\t\t\t\t}\r\n\t\t\t}\r\n\t\t],\r\n\t\t\"payloadBom\": [\r\n\t\t\t$state.context\r\n\t\t\t\t.REQUEST\r\n\t\t\t\t.DATA\r\n\t\t\t\t.workOrderProcess\r\n\t\t\t\t.workOrderProcessBoms\r\n\t\t\t\t.edges\r\n\t\t\t\t.node\r\n\t\t\t\t.{\r\n\t\t\t\t\t\"create\": {\r\n\t\t\t\t\t\t\"addToBatch\": 0,\r\n\t\t\t\t\t\t\"priority\": priority,\r\n\t\t\t\t\t\t\"maximumUsage\": maximumUsage,\r\n\t\t\t\t\t\t\"minimumUsage\": minimumUsage,\r\n\t\t\t\t\t\t\"standardUsage\": standardUsage,\r\n\t\t\t\t\t\t\"consumptionTypeId\": consumptionTypeId,\r\n\t\t\t\t\t\t\"allowOverConsumption\": allowOverConsumption,\r\n\t\t\t\t\t\t\"validate\": validate,\r\n\t\t\t\t\t\t\"extProduct\": extProduct,\r\n\t\t\t\t\t\t\"reference\": reference,\r\n\t\t\t\t\t\t\"componentProductStrategyId\": componentProductStrategyId,\r\n\t\t\t\t\t\t\"componentProductId\": componentProductId,\r\n\t\t\t\t\t\t\"productionSetupOutputId\": $outputId\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t] ~> $append(\r\n\t\t\t[\r\n\t\t\t\t$wipBom.{\r\n\t\t\t\t\t\"create\": {\r\n\t\t\t\t\t\t\"addToBatch\": 0,\r\n\t\t\t\t\t\t\"priority\": 0,\r\n\t\t\t\t\t\t\"maximumUsage\": 1,\r\n\t\t\t\t\t\t\"minimumUsage\": 1,\r\n\t\t\t\t\t\t\"standardUsage\": 1,\r\n\t\t\t\t\t\t\"consumptionTypeId\": \"standard\",\r\n\t\t\t\t\t\t\"allowOverConsumption\": false,\r\n\t\t\t\t\t\t/* \"validate\": true, */\r\n\t\t\t\t\t\t\"wip\": true,\r\n\t\t\t\t\t\t\"componentProductStrategyId\": componentProductStrategyId,\r\n\t\t\t\t\t\t\"componentProductId\": $wipProduct,\r\n\t\t\t\t\t\t\"productionSetupOutputId\": $outputId,\r\n\t\t\t\t\t\t\"wipWorkOrderProcessId\": id\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t),\r\n\t\t\"payloadDistUpdate\": [\r\n\t\t\t$state.context\r\n\t\t\t\t.REQUEST\r\n\t\t\t\t.DATA\r\n\t\t\t\t.{\r\n\t\t\t\t\t\"update\": { \"distributionStatusId\": \"In Process\" },\r\n\t\t\t\t\t\"where\": { \"id\": id }\r\n\t\t\t\t}\r\n\t\t],\r\n\t\t\"payloadWorkOrderUpdate\": [\r\n\t\t\t$state.context\r\n\t\t\t\t.REQUEST\r\n\t\t\t\t.DATA\r\n\t\t\t\t.{\r\n\t\t\t\t\t\"update\": { \"workOrderStatusId\": \"In Process\" },\r\n\t\t\t\t\t\"where\": { \"id\": workOrderProcess.workOrderId }\r\n\t\t\t\t}\r\n\t\t],\r\n\t\t\"payloadWU\": {\r\n\t\t\t\"update\":{\r\n\t\t\t\t\"lastTransactionTypeId\": \"Production Setup Add\"\r\n\t\t\t},\r\n\t\t\t\"where\": {\r\n\t\t\t\t\"id\": $state.context.REQUEST.DATA.workunitId\r\n\t\t\t}\r\n\t\t}\r\n\t\t\r\n\t} \r\n)"
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Format Output/ Bom Creation"
+            },
+            "2c971ce4-f630-475b-8118-05d24c53607d": {
+              "id": "2c971ce4-f630-475b-8118-05d24c53607d",
+              "type": "response",
+              "selected": false,
+              "x": 2140,
+              "y": 830,
+              "ports": [
+                {
+                  "id": "cmbsdx0qn011g356l5nwg1n80",
+                  "type": "default",
+                  "x": 2132,
+                  "y": 861.73,
+                  "name": "cmbsdx0qn011h356lie1c7bab",
+                  "parentNode": "2c971ce4-f630-475b-8118-05d24c53607d",
+                  "links": [
+                    "abf3f4cf-4aea-4e4f-b934-d6eda62d5711"
+                  ],
+                  "in": true,
+                  "fieldLabel": "Response"
+                },
+                {
+                  "id": "cmbsdx0qn011i356ltpb2qnt6",
+                  "type": "default",
+                  "x": 2285.98,
+                  "y": 861.73,
+                  "name": "cmbsdx0qn011j356lkusnt4d4",
+                  "parentNode": "2c971ce4-f630-475b-8118-05d24c53607d",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "responseTransform": "{\n  \"SUCCESS\": true,\n  \"MESSAGE\": \"Successful Dispatch to Workunit \" \n    & $state.context.LOCAL.group.workunit.code\n}",
+                "nextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true
+              },
+              "name": "Response"
+            },
+            "90093b1a-b676-409b-bb45-90938e0d374d": {
+              "id": "90093b1a-b676-409b-bb45-90938e0d374d",
+              "type": "tryCatch",
+              "selected": false,
+              "x": 790,
+              "y": 945,
+              "ports": [
+                {
+                  "id": "cmbsdy0qn011q356lnlfgyjkh",
+                  "type": "default",
+                  "x": 782,
+                  "y": 976.73,
+                  "name": "cmbsdy0qn011r356l1mdtu46d",
+                  "parentNode": "90093b1a-b676-409b-bb45-90938e0d374d",
+                  "links": [
+                    "8d4d8d27-3609-4e19-a655-4535ddf6c342"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "cmbsdy0qn011s356lzphvmd2s",
+                  "type": "default",
+                  "x": 936,
+                  "y": 976.73,
+                  "name": "cmbsdy0qn011t356loivsp0py",
+                  "parentNode": "90093b1a-b676-409b-bb45-90938e0d374d",
+                  "links": [
+                    "7c452cc7-0019-42b9-8fb7-825654242203"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Try",
+                  "fieldPath": "data.tryNextNodes"
+                },
+                {
+                  "id": "cmbsdy0qn011u356l1eke1mtr",
+                  "type": "default",
+                  "x": 936,
+                  "y": 1001.89,
+                  "name": "cmbsdy0qn011v356lbsioaykx",
+                  "parentNode": "90093b1a-b676-409b-bb45-90938e0d374d",
+                  "links": [
+                    "f00c043b-3375-45d4-ae07-8504293eb217"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Catch",
+                  "fieldPath": "data.catchNextNodes"
+                }
+              ],
+              "data": {
+                "tryNextNodes": [
+                  "49b222c5-510b-4905-a875-f3ded1b3c04a"
+                ],
+                "catchNextNodes": [
+                  "0434c021-6197-4a96-ad10-e0e784240b8d"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Try Catch: Main"
+            },
+            "6216df1a-51ce-4fa5-819a-c1da5cf379bc": {
+              "id": "6216df1a-51ce-4fa5-819a-c1da5cf379bc",
+              "type": "response",
+              "selected": false,
+              "x": 855,
+              "y": 1115,
+              "ports": [
+                {
+                  "id": "cmbsdyb3y0128356lq9r6rbjh",
+                  "type": "default",
+                  "x": 847,
+                  "y": 1146.73,
+                  "name": "cmbsdyb3y0129356lh0nxa67z",
+                  "parentNode": "6216df1a-51ce-4fa5-819a-c1da5cf379bc",
+                  "links": [
+                    "afdf9d09-8d4d-4ace-8a85-e9f125e48f6e"
+                  ],
+                  "in": true,
+                  "fieldLabel": "Response"
+                },
+                {
+                  "id": "cmbsdyb3y012a356l4ewt3215",
+                  "type": "default",
+                  "x": 1004.33,
+                  "y": 1146.73,
+                  "name": "cmbsdyb3y012b356l06busddg",
+                  "parentNode": "6216df1a-51ce-4fa5-819a-c1da5cf379bc",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "responseTransform": "{\r\n  \"SUCCESS\": false,\r\n  \"MESSAGE\": $coalesce([$state.lastError.message,\"Unexpected Error Occurred, review Dispatch Functions Data Flow Logs for more detail\"])\r\n}",
+                "nextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Response Main Error"
+            },
+            "0434c021-6197-4a96-ad10-e0e784240b8d": {
+              "id": "0434c021-6197-4a96-ad10-e0e784240b8d",
+              "type": "log",
+              "selected": false,
+              "x": 815,
+              "y": 1045,
+              "ports": [
+                {
+                  "id": "cmbsdyeca012c356l5pqrql21",
+                  "type": "default",
+                  "x": 807,
+                  "y": 1076.73,
+                  "name": "cmbsdyeca012d356loibqv4sd",
+                  "parentNode": "0434c021-6197-4a96-ad10-e0e784240b8d",
+                  "links": [
+                    "f00c043b-3375-45d4-ae07-8504293eb217"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "cmbsdyeca012e356lktoyhqqt",
+                  "type": "default",
+                  "x": 961,
+                  "y": 1076.73,
+                  "name": "cmbsdyeca012f356l60jpm9up",
+                  "parentNode": "0434c021-6197-4a96-ad10-e0e784240b8d",
+                  "links": [
+                    "afdf9d09-8d4d-4ace-8a85-e9f125e48f6e"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "messageTransform": "$coalesce([$state.lastError.message,\"Unexpected Error Occurred\"])",
+                "level": "Error",
+                "includeContext": true,
+                "includePayload": true,
+                "nextNodes": [
+                  "6216df1a-51ce-4fa5-819a-c1da5cf379bc"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "TryCatch Main Error"
+            },
+            "871d08c0-3757-48e4-bdba-ccfe43289256": {
+              "id": "871d08c0-3757-48e4-bdba-ccfe43289256",
+              "type": "query",
+              "selected": false,
+              "x": 1280,
+              "y": 970,
+              "ports": [
+                {
+                  "id": "cmbtf9l9a00ft356lh9ft0pcv",
+                  "type": "default",
+                  "x": 1272,
+                  "y": 1001.73,
+                  "name": "cmbtf9l9a00fu356l7ay6bfq7",
+                  "parentNode": "871d08c0-3757-48e4-bdba-ccfe43289256",
+                  "links": [
+                    "9787f201-e63f-4466-aed8-106d23569ac7"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "cmbtf9l9a00fv356l6c2do00u",
+                  "type": "default",
+                  "x": 1455.75,
+                  "y": 1001.73,
+                  "name": "cmbtf9l9a00fw356li09k4uoc",
+                  "parentNode": "871d08c0-3757-48e4-bdba-ccfe43289256",
+                  "links": [
+                    "3fbc8e51-80eb-40a5-aeae-38597376b40c"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "api": "application",
+                "variablesTransform": "{\r\n\t\"where\": {\r\n\t\t\"id\": {\r\n\t\t\t\"_in\": [$.REQUEST.DATA.productionSetupOutputs.edges.node.id]\r\n\t\t}\r\n\t},\r\n\t\"whereDependency\": {\r\n\t\t\"_or\": [\r\n\t\t\t{\r\n\t\t\t\t\"childWorkOrderProcessDistributionId\": {\r\n\t\t\t\t\t\"_in\": [$.REQUEST.DATA.id]\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"parentWorkOrderProcessDistributionId\": {\r\n\t\t\t\t\t\"_in\": [$.REQUEST.DATA.id]\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t]\r\n\t}\r\n}",
+                "query": "query ProductionSetupOutput(\n  $where: ProductionSetupOutputWhereInput\n  $whereDependency: WorkOrderProcessDistributionDependencyWhereInput\n) {\n  productionSetupOutput(where: $where) {\n    edges {\n      node {\n        id\n        unitPerCycle\n        produced\n        quantity\n        scrapped\n        setBatch\n        standardPackQuantity\n        virtual\n        customData\n        integrationData\n        productionData\n        workunitId\n        workOrderProcessId\n        workOrderProcessDistributionId\n        workOrderProcessDistribution {\n          id\n          dispatchSequence\n          unitPerCycle\n          balanceQuantity\n          producedQuantity\n          productionOperators\n          quantity\n          setupOperators\n          active\n          extWorkunit\n          group\n          name\n          actualFinishAt\n          actualStartAt\n          scheduledFinishAt\n          scheduledStartAt\n          customData\n          integrationData\n          cycleDuration\n          idealDuration\n          processDuration\n          scheduledDuration\n          setupDuration\n          standardDuration\n          transitAfter\n          transitBefore\n          distributionStatusId\n          leadingDistributionId\n          productionRunId\n          workOrderProcessId\n          workunitId\n        }\n      }\n    }\n  }\n  workOrderProcessDistributionDependency(where: $whereDependency) {\n    edges {\n      node {\n        id\n        childWorkOrderProcessDistributionId\n        parentWorkOrderProcessDistributionId\n      }\n    }\n  }\n}\n",
+                "nextNodes": [
+                  "6adeb1c2-de7a-48b4-9a5a-9306d191c9c5"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Query Output/Distribution"
+            },
+            "6adeb1c2-de7a-48b4-9a5a-9306d191c9c5": {
+              "id": "6adeb1c2-de7a-48b4-9a5a-9306d191c9c5",
+              "type": "mergeContext",
+              "selected": false,
+              "x": 1500,
+              "y": 970,
+              "ports": [
+                {
+                  "id": "cmbtiw0ji00hv356lhjaxm8jt",
+                  "type": "default",
+                  "x": 1492,
+                  "y": 1001.73,
+                  "name": "cmbtiw0ji00hw356lqgerh81s",
+                  "parentNode": "6adeb1c2-de7a-48b4-9a5a-9306d191c9c5",
+                  "links": [
+                    "3fbc8e51-80eb-40a5-aeae-38597376b40c"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "cmbtiw0ji00hx356lxgp17kbj",
+                  "type": "default",
+                  "x": 1646,
+                  "y": 1001.73,
+                  "name": "cmbtiw0ji00hy356lq6t7x718",
+                  "parentNode": "6adeb1c2-de7a-48b4-9a5a-9306d191c9c5",
+                  "links": [
+                    "baa332ba-4282-435b-9d9c-b14aa9adcf91"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "transform": "{\r\n\t\"LOCAL\": {\r\n\t\t\"output\":[ $.productionSetupOutput.edges.node],\r\n\t\t\"distribution\": [$\r\n\t\t\t.productionSetupOutput\r\n\t\t\t.edges\r\n\t\t\t.node\r\n\t\t\t.workOrderProcessDistribution],\r\n\t\t\t\"dependency\":[$.workOrderProcessDistributionDependency.edges.node]\r\n\t}\r\n}",
+                "nextNodes": [
+                  "6be0a023-9727-402b-ad0b-5fd3f5bfb3f4"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Save Output Query"
+            },
+            "6be0a023-9727-402b-ad0b-5fd3f5bfb3f4": {
+              "id": "6be0a023-9727-402b-ad0b-5fd3f5bfb3f4",
+              "type": "mutate",
+              "selected": true,
+              "x": 1705,
+              "y": 970,
+              "ports": [
+                {
+                  "id": "cmbtixgc900ju356lfv7aayhy",
+                  "type": "default",
+                  "x": 1697,
+                  "y": 1001.73,
+                  "name": "cmbtixgc900jv356lmlifqvmy",
+                  "parentNode": "6be0a023-9727-402b-ad0b-5fd3f5bfb3f4",
+                  "links": [
+                    "baa332ba-4282-435b-9d9c-b14aa9adcf91"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "cmbtixgc900jw356luiq70wry",
+                  "type": "default",
+                  "x": 2120.97,
+                  "y": 1001.73,
+                  "name": "cmbtixgc900jx356lnniye5tc",
+                  "parentNode": "6be0a023-9727-402b-ad0b-5fd3f5bfb3f4",
+                  "links": [
+                    "cde2af56-c0da-4431-95ed-c19883ce475e"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "api": "Application",
+                "variablesTransform": "(\r\n\t$newDistId := $cuid();\r\n\t$createNewDistributions := $state.context.CREATE_NEW_DISTRIBUTIONS;\r\n\t{\r\n\t\t\"payloadCreateDistribution\": $createNewDistributions ? [\r\n\t\t\t$state\r\n\t\t\t\t.context\r\n\t\t\t\t.LOCAL\r\n\t\t\t\t.distribution[balanceQuantity > 0]\r\n\t\t\t\t.{\r\n\t\t\t\t\t\"create\": $merge([\r\n\t\t\t\t\t\t$omit(\r\n\t\t\t\t\t\t\t$,\r\n\t\t\t\t\t\t\t[\r\n\t\t\t\t\t\t\t\t\"id\",\r\n\t\t\t\t\t\t\t\t\"balanceQuantity\",\r\n\t\t\t\t\t\t\t\t\"quantity\",\r\n\t\t\t\t\t\t\t\t\"producedQuantity\",\r\n\t\t\t\t\t\t\t\t\"actualFinishAt\",\r\n\t\t\t\t\t\t\t\t\"actualStartAt\",\r\n\t\t\t\t\t\t\t\t\"scheduledFinishAt\",\r\n\t\t\t\t\t\t\t\t\"scheduledStartAt\",\r\n\t\t\t\t\t\t\t\t\"distributionStatusId\"\r\n\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t),\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"id\": $newDistId,\r\n\t\t\t\t\t\t\t\"quantity\": balanceQuantity,\r\n\t\t\t\t\t\t\t\"distributionStatusId\": \"Released\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t])\r\n\t\t\t\t}\r\n\t\t] : [],\r\n\t\t\"payloadUpdateDistribution\": [\r\n\t\t\t$state\r\n\t\t\t\t.context\r\n\t\t\t\t.LOCAL\r\n\t\t\t\t.distribution\r\n\t\t\t\t.{\r\n\t\t\t\t\t\"update\": { \r\n\t\t\t\t\t\t\"distributionStatusId\": \"Complete\",\r\n\t\t\t\t\t\t\"quantity\": producedQuantity \r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"where\": { \"id\": id }\r\n\t\t\t\t}\r\n\t\t],\r\n\t\t\"payloadDependency\": $createNewDistributions ? [\r\n\t\t\t$state\r\n\t\t\t\t.context\r\n\t\t\t\t.LOCAL\r\n\t\t\t\t.dependency\r\n\t\t\t\t.{\r\n\t\t\t\t\t\"create\": childWorkOrderProcessDistributionId\r\n\t\t\t\t\t\t= $state.context.LOCAL.output.id\r\n\t\t\t\t\t\t? {\r\n\t\t\t\t\t\t\t\"childWorkOrderProcessDistributionId\": $newDistId,\r\n\t\t\t\t\t\t\t\"parentWorkOrderProcessDistributionId\": parentWorkOrderProcessDistributionId\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\t: {\r\n\t\t\t\t\t\t\t\"childWorkOrderProcessDistributionId\": childWorkOrderProcessDistributionId,\r\n\t\t\t\t\t\t\t\"parentWorkOrderProcessDistributionId\": $newDistId\r\n\t\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t] : [],\r\n\t\t\"payloadDeleteOutput\": [$state.context.LOCAL.output.{\r\n\t\t\t\t\t\"where\": { \"id\": id }\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\"payloadWU\": {\r\n\t\t\t\"update\":{\r\n\t\t\t\t\"lastTransactionTypeId\": \"Production Setup Clear\"\r\n\t\t\t},\r\n\t\t\t\"where\": {\r\n\t\t\t\t\"id\": $state.context.REQUEST.DATA.workunitId\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n)",
+                "mutation": "mutation DeleteProductionSetupOutput(\n  $payloadDeleteOutput: [ProductionSetupOutputDeletePayloadInput!]!\n  $payloadCreateDistribution: [WorkOrderProcessDistributionCreatePayloadInput!]!\n  $payloadDependency: [WorkOrderProcessDistributionDependencyCreatePayloadInput!]!\n  $payloadUpdateDistribution: [WorkOrderProcessDistributionUpdatePayloadInput!]!\n  $payloadWU:[WorkunitUpdatePayloadInput!]!\n) {\n  deleteProductionSetupOutput(payload: $payloadDeleteOutput) {\n    id\n  }\n  createWorkOrderProcessDistribution(payload: $payloadCreateDistribution) {\n    id\n    dispatchSequence\n    unitPerCycle\n    balanceQuantity\n    producedQuantity\n    productionOperators\n    quantity\n    setupOperators\n    active\n    extWorkunit\n    group\n    actualFinishAt\n    actualStartAt\n    scheduledFinishAt\n    scheduledStartAt\n    customData\n    integrationData\n    cycleDuration\n    idealDuration\n    processDuration\n    scheduledDuration\n    setupDuration\n    standardDuration\n    transitAfter\n    transitBefore\n    distributionStatusId\n    leadingDistributionId\n    workOrderProcessId\n    workunitId\n  }\n  createWorkOrderProcessDistributionDependency(payload: $payloadDependency) {\n    id\n    childWorkOrderProcessDistributionId\n    parentWorkOrderProcessDistributionId\n  }\n  updateWorkOrderProcessDistribution(payload: $payloadUpdateDistribution) {\n    id\n    dispatchSequence\n    distributionStatusId\n  }\n  updateWorkunit(payload : $payloadWU){\n    id\n  }\n}\n",
+                "nextNodes": [
+                  "52a60da8-9edc-4977-9fc2-864757cc97c3"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": true,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Mutate: Delete Output / Create New Distributions / Link Dependencies",
+              "note": "Deletes production setup output provided and creates new distribution for any remaining unproduced balances. New Distributions will need to be manually rescheduled\n\n## Dependencies are not currently regenerated by this functionality"
+            },
+            "52a60da8-9edc-4977-9fc2-864757cc97c3": {
+              "id": "52a60da8-9edc-4977-9fc2-864757cc97c3",
+              "type": "response",
+              "selected": false,
+              "x": 2160,
+              "y": 970,
+              "ports": [
+                {
+                  "id": "cmbtlwj2g01el356lkzas6s04",
+                  "type": "default",
+                  "x": 2152,
+                  "y": 1001.73,
+                  "name": "cmbtlwj2g01em356l0fu1ccqa",
+                  "parentNode": "52a60da8-9edc-4977-9fc2-864757cc97c3",
+                  "links": [
+                    "cde2af56-c0da-4431-95ed-c19883ce475e"
+                  ],
+                  "in": true,
+                  "fieldLabel": "Response"
+                },
+                {
+                  "id": "cmbtlwj2g01en356lrx7l8e11",
+                  "type": "default",
+                  "x": 2305.98,
+                  "y": 1001.73,
+                  "name": "cmbtlwj2g01eo356lemn5c7jp",
+                  "parentNode": "52a60da8-9edc-4977-9fc2-864757cc97c3",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "responseTransform": "{\n  \"SUCCESS\": true,\n  \"MESSAGE\": \"Successfully Unloaded Distribution from Workunit\",\n  \"DATA\":$ \n}",
+                "nextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true
+              },
+              "name": "Response"
+            },
+            "f1ea889f-d2e3-4e00-a1b9-cd5202b122d0": {
+              "id": "f1ea889f-d2e3-4e00-a1b9-cd5202b122d0",
+              "type": "debugSource",
+              "selected": false,
+              "x": 355,
+              "y": 1025,
+              "ports": [
+                {
+                  "id": "cmeboddf100613j6nfkfdx3fq",
+                  "type": "default",
+                  "x": 500.98,
+                  "y": 1056.73,
+                  "name": "cmeboddf100623j6na50yx5lo",
+                  "parentNode": "f1ea889f-d2e3-4e00-a1b9-cd5202b122d0",
+                  "links": [
+                    "f56d0e61-a35e-48d1-afa5-a26e7562c989"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "payload": {
+                  "REQUEST": {
+                    "DATA": {
+                      "id": "cminq3dtm065b07h3b0urarlt",
+                      "distributionStatusId": "Released",
+                      "dispatchSequence": 17,
+                      "productionRunId": null,
+                      "setupDuration": "PT3M30S",
+                      "workOrderProcess": {
+                        "id": "cminpdt1w05zq07h32nd80ynu",
+                        "workOrder": {
+                          "extProduct": null,
+                          "number": "WO000019",
+                          "product": {
+                            "code": "Cake.rev0",
+                            "image": null
+                          }
+                        },
+                        "process": {
+                          "code": "Mix"
+                        },
+                        "sequence": 10,
+                        "workOrderId": "cminpdt1v05zp07h3cp2m1zbk",
+                        "standardPackQuantity": 0,
+                        "workOrderProcessBoms": {
+                          "edges": [
+                            {
+                              "node": {
+                                "id": "cminpdt5831230775gdy9eins",
+                                "priority": 100,
+                                "maximumUsage": 999999999,
+                                "minimumUsage": 0,
+                                "standardUsage": 1,
+                                "consumptionTypeId": "standard",
+                                "allowOverConsumption": false,
+                                "extProduct": null,
+                                "reference": null,
+                                "componentProductStrategyId": null,
+                                "componentProductId": "Sugar.rev0"
+                              }
+                            },
+                            {
+                              "node": {
+                                "id": "cminpdt59312407757klb6230",
+                                "priority": 100,
+                                "maximumUsage": 999999999,
+                                "minimumUsage": 0,
+                                "standardUsage": 2,
+                                "consumptionTypeId": "actual",
+                                "allowOverConsumption": false,
+                                "extProduct": null,
+                                "reference": null,
+                                "componentProductStrategyId": null,
+                                "componentProductId": "Flour.rev1"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "productionSetupOutputs": {
+                        "total": 0,
+                        "edges": []
+                      },
+                      "balanceQuantity": 10,
+                      "standardDuration": "PT45S",
+                      "unitPerCycle": 1,
+                      "workunitId": "Counter 1",
+                      "product": "Cake.rev0",
+                      "running": false,
+                      "process": "Mix",
+                      "workOrder": "WO000019",
+                      "image": null,
+                      "runTime": "PT7M30S",
+                      "setupTime": "PT3M30S"
+                    }
+                  },
+                  "ACTION": "LOAD"
+                },
+                "context": {},
+                "nextNodes": [
+                  "f6d1cd6d-5f71-48d6-893d-d88c04eb35d5"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Source: Load"
+            },
+            "3dbdcfde-641d-47d2-ae36-e892292e7cd8": {
+              "id": "3dbdcfde-641d-47d2-ae36-e892292e7cd8",
+              "type": "debugSource",
+              "selected": false,
+              "x": 360,
+              "y": 1155,
+              "ports": [
+                {
+                  "id": "cmed9b2jc00vy3j6ngt5pns89",
+                  "type": "default",
+                  "x": 505.98,
+                  "y": 1186.73,
+                  "name": "cmed9b2jc00vz3j6nck4eq2cz",
+                  "parentNode": "3dbdcfde-641d-47d2-ae36-e892292e7cd8",
+                  "links": [
+                    "e419b3a4-e681-44a9-9484-133993a0c2dc"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "payload": {
+                  "REQUEST": {
+                    "ACTION": "UNLOAD",
+                    "DATA": {
+                      "id": "cmed8qtx002kj01ir10l62kv0",
+                      "distributionStatusId": "In Process",
+                      "dispatchSequence": 2,
+                      "productionRunId": null,
+                      "setupDuration": null,
+                      "workOrderProcess": {
+                        "id": "cmed8qj2v001n3j6n1u7q5sow",
+                        "workOrder": {
+                          "extProduct": null,
+                          "number": "WO000037",
+                          "product": {
+                            "code": "RaspberryPi.rev0",
+                            "image": null
+                          }
+                        },
+                        "process": {
+                          "code": "SMT-Mount"
+                        },
+                        "workOrderId": "WO000037",
+                        "standardPackQuantity": 0,
+                        "workOrderProcessBoms": {
+                          "edges": [
+                            {
+                              "node": {
+                                "id": "cmed8qjwa07bo018o64r5hrpo",
+                                "priority": 100,
+                                "maximumUsage": 999999999,
+                                "minimumUsage": 0,
+                                "standardUsage": 1,
+                                "consumptionTypeId": "none",
+                                "allowOverConsumption": false,
+                                "validate": true,
+                                "extProduct": null,
+                                "reference": null,
+                                "componentProductStrategyId": null,
+                                "componentProductId": "RPi-RAM.rev0"
+                              }
+                            },
+                            {
+                              "node": {
+                                "id": "cmed8qjwa07bp018o4erhaw8f",
+                                "priority": 100,
+                                "maximumUsage": 999999999,
+                                "minimumUsage": 0,
+                                "standardUsage": 1,
+                                "consumptionTypeId": "none",
+                                "allowOverConsumption": false,
+                                "validate": true,
+                                "extProduct": null,
+                                "reference": null,
+                                "componentProductStrategyId": null,
+                                "componentProductId": "RPi-SOC.rev0"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "productionSetupOutputs": {
+                        "total": 1,
+                        "edges": [
+                          {
+                            "node": {
+                              "id": "cmewz20h2012r01h9biw5b8kc"
+                            }
+                          }
+                        ]
+                      },
+                      "balanceQuantity": 100,
+                      "standardDuration": null,
+                      "unitPerCycle": 1,
+                      "workunitId": "SMT-Mount",
+                      "product": "RaspberryPi.rev0",
+                      "running": true,
+                      "process": "SMT-Mount",
+                      "workOrder": "WO000037",
+                      "image": null,
+                      "runTime": "Not Config.",
+                      "setupTime": "Not Config."
+                    }
+                  }
+                },
+                "context": {},
+                "nextNodes": [
+                  "f6d1cd6d-5f71-48d6-893d-d88c04eb35d5"
+                ]
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Source: Unload"
+            },
+            "326501a2-5929-467a-8286-1f92df99d971": {
+              "id": "326501a2-5929-467a-8286-1f92df99d971",
+              "type": "query",
+              "selected": false,
+              "x": 1285,
+              "y": 830,
+              "ports": [
+                {
+                  "id": "cmevud72w00633j6n2ul0trn9",
+                  "type": "default",
+                  "x": 1277,
+                  "y": 861.73,
+                  "name": "cmevud72w00643j6nl4nz1ts1",
+                  "parentNode": "326501a2-5929-467a-8286-1f92df99d971",
+                  "links": [
+                    "ffd53424-8743-429b-ae89-afdbb9975364"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "cmevud72w00653j6nrw8wyxno",
+                  "type": "default",
+                  "x": 1435.13,
+                  "y": 861.73,
+                  "name": "cmevud72w00663j6nimphd7qu",
+                  "parentNode": "326501a2-5929-467a-8286-1f92df99d971",
+                  "links": [
+                    "866a9d35-9354-4bac-9866-bf27d3061890"
+                  ],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "api": "application",
+                "variablesTransform": "{\r\n  \"where\":{\r\n    \"workOrderId\": {\r\n      \"_eq\": $state.context.REQUEST.DATA.workOrderProcess.workOrderId\r\n    }\r\n  }\r\n}",
+                "nextNodes": [
+                  "54f13f1d-c8e7-423d-814f-d9e021108f99"
+                ],
+                "query": "query WorkOrderProcess($where: WorkOrderProcessWhereInput) {\r\n  workOrderProcess(where: $where) {\r\n    edges {\r\n      node {\r\n        id\r\n        processId\r\n        sequence\r\n      }\r\n    }\r\n  }\r\n}"
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Query WO Processes",
+              "note": "needed to add WIP components to BOM"
+            },
+            "0f72f788-9166-414f-90c5-1416c4a5114d": {
+              "id": "0f72f788-9166-414f-90c5-1416c4a5114d",
+              "type": "debugSource",
+              "selected": false,
+              "x": 360,
+              "y": 1090,
+              "ports": [
+                {
+                  "id": "cmewzauac00rl3j6nuw3ejls6",
+                  "type": "default",
+                  "x": 505.98,
+                  "y": 1121.73,
+                  "name": "cmewzauac00rm3j6n3osgpbnz",
+                  "parentNode": "0f72f788-9166-414f-90c5-1416c4a5114d",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "payload": {
+                  "REQUEST": {
+                    "ACTION": "LOAD",
+                    "DATA": {
+                      "id": "cmelpru1p01ex01gu18m24pfw",
+                      "distributionStatusId": "Released",
+                      "dispatchSequence": 2,
+                      "productionRunId": null,
+                      "setupDuration": null,
+                      "workOrderProcess": {
+                        "id": "cmelkln6701ah3j6n82lpgg6j",
+                        "workOrder": {
+                          "extProduct": null,
+                          "number": "WO000041",
+                          "product": {
+                            "code": "RaspberryPi.rev0",
+                            "image": null
+                          }
+                        },
+                        "process": {
+                          "code": "SMT-Mount"
+                        },
+                        "workOrderId": "WO000041",
+                        "standardPackQuantity": 0,
+                        "workOrderProcessBoms": {
+                          "edges": [
+                            {
+                              "node": {
+                                "id": "cmelklnnb01tu014c1oyegpa3",
+                                "priority": 100,
+                                "maximumUsage": 999999999,
+                                "minimumUsage": 0,
+                                "standardUsage": 1,
+                                "consumptionTypeId": "none",
+                                "allowOverConsumption": false,
+                                "validate": true,
+                                "extProduct": null,
+                                "reference": null,
+                                "componentProductStrategyId": null,
+                                "componentProductId": "RPi-RAM.rev0"
+                              }
+                            },
+                            {
+                              "node": {
+                                "id": "cmelklnnc01tv014c71nz8dzr",
+                                "priority": 100,
+                                "maximumUsage": 999999999,
+                                "minimumUsage": 0,
+                                "standardUsage": 1,
+                                "consumptionTypeId": "none",
+                                "allowOverConsumption": false,
+                                "validate": true,
+                                "extProduct": null,
+                                "reference": null,
+                                "componentProductStrategyId": null,
+                                "componentProductId": "RPi-SOC.rev0"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "productionSetupOutputs": {
+                        "total": 0,
+                        "edges": []
+                      },
+                      "balanceQuantity": 10,
+                      "standardDuration": null,
+                      "unitPerCycle": 1,
+                      "workunitId": "SMT-Mount",
+                      "product": "RaspberryPi.rev0",
+                      "running": false,
+                      "process": "SMT-Mount",
+                      "workOrder": "WO000041",
+                      "image": null,
+                      "runTime": "Not Config.",
+                      "setupTime": "Not Config."
+                    }
+                  }
+                },
+                "context": {},
+                "nextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Source: Load"
+            },
+            "7774dc58-ee12-4d37-ac85-cdab9c9a32c9": {
+              "id": "7774dc58-ee12-4d37-ac85-cdab9c9a32c9",
+              "type": "log",
+              "selected": false,
+              "x": 590,
+              "y": 885,
+              "ports": [
+                {
+                  "id": "cmidkvdsd00al356mkfa5w2vn",
+                  "type": "default",
+                  "x": 582,
+                  "y": 916.73,
+                  "name": "cmidkvdsd00am356ms40wzf4t",
+                  "parentNode": "7774dc58-ee12-4d37-ac85-cdab9c9a32c9",
+                  "links": [
+                    "0e3fcfb9-41e0-448f-8fee-1e0d9b696ab4"
+                  ],
+                  "in": true
+                },
+                {
+                  "id": "cmidkvdse00an356m0qk5eqpv",
+                  "type": "default",
+                  "x": 736,
+                  "y": 916.73,
+                  "name": "cmidkvdse00ao356micuetphk",
+                  "parentNode": "7774dc58-ee12-4d37-ac85-cdab9c9a32c9",
+                  "links": [],
+                  "in": false,
+                  "groupIndex": null,
+                  "groupPath": null,
+                  "fieldLabel": "Output",
+                  "fieldPath": "data.nextNodes"
+                }
+              ],
+              "data": {
+                "messageTransform": "\"Dispatch Functions\"",
+                "level": "Debug",
+                "includeContext": false,
+                "includePayload": true,
+                "nextNodes": []
+              },
+              "debug": {
+                "breakpointEnabled": false,
+                "publishSubscribeClient": false,
+                "publishToMFGx": false
+              },
+              "logging": {
+                "executionMetrics": false,
+                "executionStarted": false,
+                "executionSucceeded": false,
+                "executionFailed": true,
+                "enableTraceLogging": false
+              },
+              "name": "Log"
+            }
+          }
+        }
+      ],
+      "name": "Dispatch Functions",
+      "type": "System",
+      "version": "0.0.25",
+      "walkthrough": {
+        "steps": [],
+        "includeIntroduction": true
+      }
+    }
+  }
+}

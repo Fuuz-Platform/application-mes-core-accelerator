@@ -1,0 +1,25 @@
+{
+  "api": "application",
+  "modelName": "ProcessType",
+  "payload": [
+    {
+      "id": "manufactured",
+      "usable": true,
+      "code": "Manufactured ",
+      "description": "Processes that are preformed on site.",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "receive",
+      "usable": true,
+      "code": "Receive",
+      "description": "Used for the receiving process on non manufactured products.",
+      "_customFields": {
+        "_externalId": null
+      }
+    }
+  ],
+  "metadata": {}
+}

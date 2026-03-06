@@ -1,0 +1,27 @@
+{
+  "api": "application",
+  "modelName": "ProductStrategyType",
+  "payload": [
+    {
+      "id": "manufactured",
+      "active": true,
+      "usable": true,
+      "code": "Manufactured",
+      "description": "An item produced via work order, Kanban, or manually, requiring a BOM at its first process and at least one manufacturing process in its strategy.",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "purchased",
+      "active": true,
+      "usable": true,
+      "code": "Purchased",
+      "description": "An item only received via PO or manually added, limited to one strategy process of Receive, and can never have a BOM.",
+      "_customFields": {
+        "_externalId": null
+      }
+    }
+  ],
+  "metadata": {}
+}

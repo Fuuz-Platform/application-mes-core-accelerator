@@ -1,0 +1,942 @@
+{
+  "header": {
+    "id": "controlPanelDemo",
+    "name": "Control Panel Demo",
+    "description": "",
+    "active": true,
+    "moduleId": "testing",
+    "isWidget": false,
+    "_customFields": {
+      "_externalId": null
+    }
+  },
+  "version": {
+    "id": "cmigvl44k2c6c0775exh55ywc",
+    "number": "0.0.7",
+    "description": "",
+    "screenId": "controlPanelDemo",
+    "design": {
+      "components": [
+        {
+          "name": "New Screen",
+          "tabTitle": "New Tab",
+          "type": "canvas",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "flowsDelay": 0,
+                  "removeOuterMargin": false,
+                  "screenDataFlowIds": [
+                    "controlPanelWebFlow"
+                  ]
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 55,
+                    "Tab Bar": 5,
+                    "Text": 20,
+                    "Action Button": 7,
+                    "Form": 3,
+                    "Cards": 6,
+                    "Tabs": 1,
+                    "Image": 1,
+                    "Action": 4,
+                    "Widget": 6,
+                    "Select": 1
+                  }
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "99m-czH25y"
+                ],
+                "linkedNodes": {}
+              },
+              "99m-czH25y": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "g-xLxeG9Bx",
+                  "bFA-a89G3-"
+                ],
+                "linkedNodes": {}
+              },
+              "g-xLxeG9Bx": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container40"
+                },
+                "parent": "99m-czH25y",
+                "hidden": false,
+                "nodes": [
+                  "HybQCpkofN"
+                ],
+                "linkedNodes": {}
+              },
+              "bFA-a89G3-": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container41"
+                },
+                "parent": "99m-czH25y",
+                "hidden": false,
+                "nodes": [
+                  "n1hAEpvlWl"
+                ],
+                "linkedNodes": {}
+              },
+              "n1hAEpvlWl": {
+                "type": {
+                  "resolvedName": "TabBar"
+                },
+                "isCanvas": false,
+                "props": {
+                  "width": "100%",
+                  "height": "100%",
+                  "orientation": "horizontal",
+                  "justifyTabs": "center",
+                  "tabWidth": 160,
+                  "hidden": false,
+                  "tabActiveColor": "secondary",
+                  "tabs": [
+                    {
+                      "tabId": 0,
+                      "tabTitle": "Dispatch"
+                    },
+                    {
+                      "tabId": 2,
+                      "tabTitle": "BOM"
+                    },
+                    {
+                      "tabId": 5,
+                      "tabTitle": "1-Up"
+                    },
+                    {
+                      "tabId": 9,
+                      "tabTitle": "State"
+                    },
+                    {
+                      "tabId": 14,
+                      "tabTitle": "Steps"
+                    }
+                  ]
+                },
+                "displayName": "Tabs",
+                "custom": {
+                  "elementName": "Tabs1"
+                },
+                "parent": "bFA-a89G3-",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {
+                  "undefinedDetail0": "43BDo9nIz2",
+                  "Tabs1Detail2": "dPWK5eXaTV",
+                  "Tabs1Detail0": "t_f5n1Fc5b",
+                  "Tabs1Detail5": "ggBeFI-aQD",
+                  "Tabs1Detail9": "0lRjrpbNaV",
+                  "Tabs1Detail14": "Z-FbXAjGUu"
+                }
+              },
+              "43BDo9nIz2": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "undefinedDetail0"
+                },
+                "parent": "n1hAEpvlWl",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "dPWK5eXaTV": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Tabs1Detail2"
+                },
+                "parent": "n1hAEpvlWl",
+                "hidden": false,
+                "nodes": [
+                  "QsdcmrEqHv"
+                ],
+                "linkedNodes": {}
+              },
+              "t_f5n1Fc5b": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Tabs1Detail0"
+                },
+                "parent": "n1hAEpvlWl",
+                "hidden": false,
+                "nodes": [
+                  "z79Q4xK5cA"
+                ],
+                "linkedNodes": {}
+              },
+              "HybQCpkofN": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "parameters": "{\n  \"filter\": {\n    \"id\": {\n      \"_eq\": $coalesce([$metadata.urlParameters.id, \"-1\"])\n    }\n  },\n  \"first\": 1\n}",
+                    "fields": [
+                      "id",
+                      "productionSetupOutputs.edges.node.id",
+                      "currentProductionRunId"
+                    ],
+                    "disableDataChangeIndicator": false,
+                    "model": "Workunit"
+                  },
+                  "blockNavigationWhenDirty": true,
+                  "enableConfirmOnDataChanged": false,
+                  "description": "The central manufacturing resource model that represents a specific piece of equipment, machine, or production station capable of executing manufacturing processes. Workunits are the fundamental building blocks of the production floor and serve as the primary constraint resources in scheduling and execution."
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form3"
+                },
+                "parent": "g-xLxeG9Bx",
+                "hidden": false,
+                "nodes": [
+                  "GN572_GR1V"
+                ],
+                "linkedNodes": {}
+              },
+              "GN572_GR1V": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 8,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": true,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container53"
+                },
+                "parent": "HybQCpkofN",
+                "hidden": false,
+                "nodes": [
+                  "toA0YTifuD",
+                  "_A2_-fojQx"
+                ],
+                "linkedNodes": {}
+              },
+              "QsdcmrEqHv": {
+                "type": {
+                  "resolvedName": "ScreenWidget"
+                },
+                "isCanvas": false,
+                "props": {
+                  "screenParams": {
+                    "__transform": "{\r\n  \"id\": components.Form6.data.id\r\n}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "width": "100%",
+                  "height": "100%",
+                  "screenId": "setupMaterialWidget",
+                  "screenName": "loadSetupMaterialWidget"
+                },
+                "displayName": "Widget",
+                "custom": {
+                  "editor": {
+                    "category": "Layout",
+                    "description": "Provides Screen Widgets for screens.",
+                    "color": "#235175",
+                    "icon": "pen-square"
+                  },
+                  "elementName": "Widget1"
+                },
+                "parent": "dPWK5eXaTV",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "ggBeFI-aQD": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Tabs1Detail5"
+                },
+                "parent": "n1hAEpvlWl",
+                "hidden": false,
+                "nodes": [
+                  "D3DERwOLLb"
+                ],
+                "linkedNodes": {}
+              },
+              "toA0YTifuD": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "display",
+                  "label": "Workunit",
+                  "justifyContent": "start",
+                  "alignTextItems": "start",
+                  "labelFontSize": "body1",
+                  "fontSize": "body1",
+                  "formElement": "Form3",
+                  "dataPath": "code",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "description": "(String!, Required, Unique): Business-friendly unique identifier used for operational reference",
+                  "field": "code"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text20"
+                },
+                "parent": "GN572_GR1V",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "z79Q4xK5cA": {
+                "type": {
+                  "resolvedName": "ScreenWidget"
+                },
+                "isCanvas": false,
+                "props": {
+                  "screenParams": {
+                    "__transform": "{\n  \"id\": components.Form6.data.id\n}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "width": "100%",
+                  "height": "auto",
+                  "screenId": "dispatchWidget"
+                },
+                "displayName": "Widget",
+                "custom": {
+                  "editor": {
+                    "category": "Layout",
+                    "description": "Provides Screen Widgets for screens.",
+                    "color": "#235175",
+                    "icon": "pen-square"
+                  },
+                  "elementName": "Widget3"
+                },
+                "parent": "t_f5n1Fc5b",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "_A2_-fojQx": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "__transform": "(\n  $icon := $components.Form3.data.currentProductionRunId? \"stop\" : \"play\";\n  {\n    \"icon\": $icon,\n    \"variant\": \"duotone\",\n    \"size\": \"icon\"\n  }\n)",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "width": "100%",
+                  "height": "75px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "flow",
+                      "flowId": "productionRunFunctions",
+                      "transforms": {
+                        "pre": "{\r\n  \"workunitId\": $components.Form3.data.id\r\n}",
+                        "post": "$components.Form3.fn.loadData()"
+                      }
+                    }
+                  ],
+                  "customButtonColor": {
+                    "__transform": "$components.Form3.data.currentProductionRunId? \"#ff0000\" : \"#42A048\"",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "text": {
+                    "__transform": "$components.Form3.data.currentProductionRunId? \"Stop Run\" : \"Start Run\"",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Action",
+                "custom": {
+                  "elementName": "Action4"
+                },
+                "parent": "GN572_GR1V",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "0lRjrpbNaV": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Tabs1Detail9"
+                },
+                "parent": "n1hAEpvlWl",
+                "hidden": false,
+                "nodes": [
+                  "rslzOMC-SN"
+                ],
+                "linkedNodes": {}
+              },
+              "rslzOMC-SN": {
+                "type": {
+                  "resolvedName": "ScreenWidget"
+                },
+                "isCanvas": false,
+                "props": {
+                  "screenParams": {
+                    "__transform": "{\r\n  \"id\": components.Form6.data.id\r\n}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "width": "100%",
+                  "height": "auto",
+                  "screenId": "modeStateChangeModal"
+                },
+                "displayName": "Widget",
+                "custom": {
+                  "editor": {
+                    "category": "Layout",
+                    "description": "Provides Screen Widgets for screens.",
+                    "color": "#235175",
+                    "icon": "pen-square"
+                  },
+                  "elementName": "Widget4"
+                },
+                "parent": "0lRjrpbNaV",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Z-FbXAjGUu": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Tabs1Detail14"
+                },
+                "parent": "n1hAEpvlWl",
+                "hidden": false,
+                "nodes": [
+                  "3-nDKslpW9"
+                ],
+                "linkedNodes": {}
+              },
+              "3-nDKslpW9": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container54"
+                },
+                "parent": "Z-FbXAjGUu",
+                "hidden": false,
+                "nodes": [
+                  "fAuFE_duKo"
+                ],
+                "linkedNodes": {}
+              },
+              "fAuFE_duKo": {
+                "type": {
+                  "resolvedName": "ScreenWidget"
+                },
+                "isCanvas": false,
+                "props": {
+                  "screenParams": {
+                    "__transform": "{\r\n  \"id\": components.Form6.data.id\r\n}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "width": "100%",
+                  "height": "auto",
+                  "screenId": "productionStepWidget"
+                },
+                "displayName": "Widget",
+                "custom": {
+                  "editor": {
+                    "category": "Layout",
+                    "description": "Provides Screen Widgets for screens.",
+                    "color": "#235175",
+                    "icon": "pen-square"
+                  },
+                  "elementName": "Widget5"
+                },
+                "parent": "3-nDKslpW9",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "D3DERwOLLb": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container55"
+                },
+                "parent": "ggBeFI-aQD",
+                "hidden": false,
+                "nodes": [
+                  "owlYUhDGgc"
+                ],
+                "linkedNodes": {}
+              },
+              "owlYUhDGgc": {
+                "type": {
+                  "resolvedName": "ScreenWidget"
+                },
+                "isCanvas": false,
+                "props": {
+                  "screenParams": {
+                    "__transform": "{\r\n  \"id\": components.Form6.data.id\r\n}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "width": "100%",
+                  "height": "auto",
+                  "screenId": "productionWidget"
+                },
+                "displayName": "Widget",
+                "custom": {
+                  "editor": {
+                    "category": "Layout",
+                    "description": "Provides Screen Widgets for screens.",
+                    "color": "#235175",
+                    "icon": "pen-square"
+                  },
+                  "elementName": "Widget6"
+                },
+                "parent": "D3DERwOLLb",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "cmg6q7l09021501767hrwcuzk",
+      "title": "Control Panel Demo",
+      "path": "/system/testing/controlPanelDemo/:id",
+      "moduleId": "testing",
+      "screenId": "controlPanelDemo",
+      "isMenuAccessible": true,
+      "submenu": ""
+    }
+  ]
+}

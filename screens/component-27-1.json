@@ -1,0 +1,1567 @@
+{
+  "header": {
+    "id": "productionHistory",
+    "name": "Production History",
+    "description": "",
+    "active": true,
+    "moduleId": "testing",
+    "isWidget": false,
+    "_customFields": {
+      "_externalId": null
+    }
+  },
+  "version": {
+    "id": "cmipeprln45900775cfil4csq",
+    "number": "0.0.4",
+    "description": "",
+    "screenId": "productionHistory",
+    "design": {
+      "components": [
+        {
+          "type": "canvas",
+          "name": "ProductionHistoryTable",
+          "tabTitle": "Production History Table",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "stretch",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "flowsDelay": 0,
+                  "removeOuterMargin": false
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "Screen",
+                  "elementCounts": {
+                    "Container": 8,
+                    "Action Button": 4,
+                    "Form": 2,
+                    "Table": 2,
+                    "Table Column": 14,
+                    "Text": 2,
+                    "Decimal": 2,
+                    "Checkbox": 1,
+                    "Date Range": 1,
+                    "Select": 6,
+                    "Button Group": 1,
+                    "Action": 4,
+                    "Visualization": 1
+                  },
+                  "module": {
+                    "id": "testing",
+                    "group": {
+                      "id": "system"
+                    }
+                  },
+                  "dataModel": "ProductionHistory",
+                  "template": "table"
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "VTgpUurylJ"
+                ],
+                "linkedNodes": {}
+              },
+              "LNdDriaZHX": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "75%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "VTgpUurylJ",
+                "hidden": false,
+                "nodes": [
+                  "RtD0VPIUcO"
+                ],
+                "linkedNodes": {}
+              },
+              "kEprdvym4j": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "model": "ProductionHistory",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": false
+                  },
+                  "blockNavigationWhenDirty": false,
+                  "enableConfirmOnDataChanged": false
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form1"
+                },
+                "parent": "3QBT5x5YEx",
+                "hidden": false,
+                "nodes": [
+                  "LCXTvDlg0c"
+                ],
+                "linkedNodes": {}
+              },
+              "LCXTvDlg0c": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 1,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-start",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "kEprdvym4j",
+                "hidden": false,
+                "nodes": [
+                  "NVx6WQLS4t",
+                  "f2LqPV8Sqz",
+                  "8fIJcHl32g",
+                  "yk4u0nJktV",
+                  "oADjR-kuMf",
+                  "HLB1ghoJ8Q",
+                  "GC-ee_hysR",
+                  "MLGa8M6xXy",
+                  "s5rLEqIgeY"
+                ],
+                "linkedNodes": {}
+              },
+              "oADjR-kuMf": {
+                "type": {
+                  "resolvedName": "Checkbox"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "checkbox",
+                  "label": "Scrap",
+                  "formElement": "Form1",
+                  "additionalFilter": {},
+                  "dataPath": "scrap",
+                  "field": "scrap",
+                  "description": "Whether or not the produced output is scrap. ",
+                  "element": "Checkbox",
+                  "predicate": "_eq",
+                  "target": {
+                    "dataPath": "scrap._eq"
+                  }
+                },
+                "displayName": "Checkbox",
+                "custom": {
+                  "elementName": "Checkbox1"
+                },
+                "parent": "LCXTvDlg0c",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "yk4u0nJktV": {
+                "type": {
+                  "resolvedName": "TextInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "text",
+                  "label": "Serial",
+                  "variant": "standard",
+                  "formElement": "Form1",
+                  "additionalFilter": {},
+                  "dataPath": "serial",
+                  "field": "serial",
+                  "description": "Serial number of the produced output.",
+                  "element": "TextInput",
+                  "predicate": "_contains",
+                  "target": {
+                    "dataPath": "serial._contains"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text2"
+                },
+                "parent": "LCXTvDlg0c",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "HLB1ghoJ8Q": {
+                "type": {
+                  "resolvedName": "SelectInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "select",
+                  "label": "Workunit",
+                  "dialogMode": "never",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "selectAll": true,
+                  "searchPredicate": "contains",
+                  "api": "Application",
+                  "stateTracking": "full",
+                  "optionLimit": 5,
+                  "optionLimitFlex": 5,
+                  "alwaysReloadOptions": false,
+                  "formElement": "Form1",
+                  "additionalFilter": {},
+                  "dataPath": "workunit",
+                  "field": "workunit",
+                  "description": "Workunit object",
+                  "element": "SelectInput",
+                  "dataModel": "Workunit",
+                  "labelField": "code",
+                  "labelPath": "code",
+                  "additionalFields": [
+                    "code"
+                  ],
+                  "selectFields": [
+                    "code"
+                  ],
+                  "target": {
+                    "dataPath": "workunit.id._eq"
+                  },
+                  "predicate": "_eq",
+                  "linkTarget": {
+                    "__transform": "\"/productionManagement/manufacturing/workunits/\" & data.workunit.id"
+                  },
+                  "query": {
+                    "fields": [
+                      "workunit.id",
+                      "workunit.code"
+                    ]
+                  }
+                },
+                "displayName": "Select",
+                "custom": {
+                  "elementName": "Select1"
+                },
+                "parent": "LCXTvDlg0c",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "GC-ee_hysR": {
+                "type": {
+                  "resolvedName": "SelectInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "select",
+                  "label": "Production Run",
+                  "dialogMode": "never",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "selectAll": true,
+                  "searchPredicate": "contains",
+                  "api": "Application",
+                  "stateTracking": "full",
+                  "optionLimit": 5,
+                  "optionLimitFlex": 5,
+                  "alwaysReloadOptions": false,
+                  "formElement": "Form1",
+                  "additionalFilter": {},
+                  "dataPath": "productionRun",
+                  "field": "productionRun",
+                  "description": "",
+                  "element": "SelectInput",
+                  "dataModel": "ProductionRun",
+                  "labelField": "number",
+                  "labelPath": "number",
+                  "additionalFields": [
+                    "number"
+                  ],
+                  "selectFields": [
+                    "number"
+                  ],
+                  "target": {
+                    "dataPath": "productionRun.id._eq"
+                  },
+                  "predicate": "_eq",
+                  "linkTarget": {
+                    "__transform": "\"/productionManagement/manufacturing/productionRuns/\" & data.productionRun.id"
+                  },
+                  "query": {
+                    "fields": [
+                      "productionRun.id",
+                      "productionRun.number"
+                    ]
+                  }
+                },
+                "displayName": "Select",
+                "custom": {
+                  "elementName": "Select2"
+                },
+                "parent": "LCXTvDlg0c",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "MLGa8M6xXy": {
+                "type": {
+                  "resolvedName": "SelectInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "select",
+                  "label": "Scrap Reason",
+                  "dialogMode": "never",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "selectAll": true,
+                  "searchPredicate": "contains",
+                  "api": "Application",
+                  "stateTracking": "full",
+                  "optionLimit": 5,
+                  "optionLimitFlex": 5,
+                  "alwaysReloadOptions": false,
+                  "formElement": "Form1",
+                  "additionalFilter": {},
+                  "dataPath": "scrapReason",
+                  "field": "scrapReason",
+                  "description": "",
+                  "element": "SelectInput",
+                  "dataModel": "ScrapReason",
+                  "labelField": "code",
+                  "labelPath": "code",
+                  "additionalFields": [
+                    "code"
+                  ],
+                  "selectFields": [
+                    "code"
+                  ],
+                  "target": {
+                    "dataPath": "scrapReason.id._eq"
+                  },
+                  "predicate": "_eq",
+                  "linkTarget": {
+                    "__transform": "\"/traceabilityAndGenealogy/genealogyTracking/scrapReasons/\" & data.scrapReason.id"
+                  },
+                  "query": {
+                    "fields": [
+                      "scrapReason.id",
+                      "scrapReason.code"
+                    ]
+                  }
+                },
+                "displayName": "Select",
+                "custom": {
+                  "elementName": "Select3"
+                },
+                "parent": "LCXTvDlg0c",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "f2LqPV8Sqz": {
+                "type": {
+                  "resolvedName": "SelectInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "select",
+                  "label": "Work Order Process",
+                  "dialogMode": "never",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "selectAll": true,
+                  "searchPredicate": "contains",
+                  "api": "Application",
+                  "stateTracking": "full",
+                  "optionLimit": 5,
+                  "optionLimitFlex": 5,
+                  "alwaysReloadOptions": false,
+                  "formElement": "Form1",
+                  "additionalFilter": {},
+                  "dataPath": "workOrderProcessDistribution.workOrderProcess",
+                  "field": "workOrderProcessDistribution.workOrderProcess",
+                  "element": "SelectInput",
+                  "dataModel": "WorkOrderProcess",
+                  "labelField": "id",
+                  "labelPath": "name",
+                  "additionalFields": [],
+                  "selectFields": [
+                    "sequence",
+                    "workOrder.number",
+                    "process.code"
+                  ],
+                  "target": {
+                    "dataPath": "workOrderProcessDistribution.workOrderProcessId._eq"
+                  },
+                  "predicate": "_eq",
+                  "query": {
+                    "fields": [
+                      "workOrderProcessDistribution.workOrderProcess.id",
+                      "workOrderProcessDistribution.workOrderProcess.id"
+                    ]
+                  },
+                  "orderByField": "id"
+                },
+                "displayName": "Select",
+                "custom": {
+                  "elementName": "Select4"
+                },
+                "parent": "LCXTvDlg0c",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "s5rLEqIgeY": {
+                "type": {
+                  "resolvedName": "WrappedGraphQLPredicate"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "graphqlWhere",
+                  "dataPath": "predicate",
+                  "target": {
+                    "dataPath": "_and.0"
+                  },
+                  "label": "Filter Builder",
+                  "formElement": "Form1"
+                },
+                "displayName": "GraphQL Where Input",
+                "custom": {
+                  "elementName": "GraphQlWhereInput1"
+                },
+                "parent": "LCXTvDlg0c",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "3QBT5x5YEx": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 8,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "25%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "VTgpUurylJ",
+                "hidden": false,
+                "nodes": [
+                  "kEprdvym4j"
+                ],
+                "linkedNodes": {}
+              },
+              "nTSp2gJkFd": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 6,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": "search",
+                    "variant": "duotone",
+                    "size": "icon"
+                  },
+                  "width": "76px",
+                  "height": "48px",
+                  "disabled": false,
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "$components.Table1.fn.search()",
+                      "remote": false
+                    }
+                  ],
+                  "title": "Search"
+                },
+                "displayName": "Action",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "NVx6WQLS4t",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "RtD0VPIUcO": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 1,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "model": "ProductionHistory",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id"
+                    ]
+                  },
+                  "selectable": "none",
+                  "showToolPanels": true,
+                  "showStatusBar": true,
+                  "enableGrouping": true,
+                  "enableCharts": true,
+                  "showColumnMenu": true,
+                  "enableRowDragging": false,
+                  "disableColumnDragging": false,
+                  "disableDragLeaveHidesColumns": false,
+                  "masterDetail": true,
+                  "detailHeight": 300,
+                  "hideTableHeader": false,
+                  "filterFormName": "Form1",
+                  "description": "",
+                  "rowMultiSelectWithClick": false,
+                  "limitToOneActiveDetail": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table1"
+                },
+                "parent": "LNdDriaZHX",
+                "hidden": false,
+                "nodes": [
+                  "Jxm-MiNtdd",
+                  "jQ3VZKsFrS",
+                  "pH7fRNIpBp",
+                  "xUvs3zN_v7",
+                  "zY6Du7uuYs",
+                  "wh8B1gu_UE",
+                  "WAilvk7Lt9",
+                  "kqkDapJsxL",
+                  "Z_2s1H-6My",
+                  "n6Tin-rVnz",
+                  "3PPLqQkBTx"
+                ],
+                "linkedNodes": {
+                  "Table1Detail": "dKI53eUtaM"
+                }
+              },
+              "Jxm-MiNtdd": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Number",
+                  "format": "text",
+                  "sortable": true,
+                  "field": "number",
+                  "dataPath": "number",
+                  "description": "An auto-number that is created for the end-user experience.  This field is also used as the table's label.",
+                  "linkTarget": {
+                    "__transform": "\"/system/testing/productionHistories/\" & data.id"
+                  },
+                  "query": {
+                    "fields": [
+                      "id",
+                      "number"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn1"
+                },
+                "parent": "RtD0VPIUcO",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "pH7fRNIpBp": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Quantity",
+                  "format": "float",
+                  "sortable": true,
+                  "field": "quantity",
+                  "dataPath": "quantity",
+                  "description": "What is the production quantity?"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn2"
+                },
+                "parent": "RtD0VPIUcO",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "kqkDapJsxL": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Scrap",
+                  "format": "checkmark",
+                  "sortable": true,
+                  "field": "scrap",
+                  "dataPath": "scrap",
+                  "description": "Whether or not the produced output is scrap. "
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn3"
+                },
+                "parent": "RtD0VPIUcO",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "jQ3VZKsFrS": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Serial",
+                  "format": "text",
+                  "sortable": true,
+                  "field": "serial",
+                  "dataPath": "serial",
+                  "description": "Serial number of the produced output."
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn4"
+                },
+                "parent": "RtD0VPIUcO",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "WAilvk7Lt9": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Occur At",
+                  "format": "datetime",
+                  "sortable": true,
+                  "field": "occurAt",
+                  "dataPath": "occurAt",
+                  "description": "When was the production occurred at?"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn5"
+                },
+                "parent": "RtD0VPIUcO",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "wh8B1gu_UE": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Workunit",
+                  "format": "text",
+                  "sortable": true,
+                  "field": "workunit.code",
+                  "dataPath": "workunit.code",
+                  "description": "(String!, Required, Unique): Business-friendly unique identifier used for operational reference",
+                  "query": {
+                    "fields": [
+                      "workunit.id",
+                      "workunit.code"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn6"
+                },
+                "parent": "RtD0VPIUcO",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Z_2s1H-6My": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Production Run",
+                  "format": "text",
+                  "sortable": true,
+                  "field": "productionRun.number",
+                  "dataPath": "productionRun.number",
+                  "description": "Sequence - shared between multiple production Runs, if co-production",
+                  "query": {
+                    "fields": [
+                      "productionRun.id",
+                      "productionRun.number"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn7"
+                },
+                "parent": "RtD0VPIUcO",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "n6Tin-rVnz": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Scrap Reason",
+                  "format": "text",
+                  "sortable": true,
+                  "field": "scrapReason.code",
+                  "dataPath": "scrapReason.code",
+                  "description": "This is the code of the scrap reason   - Label field",
+                  "linkTarget": {
+                    "__transform": "\"/traceabilityAndGenealogy/genealogyTracking/scrapReasons/\" & data.scrapReason.id"
+                  },
+                  "query": {
+                    "fields": [
+                      "scrapReason.id",
+                      "scrapReason.code"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn8"
+                },
+                "parent": "RtD0VPIUcO",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "zY6Du7uuYs": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Work Order Process",
+                  "format": "text",
+                  "sortable": true,
+                  "field": "workOrderProcessDistribution.workOrderProcess.process.code",
+                  "dataPath": "workOrderProcessDistribution.workOrderProcess.process.code",
+                  "description": "Process unique code - Label field (UNIQUE, REQUIRED)",
+                  "query": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn9"
+                },
+                "parent": "RtD0VPIUcO",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "xUvs3zN_v7": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Work Order",
+                  "format": "text",
+                  "sortable": true,
+                  "field": "workOrderProcessDistribution.workOrderProcess.workOrder.number",
+                  "dataPath": "workOrderProcessDistribution.workOrderProcess.workOrder.number",
+                  "description": "Label field, and the number of the Work Order. This should also be the ID of the workorder.",
+                  "query": {
+                    "fields": [
+                      "workOrderProcessDistribution.workOrderProcess.workOrder.id",
+                      "workOrderProcessDistribution.workOrderProcess.workOrder.number"
+                    ]
+                  }
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn10"
+                },
+                "parent": "RtD0VPIUcO",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "3PPLqQkBTx": {
+                "type": {
+                  "resolvedName": "CustomFieldsTableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Custom Fields",
+                  "expandGroups": false,
+                  "dataPath": "_customFields",
+                  "field": "_customFields",
+                  "dataModel": "ProductionHistory"
+                },
+                "displayName": "Custom Column",
+                "custom": {
+                  "elementName": "Custom Column1"
+                },
+                "parent": "RtD0VPIUcO",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "VTgpUurylJ": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container4"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "3QBT5x5YEx",
+                  "LNdDriaZHX"
+                ],
+                "linkedNodes": {}
+              },
+              "NVx6WQLS4t": {
+                "type": {
+                  "resolvedName": "ButtonsGroup"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 6,
+                  "width": "100%",
+                  "height": "auto"
+                },
+                "displayName": "Button Group",
+                "custom": {
+                  "elementName": "ButtonGroup1"
+                },
+                "parent": "LCXTvDlg0c",
+                "hidden": false,
+                "nodes": [
+                  "nTSp2gJkFd"
+                ],
+                "linkedNodes": {}
+              },
+              "dKI53eUtaM": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "lockSize": true
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Table1Detail"
+                },
+                "parent": "RtD0VPIUcO",
+                "hidden": false,
+                "nodes": [
+                  "y7K4TqrvcK"
+                ],
+                "linkedNodes": {}
+              },
+              "y7K4TqrvcK": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container5"
+                },
+                "parent": "dKI53eUtaM",
+                "hidden": false,
+                "nodes": [
+                  "D_iGw8nOZ8",
+                  "lroQNoEQMZ"
+                ],
+                "linkedNodes": {}
+              },
+              "7qZNO6vzdi": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "flexGrow": true,
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id"
+                    ],
+                    "disableDataChangeIndicator": false,
+                    "selectedDataChangeIndicator": null,
+                    "model": "ProductionHistoryInput",
+                    "parameters": "{\r\n  \"filter\":{\r\n    \"productionHistoryId\":{\r\n      \"_eq\": $parent.data.id\r\n    }\r\n  }\r\n}"
+                  },
+                  "selectable": "none",
+                  "showToolPanels": false,
+                  "showStatusBar": false,
+                  "enableGrouping": false,
+                  "enableCharts": false,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "disableColumnDragging": false,
+                  "disableDragLeaveHidesColumns": false,
+                  "masterDetail": false,
+                  "hideTableHeader": false,
+                  "description": "Inputs that are used to create a production history output",
+                  "tableName": "Production Inputs",
+                  "rowMultiSelectWithClick": false,
+                  "limitToOneActiveDetail": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "Table2"
+                },
+                "parent": "D_iGw8nOZ8",
+                "hidden": false,
+                "nodes": [
+                  "G4Gaigm-yZ",
+                  "Irvi6kE46p",
+                  "wbbJKbuovR"
+                ],
+                "linkedNodes": {}
+              },
+              "G4Gaigm-yZ": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Serial",
+                  "format": "text",
+                  "sortable": true,
+                  "dataPath": "serial",
+                  "description": "Serial number of input Production Setup Material",
+                  "query": {},
+                  "field": "serial",
+                  "width": "100px"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn11"
+                },
+                "parent": "7qZNO6vzdi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Irvi6kE46p": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Quantity",
+                  "format": "integer",
+                  "sortable": true,
+                  "dataPath": "quantity",
+                  "description": "",
+                  "query": {},
+                  "field": "quantity",
+                  "width": "100px"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn12"
+                },
+                "parent": "7qZNO6vzdi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "wbbJKbuovR": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Product",
+                  "format": "text",
+                  "sortable": true,
+                  "dataPath": "product.code",
+                  "description": "Label field ( number - revision) - (REQUIRED)",
+                  "query": {
+                    "fields": [
+                      "product.id",
+                      "product.code"
+                    ]
+                  },
+                  "field": "product.code",
+                  "width": "100px"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn13"
+                },
+                "parent": "7qZNO6vzdi",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "8fIJcHl32g": {
+                "type": {
+                  "resolvedName": "SelectInput"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "auto",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "select",
+                  "label": "Work Order",
+                  "dialogMode": "never",
+                  "multiselect": false,
+                  "isClearable": true,
+                  "selectAll": true,
+                  "searchPredicate": "contains",
+                  "api": "Application",
+                  "stateTracking": "full",
+                  "optionLimit": 5,
+                  "optionLimitFlex": 5,
+                  "alwaysReloadOptions": false,
+                  "formElement": "Form1",
+                  "additionalFilter": {},
+                  "dataPath": "workOrderProcessDistribution.workOrderProcess.workOrder",
+                  "field": "workOrderProcessDistribution.workOrderProcess.workOrder",
+                  "element": "SelectInput",
+                  "dataModel": "WorkOrder",
+                  "labelField": "id",
+                  "labelPath": "number",
+                  "additionalFields": [],
+                  "selectFields": [
+                    "number"
+                  ],
+                  "target": {
+                    "dataPath": "workOrderProcessDistribution.workOrderProcess.workOrderId._eq"
+                  },
+                  "predicate": "_eq",
+                  "query": {
+                    "fields": [
+                      "workOrderProcessDistribution.workOrderProcess.workOrder.id",
+                      "workOrderProcessDistribution.workOrderProcess.workOrder.number"
+                    ]
+                  },
+                  "orderByField": "number"
+                },
+                "displayName": "Select",
+                "custom": {
+                  "elementName": "Select6"
+                },
+                "parent": "LCXTvDlg0c",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "D_iGw8nOZ8": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "30%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container6"
+                },
+                "parent": "y7K4TqrvcK",
+                "hidden": false,
+                "nodes": [
+                  "7qZNO6vzdi"
+                ],
+                "linkedNodes": {}
+              },
+              "lroQNoEQMZ": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "70%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container7"
+                },
+                "parent": "y7K4TqrvcK",
+                "hidden": false,
+                "nodes": [
+                  "qBU7v4SA7-"
+                ],
+                "linkedNodes": {}
+              },
+              "qBU7v4SA7-": {
+                "type": {
+                  "resolvedName": "Form"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges[0]",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "parameters": "{\n  \"filter\": {\n    \"id\": {\n      \"_eq\": id\n    }\n  },\n  \"first\": 1\n}",
+                    "fields": [
+                      "id"
+                    ],
+                    "disableDataChangeIndicator": false,
+                    "dataChangeIndicatorSize": "normal"
+                  },
+                  "blockNavigationWhenDirty": true,
+                  "enableConfirmOnDataChanged": false
+                },
+                "displayName": "Form",
+                "custom": {
+                  "elementName": "Form2"
+                },
+                "parent": "lroQNoEQMZ",
+                "hidden": false,
+                "nodes": [
+                  "desCbLy2bL"
+                ],
+                "linkedNodes": {}
+              },
+              "desCbLy2bL": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 8,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "flexShrink": false,
+                  "shadow": true,
+                  "borderRadius": 4,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container8"
+                },
+                "parent": "qBU7v4SA7-",
+                "hidden": false,
+                "nodes": [
+                  "n-rFJsyfms"
+                ],
+                "linkedNodes": {}
+              },
+              "n-rFJsyfms": {
+                "type": {
+                  "resolvedName": "Visualization"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 8,
+                  "width": "100%",
+                  "height": "100%",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "visualization",
+                  "label": "Id",
+                  "visualizationTransformRemote": true,
+                  "syncTimeseriesRange": false,
+                  "visualizationSetting": "Chart Type",
+                  "visualizationImageUrl": "https://www.fusioncharts.com/dev/images/chart-anatomy/sankey-diagram-anatomy.png",
+                  "visualizationChartType": "sankey",
+                  "visualizationConfiguration": {
+                    "chart": {
+                      "caption": "Production History Genealogy",
+                      "showLegend": "0",
+                      "linkcolor": "blend",
+                      "theme": "candy",
+                      "nodewidth": 0,
+                      "linkcurvature": 0.6,
+                      "linkalpha": 40,
+                      "nodelinkpadding": 3
+                    }
+                  },
+                  "formElement": "Form1",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "dataPath": "id",
+                  "description": "The primary unique ID of the record.  Every model should have an id field.",
+                  "field": "id",
+                  "visualizationParameters": {
+                    "__transform": "$",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "visualizationTransform": "$tryCatch(\n  function($input){\n     $executeFlow(\"productionHistoryGenealogy\",{\n      \"REQUEST\": {\n        \"DATA\": {\n          \"productionHistorySerial\": $parent.data.serial,\n          \"UPSTREAM\": true,\n          \"DOWNSTREAM\": true\n        }\n      }\n    }\n  )\n  },\n  function($err, $input){\n   $isNilOrEmpty(data.id) ? \"ID not yet loaded\" : $throw(\"Flow execution failed: \" & $err.stack)\n  }\n)()"
+                },
+                "displayName": "Visualization",
+                "custom": {
+                  "elementName": "Visualization1",
+                  "editor": {
+                    "category": "Display",
+                    "description": "Visualization type input.",
+                    "color": "#917644",
+                    "icon": "chart-line"
+                  }
+                },
+                "parent": "desCbLy2bL",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "cminlh5ht2ulm07750jt05rg9",
+      "title": "Production History",
+      "path": "/system/testing/productionHistories",
+      "moduleId": "testing",
+      "screenId": "productionHistory",
+      "isMenuAccessible": true,
+      "submenu": ""
+    }
+  ]
+}

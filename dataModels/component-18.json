@@ -1,0 +1,327 @@
+{
+  "header": {
+    "id": "productionSetupOperator",
+    "name": "ProductionSetupOperator",
+    "description": "Defines the operator assignments and labor requirements for a specific workunit during active production. This model tracks which users are assigned to operate equipment and their labor allocation weights for accurate cost accounting.\n\nOperator records in this table are created, when a user is badged into a work unit. Upon badging out of the work unit, the record is deleted. These activities are also tracked in the Operator History model for historial purposes.",
+    "dataModelKindId": "reference",
+    "_customFields": {
+      "_externalId": null
+    }
+  },
+  "version": {
+    "id": "cme4hoc5403qr017z4mf0got7",
+    "number": "7",
+    "dataModelId": "productionSetupOperator",
+    "modelDefinition": {
+      "name": "ProductionSetupOperator",
+      "metadata": {
+        "mfgx": {
+          "module": {
+            "id": "controlPanels",
+            "group": {
+              "id": "shopFloorExecution"
+            }
+          },
+          "exposed": true,
+          "mutable": true,
+          "mutations": {
+            "create": true,
+            "update": true,
+            "del": true
+          },
+          "dataChangeCapture": {
+            "exposed": false,
+            "retentionDays": 120
+          },
+          "labelField": "id",
+          "editor": {
+            "autosort": true
+          },
+          "customFields": {
+            "exposed": true
+          }
+        },
+        "mongo": {
+          "collection": "productionSetupOperator"
+        },
+        "graphql": {
+          "type": "Object"
+        }
+      },
+      "kind": "Reference",
+      "fields": [
+        {
+          "name": "id",
+          "type": "ID!",
+          "description": "The primary unique ID of the record.  Every model should have an id field.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": false
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": true
+          }
+        },
+        {
+          "name": "laborWeight",
+          "type": "Float!",
+          "description": "(Float!, Required, Default: 1): Percentage or fraction of this operator's time allocated to this workunit",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": 1
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "customData",
+          "type": "JSON",
+          "description": "(JSON, Optional): Flexible JSON storage for additional operator-related data",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "integrationData",
+          "type": "JSON",
+          "description": "(JSON, Optional): JSON storage for external system integration requirements",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "userId",
+          "type": "ID!",
+          "description": "(ID!, Required): Reference to the assigned user/operator",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "user",
+          "description": "(ID!, Required): Reference to the assigned user/operator",
+          "type": "User!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "userId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "workunitId",
+          "type": "ID!",
+          "description": "(ID!, Required): The workunit where the operator is assigned",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "workunit",
+          "description": "(ID!, Required): The workunit where the operator is assigned",
+          "type": "Workunit!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "workunitId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "operatorActivityId",
+          "type": "ID",
+          "description": "1. (ID, Optional): Specific activity type the operator is performing",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "operatorActivity",
+          "description": "(ID, Optional): Specific activity type the operator is performing",
+          "type": "OperatorActivity",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "operatorActivityId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        }
+      ],
+      "description": "Defines the operator assignments and labor requirements for a specific workunit during active production. This model tracks which users are assigned to operate equipment and their labor allocation weights for accurate cost accounting.\n\nOperator records in this table are created, when a user is badged into a work unit. Upon badging out of the work unit, the record is deleted. These activities are also tracked in the Operator History model for historial purposes."
+    },
+    "dataModelTypeId": "setup"
+  },
+  "migration": "$",
+  "migrations": [
+    {
+      "dataModelVersionId": "cme4hoc5403qr017z4mf0got7",
+      "dataModelVersion": {
+        "number": "7"
+      },
+      "mappingExpression": "$"
+    }
+  ]
+}

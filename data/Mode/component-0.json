@@ -1,0 +1,115 @@
+{
+  "api": "application",
+  "modelName": "Mode",
+  "payload": [
+    {
+      "id": "Changeover",
+      "name": "Changeover",
+      "includeProductionCounts": false,
+      "includeMaintenanceHours": false,
+      "usable": true,
+      "externalId": "",
+      "customData": null,
+      "color": "#ffb242",
+      "description": "Machine is being adjusted for a different task at the start or end of a production run.",
+      "system": true,
+      "activeRunUse": true,
+      "noRunUse": false,
+      "operatingTime": true,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Disabled",
+      "name": "Disabled",
+      "includeProductionCounts": false,
+      "includeMaintenanceHours": false,
+      "usable": true,
+      "externalId": "",
+      "customData": null,
+      "color": "#ff5656",
+      "description": "Machine is non-operational due to malfunction.",
+      "system": true,
+      "activeRunUse": true,
+      "noRunUse": true,
+      "operatingTime": false,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Idle",
+      "name": "Idle",
+      "includeProductionCounts": true,
+      "includeMaintenanceHours": false,
+      "usable": true,
+      "externalId": "",
+      "customData": null,
+      "color": "#D3D3D3",
+      "description": "Machine is on but not producing, and is scheduled / available to produce.",
+      "system": true,
+      "activeRunUse": false,
+      "noRunUse": true,
+      "operatingTime": false,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Maintenance",
+      "name": "Maintenance",
+      "includeProductionCounts": false,
+      "includeMaintenanceHours": false,
+      "usable": true,
+      "externalId": "",
+      "customData": null,
+      "color": "#388bd8",
+      "description": "Machine is undergoing scheduled upkeep.",
+      "system": true,
+      "activeRunUse": false,
+      "noRunUse": true,
+      "operatingTime": false,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Other",
+      "name": "Other/Off",
+      "includeProductionCounts": false,
+      "includeMaintenanceHours": false,
+      "usable": true,
+      "externalId": "",
+      "customData": null,
+      "color": "#d3d3d3",
+      "description": "Machine is in a mode not categorized above. Machine maybe \"Off\" - not scheduled or expected to be in production.",
+      "system": true,
+      "activeRunUse": false,
+      "noRunUse": true,
+      "operatingTime": false,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Production",
+      "name": "Production",
+      "includeProductionCounts": true,
+      "includeMaintenanceHours": true,
+      "usable": true,
+      "externalId": "",
+      "customData": null,
+      "color": "#10ec54",
+      "description": "Machine operating, and actively in a production run.",
+      "system": true,
+      "activeRunUse": true,
+      "noRunUse": false,
+      "operatingTime": true,
+      "_customFields": {
+        "_externalId": null
+      }
+    }
+  ],
+  "metadata": {}
+}

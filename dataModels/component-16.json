@@ -1,0 +1,594 @@
+{
+  "header": {
+    "id": "productionSetupBom",
+    "name": "ProductionSetupBom",
+    "description": "Represents the bill of materials components required for a specific production output during active manufacturing. This model tracks the component consumption requirements, usage rates, and actual material additions to production batches.\n\nOne or more records are created in this table, during the work order dispatching process. After completing that process- each workorderprocessbom component is added to this table and referenced during the production run.",
+    "dataModelKindId": "reference",
+    "_customFields": {
+      "_externalId": null
+    }
+  },
+  "version": {
+    "id": "cmipboga33z3307754lhaa6kl",
+    "number": "11",
+    "dataModelId": "productionSetupBom",
+    "modelDefinition": {
+      "name": "ProductionSetupBom",
+      "metadata": {
+        "mfgx": {
+          "module": {
+            "id": "controlPanels",
+            "group": {
+              "id": "shopFloorExecution"
+            }
+          },
+          "exposed": true,
+          "mutable": true,
+          "mutations": {
+            "create": true,
+            "update": true,
+            "del": true
+          },
+          "dataChangeCapture": {
+            "exposed": false,
+            "retentionDays": 120
+          },
+          "labelField": "id",
+          "editor": {
+            "autosort": true
+          },
+          "customFields": {
+            "exposed": true
+          }
+        },
+        "mongo": {
+          "collection": "productionSetupBom"
+        },
+        "graphql": {
+          "type": "Object"
+        }
+      },
+      "kind": "Reference",
+      "fields": [
+        {
+          "name": "id",
+          "type": "ID!",
+          "description": "The primary unique ID of the record.  Every model should have an id field.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": false
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": true
+          }
+        },
+        {
+          "name": "priority",
+          "type": "Int!",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "addToBatch",
+          "type": "Float!",
+          "description": "(Float!, Required, Default: 0): Actual quantity of this component added to the current production batch. During batch manufacturing, multiple additions to the batch maybe added. Once the batch is completed (produced) this field should be reset to 0 to begin the next batch.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": 0
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "maximumUsage",
+          "type": "Float!",
+          "description": "(Float!, Required, Default: 0): Maximum allowable usage quantity for quality/cost control. Typically used in Batch processing, or scaling.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": 0
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "minimumUsage",
+          "type": "Float!",
+          "description": "(Float!, Required, Default: 0): Minimum acceptable usage quantity for this component. Typically used in batch processing, or scaling.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": 0
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "standardUsage",
+          "type": "Float!",
+          "description": "(Float!, Required): The planned/standard quantity of this component per unit of output. Typically used for discrete production.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "allowOverConsumption",
+          "type": "Boolean!",
+          "description": "Allow overconsumption of loaded materials (quantity loaded can go negative during production).",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": false
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "wip",
+          "type": "Boolean!",
+          "description": "If this bom item is WIP. When loading setup material (with the ProductionHistory record), the wipWorkOrderProcess ID will be used to verify the material being loaded is from the previous process.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": false
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "extProduct",
+          "type": "String",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "reference",
+          "type": "String",
+          "description": "(String, Optional, Default: \"Undefined\"): Business reference for this BOM line item. ",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": "Undefined"
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "componentProductId",
+          "type": "ID!",
+          "description": "(ID, Optional): The product being consumed as a component. This is optional in the event that Product data is not being persisted in Fuuz. In which case the product ID should be placed in the extProduct field.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "consumptionTypeId",
+          "type": "ID!",
+          "description": "Select whether the Consumption Type is Actual (uses Min/Max/Std usage), Standard (uses Standard Usage), or None (does not use any of these values and does not require source material to be loaded for this BOM item)",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "consumptionType",
+          "description": "",
+          "type": "ConsumptionType!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "consumptionTypeId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "componentProduct",
+          "description": "(ID, Optional): The product being consumed as a component. This is optional in the event that Product data is not being persisted in Fuuz. In which case the product ID should be placed in the extProduct field.",
+          "type": "Product",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "deletionReferenceBehavior": "prevent",
+                "fields": {
+                  "from": "componentProductId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "componentProductStrategyId",
+          "type": "ID",
+          "description": "(ID, Optional): Specific product strategy governing component usage. When this ID is present, only component products made from the defined strategy maybe consumed. If not provided, only the productID must match in order to be consumed.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "componentProductStrategy",
+          "description": "(ID, Optional): Specific product strategy governing component usage. When this ID is present, only component products made from the defined strategy maybe consumed. If not provided, only the productID must match in order to be consumed.",
+          "type": "ProductStrategy",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "deletionReferenceBehavior": "prevent",
+                "fields": {
+                  "from": "componentProductStrategyId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "productionSetupOutputId",
+          "type": "ID",
+          "description": "(ID, Optional): The output product this component supports",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "productionSetupOutput",
+          "description": "(ID, Optional): The output product this component supports",
+          "type": "ProductionSetupOutput",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "deletionReferenceBehavior": "cascade",
+                "fields": {
+                  "from": "productionSetupOutputId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "wipWorkOrderProcessId",
+          "type": "ID",
+          "description": "The Work Order Process used to create the WIP that is required for the current process.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "wipWorkOrderProcess",
+          "description": "",
+          "type": "WorkOrderProcess",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "wipWorkOrderProcessId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        }
+      ],
+      "description": "Represents the bill of materials components required for a specific production output during active manufacturing. This model tracks the component consumption requirements, usage rates, and actual material additions to production batches.\n\nOne or more records are created in this table, during the work order dispatching process. After completing that process- each workorderprocessbom component is added to this table and referenced during the production run."
+    },
+    "dataModelTypeId": "setup"
+  },
+  "migration": "{ \n  /* - To rename a field: */\n  \"componentProductId\": componentProductId\n}",
+  "migrations": [
+    {
+      "dataModelVersionId": "cmipboga33z3307754lhaa6kl",
+      "dataModelVersion": {
+        "number": "11"
+      },
+      "mappingExpression": "{ \n  /* - To rename a field: */\n  \"componentProductId\": componentProductId\n}"
+    },
+    {
+      "dataModelVersionId": "cmf6wxrjo01b2017lb8656prv",
+      "dataModelVersion": {
+        "number": "10"
+      },
+      "mappingExpression": "$"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "api": "application",
+  "modelName": "ConsumptionType",
+  "payload": [
+    {
+      "id": "actual",
+      "name": "Actual",
+      "usable": true,
+      "description": "Consumption using minimumUsage, maximumUsage, and standardUsage",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "none",
+      "name": "None",
+      "usable": true,
+      "description": "Not using a defined standard or actual usage (defaults to 1 standardUsage)",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "standard",
+      "name": "Standard",
+      "usable": true,
+      "description": "Consumption using only a defined standardUsage",
+      "_customFields": {
+        "_externalId": null
+      }
+    }
+  ],
+  "metadata": {}
+}

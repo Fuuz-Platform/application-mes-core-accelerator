@@ -1,0 +1,119 @@
+{
+  "api": "application",
+  "modelName": "WorkOrderStatus",
+  "payload": [
+    {
+      "id": "Canceled",
+      "system": true,
+      "usable": true,
+      "workOrderProcessDistUse": true,
+      "workOrderUse": true,
+      "color": "grey 242,241,240",
+      "description": "Status indicating the order is no longer active and can not be produced against. Status can not be changed",
+      "externalId": null,
+      "name": "Canceled",
+      "customData": null,
+      "integrationData": null,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Complete",
+      "system": true,
+      "usable": true,
+      "workOrderProcessDistUse": true,
+      "workOrderUse": true,
+      "color": "aqua 69,237,255",
+      "description": "Status indicating all production is complete. Status can not be changed",
+      "externalId": null,
+      "name": "Complete",
+      "customData": null,
+      "integrationData": null,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Hold",
+      "system": true,
+      "usable": true,
+      "workOrderProcessDistUse": true,
+      "workOrderUse": true,
+      "color": "amber 255,191,0",
+      "description": "Status indicating production against the order is paused and needs to be rescheduled. Must move to Planned, or Released status",
+      "externalId": null,
+      "name": "Hold",
+      "customData": null,
+      "integrationData": null,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "In Process",
+      "system": true,
+      "usable": true,
+      "workOrderProcessDistUse": true,
+      "workOrderUse": true,
+      "color": "green 43,232,79",
+      "description": "Status indicating the order is being produced against. Must move to Complete, Canceled, or Hold",
+      "externalId": null,
+      "name": "In Process",
+      "customData": null,
+      "integrationData": null,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Planned",
+      "system": true,
+      "usable": true,
+      "workOrderProcessDistUse": false,
+      "workOrderUse": true,
+      "color": "blue 34,139,231",
+      "description": "Initial Status of Work Order upon creation. Must move to Released status next or can be canceled",
+      "externalId": null,
+      "name": "Planned",
+      "customData": null,
+      "integrationData": null,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Released",
+      "system": true,
+      "usable": true,
+      "workOrderProcessDistUse": true,
+      "workOrderUse": true,
+      "color": "purple 9,5,118",
+      "description": "Status indicating distributions have been created but not scheduled. Must move to Scheduled status next or can be canceled",
+      "externalId": null,
+      "name": "Released",
+      "customData": null,
+      "integrationData": null,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Scheduled",
+      "system": true,
+      "usable": true,
+      "workOrderProcessDistUse": true,
+      "workOrderUse": true,
+      "color": "orange 241,99,58",
+      "description": "Status indicating scheduling is complete. Must move to Complete, Canceled, or Hold",
+      "externalId": null,
+      "name": "Scheduled",
+      "customData": null,
+      "integrationData": null,
+      "_customFields": {
+        "_externalId": null
+      }
+    }
+  ],
+  "metadata": {}
+}

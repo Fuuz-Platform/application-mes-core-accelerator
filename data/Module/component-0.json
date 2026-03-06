@@ -1,0 +1,387 @@
+{
+  "api": "application",
+  "modelName": "Module",
+  "payload": [
+    {
+      "id": "accessControl",
+      "name": "Access Control",
+      "description": "Functionality around managing access to MFGx, such as users, roles, policies, and devices.",
+      "moduleGroupId": "system",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "advancedProductionScheduling",
+      "name": "Advanced Production Scheduling",
+      "description": "For models that are used in any advanced scheduling functionality APS",
+      "moduleGroupId": "productionManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "applicationConnector",
+      "name": "Application Connector",
+      "description": "Functionality around managing data replication between two tenants.",
+      "moduleGroupId": "applications",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "applicationLifecycleManagement",
+      "name": "Application Lifecycle Management",
+      "description": "Features and functionality related to installing, uninstalling, updating and publishing Fuuz Apps in the platform",
+      "moduleGroupId": "applications",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "applicationSetup",
+      "name": "Application Setup",
+      "description": "Contains Submenus for Screens of Type, Stage, Priority, Mode, Event, and Severity",
+      "moduleGroupId": "system",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "applicationTrace",
+      "name": "Application Trace",
+      "description": "Features and functionality related to trace information for Applications.",
+      "moduleGroupId": "applications",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "businessIntelligence",
+      "name": "Business Intelligence",
+      "description": "Functionality around business intelligence, such as saved queries and document generation.",
+      "moduleGroupId": "system",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "configuration",
+      "name": "Configuration",
+      "description": "Functionality around managing system configuration, such as settings, units, and modules.",
+      "moduleGroupId": "system",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "confluence",
+      "name": "Confluence",
+      "description": "The confluence documentation module is used to categorize all confluence related screens and flows under a common place.",
+      "moduleGroupId": "documentation",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "controlPanels",
+      "name": "Control Panels",
+      "description": "Operator Interfaces - shop floor users",
+      "moduleGroupId": "shopFloorExecution",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "customerManagement",
+      "name": "Customer Management",
+      "description": "Customer data management",
+      "moduleGroupId": "productionManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "dashboard",
+      "name": "Dashboard",
+      "description": "Functionality around dashboards.",
+      "moduleGroupId": "system",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "dataManagement",
+      "name": "Data Management",
+      "description": "Functionality around managing data imports and exports from Fuuz",
+      "moduleGroupId": "system",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "dataModeling",
+      "name": "Data Modeling",
+      "description": "Functionality around modeling data.",
+      "moduleGroupId": "system",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "employees",
+      "name": "Employees",
+      "description": "Functionality around management employee data such as departments, positions, and skills.",
+      "moduleGroupId": "humanCapitalManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "engineering",
+      "name": "Engineering",
+      "description": "Functionality around managing engineering data, such as items, strategies, and operations.",
+      "moduleGroupId": "productDataManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "files",
+      "name": "Files",
+      "description": "Functionality around managing files.",
+      "moduleGroupId": "system",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "genealogyTracking",
+      "name": "Genealogy Tracking",
+      "description": "Component Relationships, Production History, Serial and Lot Numbers",
+      "moduleGroupId": "traceabilityAndGenealogy",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "integration",
+      "name": "Integration",
+      "description": "Functionality around managing integrations, such as connections, integrations, and integration requests.",
+      "moduleGroupId": "system",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "integrationNetSuite",
+      "name": "Integration: NetSuite",
+      "description": "Module to group data flows that specifically integrates with NS",
+      "moduleGroupId": "system",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "internetOfThings",
+      "name": "Internet of Things",
+      "description": "A set of devices, usually located on the periphery of a network, that are accessible through various internet protocols.",
+      "moduleGroupId": "system",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "inventory",
+      "name": "Inventory",
+      "description": "Functionality around managing inventory, such as inventory data, move, split, and merge.",
+      "moduleGroupId": "materialsManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "inventoryControl",
+      "name": "Inventory Control",
+      "description": "Inventory Conrol - handling individual inventory tasks",
+      "moduleGroupId": "warehouseManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "kanbanProduction",
+      "name": "Kanban Production",
+      "description": "Kanban (no-work order) Production",
+      "moduleGroupId": "productionManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "logistics",
+      "name": "Logistics",
+      "description": "Functionality around managing logistics, such as loads, carriers, and shipments.",
+      "moduleGroupId": "materialsManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "maintenance",
+      "name": "Maintenance",
+      "description": "Functionality around management maintenace data such as equipment.",
+      "moduleGroupId": "productionManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "manufacturing",
+      "name": "Manufacturing",
+      "description": "Functionality around managing manufacturing, such as the control panel.",
+      "moduleGroupId": "productionManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "materials",
+      "name": "Materials",
+      "description": "Functionality around managing material data, such as heats, grades, and lots.",
+      "moduleGroupId": "productDataManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "orchestration",
+      "name": "Orchestration",
+      "description": "Functionality around system orchestration, including topics, consumers, and webhooks.",
+      "moduleGroupId": "system",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "planning",
+      "name": "Planning",
+      "description": "Functionality around production planning, such as resources, production orders, and kanban.",
+      "moduleGroupId": "productionManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "procurement",
+      "name": "Procurement",
+      "description": "Functionality around managing procurement, such as suppliers and purchase orders.",
+      "moduleGroupId": "supplyChainManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "productDataManagement",
+      "name": "Product Data Management",
+      "description": "Functionality around managing engineering data, such as items, strategies, and operations.",
+      "moduleGroupId": "productionManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "quality",
+      "name": "Quality",
+      "description": "Functionality around managing quality data, such as control plans and specifications.",
+      "moduleGroupId": "productDataManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "requestManagement",
+      "name": "Request Management",
+      "description": "Request management or Andon features",
+      "moduleGroupId": "shopFloorExecution",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "resources",
+      "name": "Resources",
+      "description": "Resources are things like workunits, employees, etc. that provide capacity to production operations.",
+      "moduleGroupId": "resourceManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "sales",
+      "name": "Sales",
+      "description": "Functionality around managing sales, such as customer data and sales orders.",
+      "moduleGroupId": "customerRelationshipManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "scheduling",
+      "name": "Scheduling",
+      "description": "Features and functionality related to scheduling in the Fuuz Platform",
+      "moduleGroupId": "system",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "storageManagement",
+      "name": "Storage Management",
+      "description": "Storage management and configuration of Facilities, Locations",
+      "moduleGroupId": "materialsManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "supplierManagement",
+      "name": "Supplier Management",
+      "description": "Management of supplier data",
+      "moduleGroupId": "productionManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "testing",
+      "name": "Testing",
+      "description": "Features and functionality related to testing the Fuuz platform and apps.",
+      "moduleGroupId": "system",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "workOrderManagement",
+      "name": "Work Order Management",
+      "description": "Work Order Management",
+      "moduleGroupId": "productionManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "workunits",
+      "name": "Workunits",
+      "description": "Workunits and Management of Workunit resources",
+      "moduleGroupId": "resourceManagement",
+      "_customFields": {
+        "_externalId": null
+      }
+    }
+  ],
+  "metadata": {
+    "insertEarly": true
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "api": "application",
+  "modelName": "Process",
+  "payload": [
+    {
+      "id": "Default",
+      "code": "Default",
+      "usable": true,
+      "color": null,
+      "description": "This is the default process code, during any type of import if the incoming operation does not have a process that matches. Use this as the fallback processId in the productStrategyProcess.",
+      "externalId": "Default",
+      "customData": null,
+      "iDocumentDesignId": null,
+      "processTypeId": "manufactured",
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Receive",
+      "code": "Receive",
+      "usable": true,
+      "color": null,
+      "description": null,
+      "externalId": null,
+      "customData": null,
+      "iDocumentDesignId": null,
+      "processTypeId": "receive",
+      "_customFields": {
+        "_externalId": null
+      }
+    }
+  ],
+  "metadata": {}
+}

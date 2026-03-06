@@ -1,0 +1,1485 @@
+{
+  "header": {
+    "id": "setupMaterialWidget",
+    "name": "Setup Material Widget",
+    "description": "",
+    "active": true,
+    "moduleId": "manufacturing",
+    "isWidget": true,
+    "_customFields": {
+      "_externalId": null
+    }
+  },
+  "version": {
+    "id": "cmiphvbsu4emy077504scckeo",
+    "number": "0.0.10",
+    "description": "",
+    "screenId": "setupMaterialWidget",
+    "design": {
+      "components": [
+        {
+          "name": "New Screen",
+          "tabTitle": "New Tab",
+          "type": "canvas",
+          "props": {
+            "design": {
+              "ROOT": {
+                "type": {
+                  "resolvedName": "Screen"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexDirection": "column",
+                  "flexWrap": false,
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                  "width": "100%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "flowsDelay": 0,
+                  "removeOuterMargin": false,
+                  "screenDataFlowIds": [
+                    "controlPanelWebFlow"
+                  ]
+                },
+                "displayName": "Screen",
+                "custom": {
+                  "elementName": "MaterialScreen",
+                  "elementCounts": {
+                    "Text": 13,
+                    "Container": 19,
+                    "Action Button": 9,
+                    "Cards": 1,
+                    "Scan": 1,
+                    "Table": 2,
+                    "Table Column": 4
+                  }
+                },
+                "parent": null,
+                "hidden": false,
+                "nodes": [
+                  "3CK1n43osQ"
+                ],
+                "linkedNodes": {}
+              },
+              "Td5bxIcr-c": {
+                "type": {
+                  "resolvedName": "Cards"
+                },
+                "isCanvas": true,
+                "props": {
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "parameters": "{\n\t\"filter\": {\n\t\t\"productionSetupOutput\": {\n\t\t\t\"workunitId\": {\n\t\t\t\t\"_in\": [$metadata.urlParameters.id]\n\t\t\t}\n\t\t}\n\t},\n\t\"orderBy\": { \"field\": \"priority\", \"direction\": \"asc\" }\n}",
+                    "fields": [
+                      "id",
+                      "standardUsage",
+                      "wipWorkOrderProcessId",
+                      "productionSetupOutput.workOrderProcess.workOrder.id",
+                      "productionSetupOutput.workOrderProcess.workOrder.number",
+                      "productionSetupOutput.workOrderProcessDistribution.balanceQuantity",
+                      "productionSetupOutput.workOrderProcessId",
+                      "productionSetupOutput.workunit.productionSetupMaterials.edges.node.quantity",
+                      "productionSetupOutput.workunit.productionSetupMaterials.edges.node.productId",
+                      "componentProduct.code",
+                      "componentProduct.id",
+                      "componentProduct.number",
+                      "allowOverConsumption",
+                      "consumptionType.name",
+                      "wip",
+                      "extProduct",
+                      "productionSetupOutput.workunit.currentProductionRunId",
+                      "componentProductStrategy.inventoryUnitId"
+                    ],
+                    "model": "ProductionSetupBom"
+                  },
+                  "blockNavigationWhenDirty": false,
+                  "padding": 8,
+                  "margin": 8,
+                  "flexDirection": "column",
+                  "flexWrap": true,
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "shadow": false,
+                  "borderRadius": 0
+                },
+                "displayName": "Cards",
+                "custom": {
+                  "elementName": "SetupMaterialCards"
+                },
+                "parent": "3CK1n43osQ",
+                "hidden": false,
+                "nodes": [
+                  "UmJdAYOGn7"
+                ],
+                "linkedNodes": {}
+              },
+              "UmJdAYOGn7": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 4,
+                  "margin": 1,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "flexShrink": false,
+                  "shadow": true,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "data": {},
+                  "background": "paper"
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container7"
+                },
+                "parent": "Td5bxIcr-c",
+                "hidden": false,
+                "nodes": [
+                  "W-az2oO72j",
+                  "Aa7SvKiiGX"
+                ],
+                "linkedNodes": {}
+              },
+              "ytPfvUkk5z": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container3"
+                },
+                "parent": "W-az2oO72j",
+                "hidden": false,
+                "nodes": [
+                  "PPjWW2qtOy",
+                  "38VK9JMazQ",
+                  "cSA6W6Tk6N",
+                  "gs74ZwTgxH"
+                ],
+                "linkedNodes": {}
+              },
+              "38VK9JMazQ": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 4,
+                  "width": "100%",
+                  "height": "30",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "display",
+                  "label": "WO:",
+                  "justifyContent": "space-between",
+                  "alignTextItems": "center",
+                  "labelFontSize": "body1",
+                  "fontSize": "h6",
+                  "dataPath": "productionSetupOutput.workOrderProcess.workOrder.number",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "productionSetupOutput.workOrderProcess.workOrder.number",
+                  "formElement": "InputBomCards",
+                  "disabled": false,
+                  "labelPosition": {
+                    "id": "row",
+                    "label": "Left"
+                  },
+                  "fontColor": "#228be7"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text1"
+                },
+                "parent": "ytPfvUkk5z",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "cSA6W6Tk6N": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container1"
+                },
+                "parent": "ytPfvUkk5z",
+                "hidden": false,
+                "nodes": [
+                  "zK-7SxIUvL"
+                ],
+                "linkedNodes": {}
+              },
+              "zK-7SxIUvL": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 4,
+                  "width": "auto",
+                  "height": "30",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "display",
+                  "label": "Comp:",
+                  "justifyContent": "space-between",
+                  "alignTextItems": "center",
+                  "labelFontSize": "body1",
+                  "fontSize": "h6",
+                  "dataPath": "componentProduct.code",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "formElement": "InputBomCards",
+                  "disabled": false,
+                  "labelPosition": {
+                    "id": "row",
+                    "label": "Left"
+                  },
+                  "fontColor": "#228be7",
+                  "query": {
+                    "fields": []
+                  },
+                  "data": {
+                    "__transform": "$coalesce([$card.data.componentProduct.code, $card.data.extProduct])"
+                  },
+                  "field": "componentProduct.code"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text2"
+                },
+                "parent": "cSA6W6Tk6N",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "gs74ZwTgxH": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 2,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "center",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container2"
+                },
+                "parent": "ytPfvUkk5z",
+                "hidden": false,
+                "nodes": [
+                  "bh1MphFowe",
+                  "7LVoAekLH_",
+                  "pDwYVTUIg_",
+                  "oBsArL9_qK",
+                  "QJW1lylAQ9",
+                  "pGhHUC2dvN"
+                ],
+                "linkedNodes": {}
+              },
+              "pDwYVTUIg_": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 4,
+                  "width": "100%",
+                  "height": "30",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "display",
+                  "label": "Short to Complete: ",
+                  "justifyContent": "space-between",
+                  "alignTextItems": "center",
+                  "labelFontSize": "subtitle2",
+                  "fontSize": "body1",
+                  "dataPath": "qtyRequired",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "formElement": "InputBomCards",
+                  "disabled": false,
+                  "labelPosition": {
+                    "id": "row",
+                    "label": "Left"
+                  },
+                  "data": {
+                    "__transform": "(\n\n/*data.standardUsage*data.productionSetupOutput.remainingBalance*/\n$total := 0;\n$required := $coalesce([data.standardUsage,0])*$coalesce([data.productionSetupOutput.workOrderProcessDistribution.balanceQuantity,0]) - $coalesce([$total,0]);\n$required < 0 ? 0 : $round($required,2)\n) ",
+                    "__dynamicFields": {
+                      "payload": [
+                        "data.productionSetupOutput",
+                        "data.standardUsage"
+                      ],
+                      "context": []
+                    }
+                  },
+                  "query": {
+                    "fields": [
+                      "standardUsage",
+                      "productionSetupOutput.workOrderProcessDistribution.balanceQuantity"
+                    ]
+                  },
+                  "fontColor": "#228be7"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text4"
+                },
+                "parent": "gs74ZwTgxH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "JsHptQgawt": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "15%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {
+                    "__transform": "{\r\n  \"overflow\": \"hidden\"\r\n}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container4"
+                },
+                "parent": "Aa7SvKiiGX",
+                "hidden": false,
+                "nodes": [
+                  "nkj9Ha9cYn"
+                ],
+                "linkedNodes": {}
+              },
+              "nkj9Ha9cYn": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 0,
+                  "buttonColor": "green",
+                  "icon": {
+                    "icon": null,
+                    "color": null,
+                    "variant": null,
+                    "size": null
+                  },
+                  "width": "105%",
+                  "height": "105%",
+                  "disabled": {
+                    "__transform": "$card.data.consumptionType.name = \"None\"",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "transformation",
+                      "transformation": "/* $card.data.wip ?\r\n$showFormDialog(\r\n    {\r\n      'title': 'Add Setup Material',\r\n      'formInputs': [\r\n        {\r\n          \"name\": \"Serial Number\",\r\n          \"description\": \"\",\r\n          \"label\": \"Enter Serial Number of Material being loaded\",\r\n          \"type\": \"text\",\r\n          \"dataPath\": \"serial\",\r\n          \"validation\": {\r\n            \"required\": true\r\n          }\r\n        }\r\n      ], \r\n      'submitIcon': 'plus',\r\n      'data': {\r\n        'description': '',\r\n        'versionNumber': '0.0.1'\r\n      }\r\n    }\r\n  )\r\n  \r\n : */\r\n\r\n$showFormDialog(\r\n    {\r\n      'title': 'Add Setup Material',\r\n      'formInputs': [\r\n        {\r\n          \"name\": \"Quantity\",\r\n          \"description\": \"\",\r\n          \"label\": \"Enter Quantity of Material being loaded\",\r\n          \"type\": \"number\",\r\n          \"dataPath\": \"quantity\",\r\n          \"validation\": {\r\n            \"required\": true\r\n          },\r\n          \"defaultValue\": \"1\"          \r\n        },\r\n        {\r\n          \"name\": \"Serial Number\",\r\n          \"description\": \"\",\r\n          \"label\": \"Enter Serial Number of Material being loaded\",\r\n          \"type\": \"text\",\r\n          \"dataPath\": \"serial\",\r\n          \"validation\": {\r\n            \"required\": true\r\n          }\r\n        }\r\n      ], \r\n      'submitIcon': 'plus',\r\n      'data': {\r\n        'description': '',\r\n        'versionNumber': '0.0.1'\r\n      }\r\n    }\r\n  ) "
+                    },
+                    {
+                      "type": "transformation",
+                      "transformation": "($card.data.wip and serial) or $not($card.data.wip) and quantity ? $executeFlow(\"controlPanelWebFlow\",{\r\n  \"ACTION\": \"LOAD_SETUP_MATERIAL\",\r\n  \"REQUEST\":{\r\n    \"DATA\": {\r\n      \"productId\": $card.data.componentProduct.id,\r\n      \"productCode\": $card.data.componentProduct.code,\r\n      \"quantity\": $number(quantity),\r\n      \"serial\": serial,\r\n      \"wip\": $card.data.wip,\r\n      \"workunitId\": $metadata.urlParameters.id\r\n    }\r\n  }\r\n})",
+                      "transforms": {
+                        "post": "(\r\n  $components.SetupMaterialCards.fn.loadData();\r\n)"
+                      }
+                    }
+                  ],
+                  "title": "Load Component",
+                  "text": "LOAD",
+                  "customTextSize": 16
+                },
+                "displayName": "Action",
+                "custom": {
+                  "elementName": "ActionButton1"
+                },
+                "parent": "JsHptQgawt",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Aa7SvKiiGX": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "center",
+                  "width": "auto",
+                  "height": "50px",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "columns": 4
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container9"
+                },
+                "parent": "UmJdAYOGn7",
+                "hidden": false,
+                "nodes": [
+                  "JsHptQgawt",
+                  "MbgS0QOX0Y",
+                  "uEREO0baOy",
+                  "Mp5J4moLyj"
+                ],
+                "linkedNodes": {}
+              },
+              "2Xz2T9Vo8T": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 8,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "flex-end",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {
+                    "borderMode": "full",
+                    "border": "0px undefined "
+                  },
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container10"
+                },
+                "parent": "W-az2oO72j",
+                "hidden": false,
+                "nodes": [
+                  "VMQsswmrXe"
+                ],
+                "linkedNodes": {}
+              },
+              "oBsArL9_qK": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 4,
+                  "width": "100%",
+                  "height": "30",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "display",
+                  "label": "Issued: ",
+                  "justifyContent": "space-between",
+                  "alignTextItems": "center",
+                  "labelFontSize": "subtitle2",
+                  "fontSize": "body1",
+                  "dataPath": "qtyIssued",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "productionSetupOutput.productionSetupMaterials.edges.node.quantity",
+                  "formElement": "InputBomCards",
+                  "disabled": false,
+                  "labelPosition": {
+                    "id": "row",
+                    "label": "Left"
+                  },
+                  "fontColor": "#228be7",
+                  "query": {
+                    "fields": []
+                  },
+                  "data": {
+                    "__transform": "(\r\n  $productId := data.componentProduct.id;\r\n  $coalesce([$sum(data.productionSetupOutput.workunit.productionSetupMaterials.edges.node[productId = $productId].quantity),0]);\r\n)"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text6"
+                },
+                "parent": "gs74ZwTgxH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "QJW1lylAQ9": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 4,
+                  "width": "100%",
+                  "height": "30",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "display",
+                  "label": "Remaining: ",
+                  "justifyContent": "space-between",
+                  "alignTextItems": "center",
+                  "labelFontSize": "subtitle2",
+                  "fontSize": "body1",
+                  "dataPath": "qtyRemaining",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "standardUsage",
+                  "formElement": "InputBomCards",
+                  "disabled": false,
+                  "labelPosition": {
+                    "id": "row",
+                    "label": "Left"
+                  },
+                  "description": "What is the standard usage?",
+                  "fontColor": "#228be7",
+                  "query": {
+                    "fields": []
+                  },
+                  "data": {
+                    "__transform": "(\r\n  $productId := data.componentProduct.id;\r\n  $balanceQty := data.productionSetupOutput.workOrderProcessDistribution.balanceQuantity;\r\n  $stdUsage := data.standardUsage;\r\n  ($balanceQty * $stdUsage) - $coalesce([$sum(data.productionSetupOutput.workunit.productionSetupMaterials.edges.node[productId = $productId].quantity),0]);\r\n)"
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text8"
+                },
+                "parent": "gs74ZwTgxH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "NOSIa5lBHT": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Serial",
+                  "format": "text",
+                  "sortable": true,
+                  "dataPath": "serial",
+                  "description": "(String, Optional): Serial number of the specific material lot or item",
+                  "query": {},
+                  "field": "serial",
+                  "width": "175px",
+                  "validation": {}
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn1"
+                },
+                "parent": "w1e16ZZgTZ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "XKFXw9GJhB": {
+                "type": {
+                  "resolvedName": "TableColumn"
+                },
+                "isCanvas": false,
+                "props": {
+                  "label": "Qty",
+                  "format": "integer",
+                  "sortable": true,
+                  "dataPath": "quantity",
+                  "description": "(Int, Required, 0): Available quantity of this material allocation",
+                  "query": {},
+                  "field": "quantity",
+                  "width": "75px"
+                },
+                "displayName": "Table Column",
+                "custom": {
+                  "elementName": "TableColumn3"
+                },
+                "parent": "w1e16ZZgTZ",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "w1e16ZZgTZ": {
+                "type": {
+                  "resolvedName": "Table"
+                },
+                "isCanvas": true,
+                "props": {
+                  "margin": 0,
+                  "width": "100%",
+                  "height": "320px",
+                  "flexGrow": false,
+                  "query": {
+                    "api": "Application",
+                    "query": null,
+                    "dataPath": "edges",
+                    "dataTransform": {
+                      "transform": null,
+                      "remote": true
+                    },
+                    "dataSubscription": {
+                      "enabled": false
+                    },
+                    "autoLoad": true,
+                    "fields": [
+                      "id",
+                      "serial"
+                    ],
+                    "disableDataChangeIndicator": false,
+                    "selectedDataChangeIndicator": null,
+                    "model": "ProductionSetupMaterial",
+                    "parameters": "{\r\n  \"filter\":{\r\n     \"workunitId\":{\r\n        \"_eq\": $metadata.urlParameters.id\r\n      },\r\n      \"productId\":{\r\n        \"_eq\": $parent.data.componentProduct.id\r\n      },\r\n      \"_or\":[\r\n        {\r\n          \"workOrderProcessId\":{\r\n            \"_eq\": $parent.data.wipWorkOrderProcessId\r\n          }\r\n        },\r\n        {\r\n          \"workOrderProcessId\":{\r\n            \"_isNull\": true\r\n          }\r\n        }\r\n      ]\r\n  },\r\n  \"orderBy\": [\r\n    {\r\n      \"direction\": \"asc\",\r\n      \"field\": \"priority\"\r\n    }\r\n  ]\r\n}",
+                    "filterPredicate": {}
+                  },
+                  "selectable": "multiple",
+                  "showToolPanels": true,
+                  "showStatusBar": true,
+                  "enableGrouping": true,
+                  "enableCharts": true,
+                  "showColumnMenu": false,
+                  "enableRowDragging": false,
+                  "disableColumnDragging": false,
+                  "disableDragLeaveHidesColumns": false,
+                  "masterDetail": false,
+                  "hideTableHeader": false,
+                  "tableName": "Loaded Materials",
+                  "description": "Represents the actual physical inventory materials that have been allocated and loaded for consumption during active production. This model tracks specific inventory lots, serial numbers, and consumption status for materials required by production processes.\n\nThis is a transient model, items are added and removed here throughout the production run. Once an item has been completely consumed, the record should be deleted from this table.",
+                  "rowMultiSelectWithClick": true,
+                  "limitToOneActiveDetail": false
+                },
+                "displayName": "Table",
+                "custom": {
+                  "elementName": "SetupMaterialTable"
+                },
+                "parent": "VMQsswmrXe",
+                "hidden": false,
+                "nodes": [
+                  "NOSIa5lBHT",
+                  "XKFXw9GJhB"
+                ],
+                "linkedNodes": {}
+              },
+              "VMQsswmrXe": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container8"
+                },
+                "parent": "2Xz2T9Vo8T",
+                "hidden": false,
+                "nodes": [
+                  "w1e16ZZgTZ"
+                ],
+                "linkedNodes": {}
+              },
+              "uEREO0baOy": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "15%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {
+                    "__transform": "{\r\n  \"overflow\": \"hidden\"\r\n}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container12"
+                },
+                "parent": "Aa7SvKiiGX",
+                "hidden": false,
+                "nodes": [
+                  "bPWBv4sdRm"
+                ],
+                "linkedNodes": {}
+              },
+              "bPWBv4sdRm": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 0,
+                  "buttonColor": "red",
+                  "icon": {
+                    "icon": null,
+                    "color": null,
+                    "variant": null,
+                    "size": null
+                  },
+                  "width": "105%",
+                  "height": "105%",
+                  "disabled": {
+                    "__transform": "$card.data.consumptionType.name = \"None\"",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "message",
+                      "title": "Action Not Configured",
+                      "message": "No action steps configured for this button",
+                      "severity": "error"
+                    }
+                  ],
+                  "title": "Scrap Component",
+                  "text": "SCRAP",
+                  "customTextSize": 16
+                },
+                "displayName": "Action",
+                "custom": {
+                  "elementName": "ActionButton4"
+                },
+                "parent": "uEREO0baOy",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "PPjWW2qtOy": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 4,
+                  "width": "100%",
+                  "height": "30",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "display",
+                  "label": "Priority: ",
+                  "justifyContent": "space-between",
+                  "alignTextItems": "center",
+                  "labelFontSize": "body1",
+                  "fontSize": "h6",
+                  "dataPath": "priority",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "priority",
+                  "formElement": "InputBomCards",
+                  "disabled": false,
+                  "labelPosition": {
+                    "id": "row",
+                    "label": "Left"
+                  },
+                  "fontColor": "#228be7",
+                  "description": ""
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text9"
+                },
+                "parent": "ytPfvUkk5z",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "MbgS0QOX0Y": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "15%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {
+                    "__transform": "{\r\n  \"overflow\": \"hidden\"\r\n}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container15"
+                },
+                "parent": "Aa7SvKiiGX",
+                "hidden": false,
+                "nodes": [
+                  "3R1AwPuckK"
+                ],
+                "linkedNodes": {}
+              },
+              "3R1AwPuckK": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 0,
+                  "buttonColor": "secondary",
+                  "icon": {
+                    "icon": null,
+                    "color": null,
+                    "variant": null,
+                    "size": null
+                  },
+                  "width": "105%",
+                  "height": "105%",
+                  "disabled": {
+                    "__transform": "$card.data.consumptionType.name = \"None\"",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "flow",
+                      "flowId": "controlPanelWebFlow",
+                      "transforms": {
+                        "pre": "{\r\n  \"ACTION\": \"UNLOAD_SETUP_MATERIAL\",\r\n  \"REQUEST\":{\r\n    \"DATA\":{\r\n      \"id\": $components.SetupMaterialTable.selectedRows.id ? $components.SetupMaterialTable.selectedRows.id,\r\n      \"workunitId\": $metadata.urlParameters.id\r\n    }  \r\n  }\r\n}",
+                        "post": "(\r\n  $components.SetupMaterialCards.fn.loadData();\r\n)"
+                      }
+                    }
+                  ],
+                  "title": "Unload Component",
+                  "text": "UNLOAD",
+                  "customTextSize": 16
+                },
+                "displayName": "Action",
+                "custom": {
+                  "elementName": "ActionButton7"
+                },
+                "parent": "MbgS0QOX0Y",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "W-az2oO72j": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "alignItems": "stretch",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "grid",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {},
+                  "columns": 2
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container16"
+                },
+                "parent": "UmJdAYOGn7",
+                "hidden": false,
+                "nodes": [
+                  "ytPfvUkk5z",
+                  "2Xz2T9Vo8T"
+                ],
+                "linkedNodes": {}
+              },
+              "pGhHUC2dvN": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 4,
+                  "width": "100%",
+                  "height": "30",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "display",
+                  "label": "Usage Per: ",
+                  "justifyContent": "space-between",
+                  "alignTextItems": "center",
+                  "labelFontSize": "subtitle2",
+                  "fontSize": "body1",
+                  "dataPath": "standardUsage",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "standardUsage",
+                  "formElement": "InputBomCards",
+                  "disabled": false,
+                  "labelPosition": {
+                    "id": "row",
+                    "label": "Left"
+                  },
+                  "description": "What is the standard usage?",
+                  "fontColor": "#228be7"
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text10"
+                },
+                "parent": "gs74ZwTgxH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "bh1MphFowe": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 4,
+                  "width": "100%",
+                  "height": "30",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": true,
+                  "type": "display",
+                  "label": "Consumption Mode: ",
+                  "justifyContent": "space-between",
+                  "alignTextItems": "center",
+                  "labelFontSize": "subtitle2",
+                  "fontSize": "body1",
+                  "dataPath": "consumptionType.name",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "productionSetupOutput.productionSetupMaterials.edges.node.quantity",
+                  "formElement": "InputBomCards",
+                  "disabled": false,
+                  "labelPosition": {
+                    "id": "row",
+                    "label": "Left"
+                  },
+                  "fontColor": "#228be7",
+                  "query": {
+                    "fields": []
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text12"
+                },
+                "parent": "gs74ZwTgxH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "7LVoAekLH_": {
+                "type": {
+                  "resolvedName": "DisplayText"
+                },
+                "isCanvas": false,
+                "props": {
+                  "padding": 4,
+                  "width": "100%",
+                  "height": "30",
+                  "validation": {
+                    "required": false
+                  },
+                  "uniqueValidationEnabled": false,
+                  "visible": {
+                    "__transform": "$not(data.consumptionType.name = \"None\")",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "type": "display",
+                  "label": "Allow Overconsumption: ",
+                  "justifyContent": "space-between",
+                  "alignTextItems": "center",
+                  "labelFontSize": "subtitle2",
+                  "fontSize": "body1",
+                  "dataPath": "allowOverconsumption",
+                  "target": {
+                    "dataPath": null
+                  },
+                  "field": "productionSetupOutput.productionSetupMaterials.edges.node.quantity",
+                  "formElement": "InputBomCards",
+                  "disabled": false,
+                  "labelPosition": {
+                    "id": "row",
+                    "label": "Left"
+                  },
+                  "fontColor": "#228be7",
+                  "query": {
+                    "fields": []
+                  },
+                  "data": {
+                    "__transform": "data.allowOverConsumption ? \"True\" : \"False\""
+                  }
+                },
+                "displayName": "Text",
+                "custom": {
+                  "elementName": "Text13"
+                },
+                "parent": "gs74ZwTgxH",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "Mp5J4moLyj": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": false,
+                  "flexDirection": "column",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "width": "15%",
+                  "height": "100%",
+                  "hidden": false,
+                  "flexGrow": false,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {
+                    "__transform": "{\r\n  \"overflow\": \"hidden\"\r\n}",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  }
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container18"
+                },
+                "parent": "Aa7SvKiiGX",
+                "hidden": false,
+                "nodes": [
+                  "J49w_hgyiV"
+                ],
+                "linkedNodes": {}
+              },
+              "J49w_hgyiV": {
+                "type": {
+                  "resolvedName": "ActionButton"
+                },
+                "isCanvas": false,
+                "props": {
+                  "margin": 0,
+                  "buttonColor": "primary",
+                  "icon": {
+                    "icon": null,
+                    "color": null,
+                    "variant": null,
+                    "size": null
+                  },
+                  "width": "105%",
+                  "height": "105%",
+                  "disabled": {
+                    "__transform": "$card.data.consumptionType.name = \"None\"",
+                    "__dynamicFields": {
+                      "payload": null,
+                      "context": []
+                    },
+                    "__cacheKey": "",
+                    "__remote": false
+                  },
+                  "hidden": false,
+                  "useIconButton": false,
+                  "disableHover": false,
+                  "disableRipple": false,
+                  "action": [
+                    {
+                      "type": "screenDialog",
+                      "screenParams": {
+                        "__transform": "{\r\n  \"workunitId\": $metadata.urlParameters.id,\r\n  \"productId\": $parent.data.componentProduct.id\r\n}",
+                        "__dynamicFields": {
+                          "payload": null,
+                          "context": []
+                        },
+                        "__cacheKey": "",
+                        "__remote": false
+                      },
+                      "screenId": "updateSetupMaterialOrderModal",
+                      "canvasDialog": {
+                        "includeSubmit": true,
+                        "includeCancel": false
+                      },
+                      "transforms": {
+                        "post": "(\r\n  $components.SetupMaterialCards.fn.loadData();\r\n)"
+                      }
+                    }
+                  ],
+                  "title": "Update Setup Material Order",
+                  "text": "Update",
+                  "customTextSize": 16
+                },
+                "displayName": "Action",
+                "custom": {
+                  "elementName": "ActionButton9"
+                },
+                "parent": "Mp5J4moLyj",
+                "hidden": false,
+                "nodes": [],
+                "linkedNodes": {}
+              },
+              "3CK1n43osQ": {
+                "type": {
+                  "resolvedName": "Container"
+                },
+                "isCanvas": true,
+                "props": {
+                  "padding": 0,
+                  "margin": 0,
+                  "flexWrap": true,
+                  "flexDirection": "column",
+                  "justifyContent": "start",
+                  "alignItems": "center",
+                  "width": "100%",
+                  "height": "auto",
+                  "hidden": false,
+                  "flexGrow": true,
+                  "flexShrink": false,
+                  "shadow": false,
+                  "borderRadius": 0,
+                  "collapsible": false,
+                  "collapsedFooter": false,
+                  "collapsedSize": 0,
+                  "collapsedByDefault": false,
+                  "onClickTransform": false,
+                  "layout": "flex",
+                  "bordersInput": {},
+                  "justifyItems": "start",
+                  "style": {}
+                },
+                "displayName": "Container",
+                "custom": {
+                  "elementName": "Container19"
+                },
+                "parent": "ROOT",
+                "hidden": false,
+                "nodes": [
+                  "Td5bxIcr-c"
+                ],
+                "linkedNodes": {}
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "routes": [
+    {
+      "id": "cmgii211a05it015tgx6m09it",
+      "title": "Setup Material Widget",
+      "path": "/productionManagement/manufacturing/setupMaterialWidget",
+      "moduleId": "manufacturing",
+      "screenId": "setupMaterialWidget",
+      "isMenuAccessible": false,
+      "submenu": ""
+    }
+  ]
+}

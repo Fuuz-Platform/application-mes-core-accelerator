@@ -1,0 +1,526 @@
+{
+  "header": {
+    "id": "productionSetupMaterial",
+    "name": "ProductionSetupMaterial",
+    "description": "Represents the actual physical inventory materials that have been allocated and loaded for consumption during active production. This model tracks specific inventory lots, serial numbers, and consumption status for materials required by production processes.\n\nThis is a transient model, items are added and removed here throughout the production run. Once an item has been completely consumed, the record should be deleted from this table.",
+    "dataModelKindId": "reference",
+    "_customFields": {
+      "_externalId": null
+    }
+  },
+  "version": {
+    "id": "cmflll9em05pd012669wegc67",
+    "number": "13",
+    "dataModelId": "productionSetupMaterial",
+    "modelDefinition": {
+      "name": "ProductionSetupMaterial",
+      "metadata": {
+        "mfgx": {
+          "module": {
+            "id": "controlPanels",
+            "group": {
+              "id": "shopFloorExecution"
+            }
+          },
+          "exposed": true,
+          "mutable": true,
+          "mutations": {
+            "create": true,
+            "update": true,
+            "del": true
+          },
+          "dataChangeCapture": {
+            "exposed": false,
+            "retentionDays": 120
+          },
+          "labelField": "number",
+          "editor": {
+            "autosort": true
+          },
+          "customFields": {
+            "exposed": true
+          }
+        },
+        "mongo": {
+          "collection": "productionSetupMaterial"
+        },
+        "graphql": {
+          "type": "Object"
+        }
+      },
+      "kind": "Reference",
+      "fields": [
+        {
+          "name": "id",
+          "type": "ID!",
+          "description": "The primary unique ID of the record.  Every model should have an id field.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": false
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": true
+          }
+        },
+        {
+          "name": "number",
+          "type": "String!",
+          "description": "(String!, Required, Auto-generated): Auto-generated sequence number for user-friendly identification",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "sequence": {
+                "id": "productionSetupMaterialNumber"
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "age",
+          "type": "Int",
+          "description": "(Int, Optional): Age of the material (for FIFO/shelf-life management)",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "priority",
+          "type": "Int!",
+          "description": "Priority in which the setup material is consumed, starting at 0",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": 0
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "quantity",
+          "type": "Int!",
+          "description": "(Int, Required, 0): Available quantity of this material allocation",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "pendingConsumptionQuantity",
+          "type": "Float!",
+          "description": "(Float!, Required, Default: 0): Quantity that has been pre-allocated for consumption. Used typically in Batch production, as the component is added to the batch. The actual depletion occurs when the Batch is produced at the end.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": 0
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "outputConsumptionLock",
+          "type": "Boolean!",
+          "description": "(Boolean!, Required, Default: false): Flag indicating material is reserved for a specific output\n\nNOT SURE WHAT THIS IS SUPPOSED TO DO. LIKELY CAN BE ELIMINATED WHEN WE GET THE SHARED CONSUMCustomer-DON SETUP.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": false
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "pendingConsumption",
+          "type": "Boolean!",
+          "description": "(Boolean!, Required, Default: false): Flag indicating if material has been pre-consumed by the process\n\nUNSURE WHAT THIS IS TO BE USED FOR.",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": false
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "wip",
+          "type": "Boolean!",
+          "description": "Is this material a Work In Progress component?",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              },
+              "defaultValue": false
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "order",
+          "type": "String",
+          "description": "(String, Optional): Consumption order sequence for materials requiring ordered usage",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "serial",
+          "type": "String",
+          "description": "(String, Optional): Serial number of the specific material lot or item",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": true
+          }
+        },
+        {
+          "name": "loadedAt",
+          "type": "DateTime",
+          "description": "(DateTime, Optional): Timestamp when the material was loaded into the production setup",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "productId",
+          "type": "ID!",
+          "description": "(ID, Optional): The product/material being tracked",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "product",
+          "description": "(ID, Optional): The product/material being tracked",
+          "type": "Product!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "productId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "workunitId",
+          "type": "ID!",
+          "description": "",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "workunit",
+          "description": "",
+          "type": "Workunit!",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "workunitId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "workOrderProcessId",
+          "type": "ID",
+          "description": "(ID, Optional): Source work order process that required this material",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "workOrderProcess",
+          "description": "(ID, Optional): Source work order process that required this material\n\nTHIS CAN BE ELIMINATED. AS WE ONLY CONSUME COMPONENTS HERE.",
+          "type": "WorkOrderProcess",
+          "metadata": {
+            "mfgx": {
+              "relation": {
+                "fields": {
+                  "from": "workOrderProcessId",
+                  "to": "id"
+                }
+              },
+              "mutations": {
+                "create": {
+                  "include": true
+                },
+                "update": {
+                  "include": true
+                }
+              },
+              "queries": {
+                "include": true
+              },
+              "where": {
+                "include": true
+              }
+            },
+            "unique": false
+          }
+        }
+      ],
+      "description": "Represents the actual physical inventory materials that have been allocated and loaded for consumption during active production. This model tracks specific inventory lots, serial numbers, and consumption status for materials required by production processes.\n\nThis is a transient model, items are added and removed here throughout the production run. Once an item has been completely consumed, the record should be deleted from this table."
+    },
+    "dataModelTypeId": "setup"
+  },
+  "migration": "{\n  \"priority\": 0\n}",
+  "migrations": [
+    {
+      "dataModelVersionId": "cmflll9em05pd012669wegc67",
+      "dataModelVersion": {
+        "number": "13"
+      },
+      "mappingExpression": "{\n  \"priority\": 0\n}"
+    }
+  ]
+}

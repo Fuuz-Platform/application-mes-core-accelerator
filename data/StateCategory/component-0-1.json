@@ -1,0 +1,77 @@
+{
+  "api": "application",
+  "modelName": "StateCategory",
+  "payload": [
+    {
+      "id": "Blocked",
+      "usable": true,
+      "description": null,
+      "name": "Blocked",
+      "customData": null,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Disabled",
+      "usable": true,
+      "description": null,
+      "name": "Disabled",
+      "customData": null,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Idle",
+      "usable": true,
+      "description": null,
+      "name": "Idle",
+      "customData": null,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Planned Downtime",
+      "usable": true,
+      "description": null,
+      "name": "Planned Downtime",
+      "customData": null,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Running",
+      "usable": true,
+      "description": null,
+      "name": "Running",
+      "customData": null,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Starved",
+      "usable": true,
+      "description": null,
+      "name": "Starved",
+      "customData": null,
+      "_customFields": {
+        "_externalId": null
+      }
+    },
+    {
+      "id": "Unplanned Downtime",
+      "usable": true,
+      "description": null,
+      "name": "Unplanned Downtime",
+      "customData": null,
+      "_customFields": {
+        "_externalId": null
+      }
+    }
+  ],
+  "metadata": {}
+}
