@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>application-mes-core-accelerator &mdash; Fuuz Accelerator</title>
+<meta name="description" content="Fuuz accelerator: Core MES foundations — modules, roles, work orders, modes, sequences, seed data">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://accelerators.fuuz.com/application-mes-core-accelerator/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://accelerators.fuuz.com/application-mes-core-accelerator/">
+<meta property="og:site_name" content="Fuuz Accelerators">
+<meta property="og:title" content="application-mes-core-accelerator &mdash; Fuuz Accelerator">
+<meta property="og:description" content="Fuuz accelerator: Core MES foundations — modules, roles, work orders, modes, sequences, seed data">
+<link rel="icon" href="assets/appicon-violet.svg">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="prose.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "application-mes-core-accelerator",
+  "url": "https://accelerators.fuuz.com/application-mes-core-accelerator/",
+  "description": "Fuuz accelerator: Core MES foundations \u2014 modules, roles, work orders, modes, sequences, seed data",
+  "codeRepository": "https://github.com/Fuuz-Platform/application-mes-core-accelerator",
+  "applicationCategory": "BusinessApplication",
+  "runtimePlatform": "Fuuz",
+  "author": {
+    "@type": "Organization",
+    "name": "Fuuz",
+    "url": "https://fuuz.com"
+  }
+}
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="../"><img src="assets/logo-horizontal-on-midnight.svg" alt="Fuuz"></a>
+    <span class="section">Accelerators</span>
+    <nav><a href="#table-of-contents">Table of Contents</a><a href="#overview">Overview</a><a href="#module-structure">Module Structure</a><a href="https://github.com/Fuuz-Platform/application-mes-core-accelerator">GitHub</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap hero">
+  <p class="eyebrow">Accelerator &middot; Installs into a tenant</p>
+  <h1>application-mes-core-accelerator<span class="accent"></span></h1>
+  <p class="lede">Fuuz accelerator: Core MES foundations — modules, roles, work orders, modes, sequences, seed data</p>
+  <div class="ctas">
+    <a class="cta cta-primary" href="https://github.com/Fuuz-Platform/application-mes-core-accelerator">Get the package</a>
+    <a class="cta cta-secondary" href="../">All accelerators</a>
+  </div>
+</div>
+<section>
+  <div class="wrap prose">
+<blockquote>
+<p><strong>Fuuz Industrial Operations Platform — Manufacturing Execution System (Core)</strong>
+Package Version: <code>1.0.0</code> | Platform Version: <code>2025.11.3</code> | Spec: <code>2.0.0</code></p>
+</blockquote>
+<p>The <strong>MES Core</strong> accelerator is the foundational Manufacturing Execution System package built on the <a href="https://fuuz.com">Fuuz Industrial Operations Platform</a>. It provides the complete module registry, platform-level data architecture, and core operational workflows that underpin discrete and process manufacturing execution. This package establishes the full organizational and functional hierarchy used across all Fuuz MES accelerators, making it the essential baseline for any manufacturing deployment.</p>
+<p>This package contains <strong>41 modules</strong> across <strong>18 functional areas</strong>, <strong>32 data flows</strong>, <strong>92 data models</strong>, <strong>56 screens</strong>, and <strong>34 seed data records</strong>.</p>
+<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#module-structure">Module Structure</a></li>
+<li><a href="#functional-areas">Functional Areas</a></li>
+<li><a href="#data-flows">Data Flows</a></li>
+<li><a href="#data-models">Data Models</a></li>
+<li><a href="#screens">Screens</a></li>
+<li><a href="#access-control">Access Control</a></li>
+<li><a href="#package-contents">Package Contents</a></li>
+<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#installation">Installation</a></li>
+</ol>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>The MES Core accelerator provides the foundational infrastructure for manufacturing operations management, including:</p>
+<ul>
+<li><strong>Platform Module Registry</strong> — The complete set of module group and module definitions that organize all Fuuz MES functionality into a structured, navigable hierarchy</li>
+<li><strong>Production Management</strong> — Work order management, advanced production scheduling, Kanban production, planning, and manufacturing execution</li>
+<li><strong>Shop Floor Execution</strong> — Control panels (work center operator terminals), Andon/request management, and real-time production monitoring</li>
+<li><strong>Resource Management</strong> — Workunits (equipment/work center state tracking), resource assignment, and availability management</li>
+<li><strong>Quality Control</strong> — Quality data models and specifications integrated with production workflows</li>
+<li><strong>Materials Management</strong> — Inventory tracking, storage management, logistics, and material staging</li>
+<li><strong>Traceability and Genealogy</strong> — Full genealogy tracking across production orders and material movements</li>
+<li><strong>Warehouse Management</strong> — Inventory control, location management, and warehouse operations foundation</li>
+<li><strong>System Platform</strong> — Access control, configuration management, scheduling engine, orchestration, IoT integration, integration framework, data modeling, business intelligence, and application lifecycle management</li>
+<li><strong>Product Data Management</strong> — Engineering data, materials specifications, and quality specifications</li>
+<li><strong>Supply Chain Management</strong> — Procurement and supplier management workflows</li>
+<li><strong>Human Capital Management</strong> — Employee records and workforce data</li>
+<li><strong>Customer Relationship Management</strong> — Customer and sales management</li>
+<li><strong>Documentation</strong> — Confluence-based documentation integration</li>
+<li><strong>EDI</strong> — Electronic data interchange foundation</li>
+</ul>
+<hr />
+<h2 id="module-structure">Module Structure</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Module Group</th>
+<th>Modules</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Applications</strong></td>
+<td>Application Connector, Application Lifecycle Management, Application Trace</td>
+</tr>
+<tr>
+<td><strong>Customer Relationship Management</strong></td>
+<td>Sales</td>
+</tr>
+<tr>
+<td><strong>Documentation</strong></td>
+<td>Confluence</td>
+</tr>
+<tr>
+<td><strong>EDI</strong></td>
+<td><em>(EDI foundation)</em></td>
+</tr>
+<tr>
+<td><strong>Human Capital Management</strong></td>
+<td>Employees</td>
+</tr>
+<tr>
+<td><strong>Maintenance Management</strong></td>
+<td>Maintenance</td>
+</tr>
+<tr>
+<td><strong>Materials Management</strong></td>
+<td>Inventory, Logistics, Storage Management</td>
+</tr>
+<tr>
+<td><strong>Mobile</strong></td>
+<td><em>(Mobile foundation)</em></td>
+</tr>
+<tr>
+<td><strong>Product Data Management</strong></td>
+<td>Engineering, Materials, Quality</td>
+</tr>
+<tr>
+<td><strong>Production Management</strong></td>
+<td>Advanced Production Scheduling, Customer Management, Kanban Production, Manufacturing, Planning, Product Data Management, Supplier Management, Work Order Management</td>
+</tr>
+<tr>
+<td><strong>Quality Control</strong></td>
+<td><em>(Quality foundation)</em></td>
+</tr>
+<tr>
+<td><strong>Reporting and Analytics</strong></td>
+<td>Business Intelligence</td>
+</tr>
+<tr>
+<td><strong>Resource Management</strong></td>
+<td>Resources, Workunits</td>
+</tr>
+<tr>
+<td><strong>Shop Floor Execution</strong></td>
+<td>Control Panels, Request Management</td>
+</tr>
+<tr>
+<td><strong>Supply Chain Management</strong></td>
+<td>Procurement</td>
+</tr>
+<tr>
+<td><strong>System</strong></td>
+<td>Access Control, Application Setup, Configuration, Dashboard, Data Management, Data Modeling, Files, Integration, Integration (NetSuite), Internet of Things, Orchestration, Scheduling, Testing</td>
+</tr>
+<tr>
+<td><strong>Traceability and Genealogy</strong></td>
+<td>Genealogy Tracking</td>
+</tr>
+<tr>
+<td><strong>Warehouse Management</strong></td>
+<td>Inventory Control</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="functional-areas">Functional Areas</h2>
+<h3>Production Management</h3>
+<p>Core production execution and scheduling infrastructure:</p>
+<ul>
+<li><strong>Work Order Management</strong> — Create, dispatch, track, and close manufacturing work orders; capture actual vs. planned quantities, cycle times, and completion status</li>
+<li><strong>Advanced Production Scheduling</strong> — Constraint-based forward/backward scheduling with capacity visibility and scheduling board integration</li>
+<li><strong>Kanban Production</strong> — Pull-based Kanban card management with configurable replenishment triggers and signal workflows</li>
+<li><strong>Planning</strong> — Production planning workflows with demand-driven order generation</li>
+<li><strong>Manufacturing</strong> — Core manufacturing execution with operation-level tracking, time capture, and status management</li>
+<li><strong>Customer Management</strong> — Customer-facing production data and order-linked manufacturing workflows</li>
+<li><strong>Supplier Management</strong> — Supplier-linked production inputs and incoming material tracking</li>
+</ul>
+<h3>Shop Floor Execution</h3>
+<p>Operator-level production control and communication:</p>
+<ul>
+<li><strong>Control Panels</strong> — Work center operator terminals providing real-time visibility into active production orders, operation instructions, production count recording, and labor capture</li>
+<li><strong>Request Management (Andon)</strong> — Structured shop floor request and escalation system for downtime events, material shortages, quality holds, and maintenance requests; configurable response workflows with notification routing</li>
+</ul>
+<h3>Resource Management</h3>
+<p>Equipment and work center availability tracking:</p>
+<ul>
+<li><strong>Workunits</strong> — Real-time work center and equipment state management (running, idle, down, maintenance); automated state history tracking with end-date backfill and duration calculation; the core data engine powering OEE and utilization reporting</li>
+<li><strong>Resources</strong> — Resource registry with capability classification, assignment to work orders, and availability scheduling</li>
+</ul>
+<h3>Materials Management</h3>
+<p>Inventory, storage, and logistics operations:</p>
+<ul>
+<li><strong>Inventory</strong> — Real-time inventory balance tracking by location, lot, and serial number with transaction history</li>
+<li><strong>Storage Management</strong> — Location hierarchy management, bin/rack/shelf assignment, and storage rule configuration</li>
+<li><strong>Logistics</strong> — Material movement workflows including transfers, staging for production, and inter-facility logistics</li>
+</ul>
+<h3>Product Data Management</h3>
+<p>Engineering and specification management:</p>
+<ul>
+<li><strong>Engineering</strong> — Engineering change management, revision control, and released engineering data linked to production workflows</li>
+<li><strong>Materials</strong> — Material master data including specifications, approved supplier lists, and procurement parameters</li>
+<li><strong>Quality</strong> — Quality specification management linked to inspection plans and in-process check criteria</li>
+</ul>
+<h3>Traceability and Genealogy</h3>
+<p>Material and production traceability:</p>
+<ul>
+<li><strong>Genealogy Tracking</strong> — Forward and backward genealogy across lots, serials, and work orders; component-to-assembly lineage; trace queries for compliance, recalls, and customer investigations</li>
+</ul>
+<h3>Warehouse Management</h3>
+<p>Foundational warehouse operations:</p>
+<ul>
+<li><strong>Inventory Control</strong> — Cycle count management, inventory adjustment workflows, ABC classification, and reorder point management</li>
+</ul>
+<h3>System Platform</h3>
+<p>Core platform infrastructure and administration:</p>
+<ul>
+<li><strong>Access Control</strong> — Role-based access management, permission assignment, and user provisioning workflows</li>
+<li><strong>Configuration</strong> — System-wide settings management including reason codes, unit-of-measure tables, lookup tables, and configurable parameters</li>
+<li><strong>Scheduling</strong> — Background job scheduling engine for automated flow execution, report generation, and maintenance triggers</li>
+<li><strong>Orchestration</strong> — Multi-step workflow orchestration for complex cross-module business processes</li>
+<li><strong>Internet of Things (IoT)</strong> — Device registry, tag mapping, and real-time data ingestion from PLCs, sensors, and SCADA systems</li>
+<li><strong>Integration</strong> — Generic integration framework for external system connectivity with configurable mapping and transformation</li>
+<li><strong>Integration (NetSuite)</strong> — Pre-built NetSuite ERP connector for bidirectional work order, inventory, and transaction synchronization</li>
+<li><strong>Data Modeling</strong> — Platform-level data model management and schema configuration</li>
+<li><strong>Data Management</strong> — Data import/export, bulk operations, and data governance workflows</li>
+<li><strong>Business Intelligence</strong> — Configurable analytics and reporting infrastructure with dashboard builder</li>
+<li><strong>Dashboard</strong> — System dashboard framework with widget-based layout and KPI display</li>
+<li><strong>Files</strong> — File attachment management for documents, images, and binary assets across all platform entities</li>
+<li><strong>Application Setup</strong> — Initial platform configuration, tenant setup, and deployment initialization workflows</li>
+<li><strong>Application Lifecycle Management</strong> — Package versioning, deployment, and environment promotion workflows</li>
+<li><strong>Application Connector</strong> — Cross-application integration and service connector framework</li>
+<li><strong>Application Trace</strong> — Audit logging, flow execution tracing, and operational diagnostics</li>
+<li><strong>Testing</strong> — Automated testing framework for flow validation and platform regression testing</li>
+</ul>
+<h3>Supply Chain Management</h3>
+<p>Procurement and supplier operations:</p>
+<ul>
+<li><strong>Procurement</strong> — Purchase order management, receiving integration, supplier performance tracking, and procurement approval workflows</li>
+</ul>
+<h3>Human Capital Management</h3>
+<p>Workforce data foundation:</p>
+<ul>
+<li><strong>Employees</strong> — Employee records, skill profiles, certification tracking, and workforce organizational hierarchy</li>
+</ul>
+<h3>Customer Relationship Management</h3>
+<p>Customer data and sales operations:</p>
+<ul>
+<li><strong>Sales</strong> — Customer order management, sales order–to–work order linking, and customer communication workflows</li>
+</ul>
+<h3>Maintenance Management</h3>
+<p>Asset and maintenance foundation:</p>
+<ul>
+<li><strong>Maintenance</strong> — Maintenance work order framework, asset registry integration, and downtime capture linked to workunit state management</li>
+</ul>
+<hr />
+<h2 id="data-flows">Data Flows</h2>
+<p>The package includes <strong>32 data flow files</strong> providing core platform automation:</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Flow Type</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>System (Scheduled)</strong></td>
+<td>Workunit state history end-date backfill and duration calculation; scheduled data maintenance and cleanup operations</td>
+</tr>
+<tr>
+<td><strong>System (Background)</strong></td>
+<td>Work order status transitions; inventory balance recalculation; Kanban signal processing</td>
+</tr>
+<tr>
+<td><strong>Screen</strong></td>
+<td>UI-driven flows for production recording, work order operations, inventory transactions, and request submission</td>
+</tr>
+<tr>
+<td><strong>Integration</strong></td>
+<td>NetSuite ERP sync flows; IoT device data ingestion; external system webhook processing</td>
+</tr>
+</tbody>
+</table></div>
+<p>Flow types used across the package:
+- <strong>System</strong> — Backend/scheduled business logic, data processing pipelines, and automated state management
+- <strong>Screen</strong> — User-interface-triggered flows responding to form submissions and operator actions
+- <strong>Integration</strong> — External system connectors with bidirectional data synchronization</p>
+<h3>Notable Data Flows</h3>
+<ul>
+<li><strong>Back Fill End Dates of Workunit History</strong> — Scheduled system flow that identifies workunit state history records with null <code>endAt</code> values, calculates durations using JSONata groupBy and map operations, and performs bulk GraphQL mutations to maintain accurate availability and OEE history data</li>
+<li><strong>Kanban Production Signals</strong> — Automated Kanban card replenishment trigger processing with configurable min/max thresholds</li>
+<li><strong>Work Order Status Transitions</strong> — Orchestrated workflow managing work order lifecycle state changes with validation and downstream notifications</li>
+<li><strong>NetSuite Integration Sync</strong> — Bidirectional synchronization of production orders, inventory transactions, and BOM data with Oracle NetSuite ERP</li>
+</ul>
+<hr />
+<h2 id="data-models">Data Models</h2>
+<p>The package includes <strong>92 data model files</strong> covering all foundational platform entities:</p>
+<p><strong>Production</strong> — WorkOrder, WorkOrderOperation, ProductionRecord, WorkCenter, WorkCenterCapacity, KanbanCard, ProductionSchedule</p>
+<p><strong>Resources</strong> — Workunit, WorkunitState, WorkunitStateHistory, Resource, ResourceCapability, ResourceAssignment</p>
+<p><strong>Quality</strong> — QualitySpecification, InspectionCriteria, QualityCheck, NonConformanceRecord</p>
+<p><strong>Materials</strong> — Inventory, InventoryLocation, InventoryTransaction, Lot, Serial, MaterialMaster, StorageLocation</p>
+<p><strong>Genealogy</strong> — GenealogyRecord, ComponentTrace, MaterialTrace, ProductionLineage</p>
+<p><strong>Warehouse</strong> — CycleCount, CycleCountLine, InventoryAdjustment</p>
+<p><strong>Procurement</strong> — PurchaseOrder, PurchaseOrderLine, Supplier, SupplierPerformance</p>
+<p><strong>Engineering</strong> — EngineeringChange, BOMRevision, MaterialSpecification</p>
+<p><strong>Maintenance</strong> — MaintenanceWorkOrder, Asset, DowntimeEvent</p>
+<p><strong>Labor</strong> — Employee, OperatorQualification, ShiftSchedule</p>
+<p><strong>System</strong> — Configuration, Sequence, ApplicationSetting, AuditLog, FileAttachment, IoTDevice, IoTTag, IntegrationMapping, ScheduledJob</p>
+<hr />
+<h2 id="screens">Screens</h2>
+<p>The package includes <strong>56 screen files</strong> providing core operational interfaces:</p>
+<ul>
+<li>Work order management and dispatch screens</li>
+<li>Shop floor operator control panel terminals</li>
+<li>Andon/request management submission and response screens</li>
+<li>Inventory management and transaction entry</li>
+<li>Work center and resource management dashboards</li>
+<li>Genealogy trace query and visualization screens</li>
+<li>System configuration and administration panels</li>
+<li>IoT device management and tag mapping screens</li>
+<li>Integration configuration and monitoring screens</li>
+<li>Application setup and deployment screens</li>
+</ul>
+<hr />
+<h2 id="access-control">Access Control</h2>
+<p>The package establishes core platform roles:</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MES Administrator</td>
+<td>Full system access including platform configuration and module management</td>
+</tr>
+<tr>
+<td>Production Supervisor</td>
+<td>Production order management, work center monitoring, Andon response</td>
+</tr>
+<tr>
+<td>Shop Floor Operator</td>
+<td>Production recording, labor capture, request submission</td>
+</tr>
+<tr>
+<td>Inventory Analyst</td>
+<td>Inventory management, cycle counts, adjustments</td>
+</tr>
+<tr>
+<td>System Administrator</td>
+<td>User management, access control, integration configuration</td>
+</tr>
+<tr>
+<td>Integration Manager</td>
+<td>EDI and ERP integration configuration and monitoring</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="package-contents">Package Contents</h2>
+<pre><code>mes-core/
+├── manifest.json          # Package metadata (version 1.0.0)
+├── definition.json        # Package structure and selection definitions
+├── package-data.json      # All seed data (module registry, config tables)
+├── data/                  # 34 seed data files
+├── dataFlows/             # 32 data flow definitions
+├── dataModels/            # 92 data model definitions
+└── screens/               # 56 screen definitions
+</code></pre>
+<p>The <strong>34 seed data records</strong> establish the foundational platform configuration:
+- Complete module group and module registry (18 groups, 41 modules)
+- System configuration defaults and lookup tables
+- Process type definitions and reason code templates
+- Sequence number configuration for work orders, lots, and transactions</p>
+<hr />
+<h2 id="dependencies">Dependencies</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Dependency</th>
+<th>Version</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fuuz Industrial Operations Platform</td>
+<td><code>&gt;= 2025.11.3</code></td>
+<td>Required</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Note:</strong> This is the core MES foundation package. It provides the module registry and platform infrastructure used by all other Fuuz MES accelerators. For a complete production-ready MES deployment, see <code>application-mes-accelerator</code>. For warehouse-specific functionality, see <code>application-wms-accelerator</code>.</p>
+</blockquote>
+<hr />
+<h2 id="installation">Installation</h2>
+<ol>
+<li>Ensure your Fuuz platform instance is running version <code>&gt;= 2025.11.3</code></li>
+<li>Navigate to <strong>Platform &gt; Packages</strong> in your Fuuz tenant</li>
+<li>Import the <code>mes-core</code> package (<code>.fuuz</code> file or directory import)</li>
+<li>Run the module registry seeding flows to populate the module group and module tables</li>
+<li>Configure roles and assign users per the Access Control section above</li>
+<li>Apply system configuration defaults appropriate for your facility</li>
+<li>Validate the deployment by confirming module navigation is accessible</li>
+<li>Configure IoT device connectivity if using machine integration features</li>
+<li>Set up NetSuite integration credentials if using the NetSuite connector module</li>
+</ol>
+<p>For detailed setup and configuration documentation, see the <a href="https://help.fuuz.com">Fuuz Platform Documentation</a>.</p>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Fuuz&reg; is an Enterprise Industrial Intelligence Platform.
+      <a href="https://accelerators.fuuz.com/">All accelerators</a> &middot;
+      <a href="https://github.com/Fuuz-Platform/application-mes-core-accelerator">Source</a> &middot;
+      <a href="https://fuuz.com">fuuz.com</a></p>
+  </div>
+</footer>
+</body>
+</html>
