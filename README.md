@@ -304,3 +304,9 @@ The **34 seed data records** establish the foundational platform configuration:
 9. Set up NetSuite integration credentials if using the NetSuite connector module
 
 For detailed setup and configuration documentation, see the [Fuuz Platform Documentation](https://help.fuuz.com).
+
+## Service levels
+
+No service level agreement applies to anything published here. It becomes a supported
+deliverable only once it has been implemented by a Fuuz services professional or an
+approved Fuuz partner.
